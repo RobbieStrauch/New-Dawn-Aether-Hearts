@@ -39,7 +39,7 @@ public class CameraController : MonoBehaviour
             }
 
             //down
-            if (Input.mousePosition.y <= Screen.height - thickness)
+            if (Input.mousePosition.y <= thickness)
             {
                 Pos.z -= movespeed * Time.deltaTime;
             }
@@ -51,7 +51,7 @@ public class CameraController : MonoBehaviour
             }
 
             //left
-            if (Input.mousePosition.x <= Screen.height - thickness)
+            if (Input.mousePosition.x <= thickness)
             {
                 Pos.x -= movespeed * Time.deltaTime;
             }
