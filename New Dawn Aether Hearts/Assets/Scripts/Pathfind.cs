@@ -9,9 +9,12 @@ public class Pathfind : MonoBehaviour
     private List<GameObject> reverseNodes = new List<GameObject>();
     private List<GameObject> originalNodes = new List<GameObject>();
 
-    private float _segmentTimer = 0;
-    private float _segmentTravelTime = 1.0f;
-    private int _segmentIndex = 1;
+    ClickPath clickPath;
+    Subject subject = new Subject();
+
+    private float segmentTimer = 0;
+    private float segmentTravelTime = 1.0f;
+    private int segmentIndex = 1;
 
     private bool isMovingHere = false;
     private bool atStart = false;
@@ -60,9 +63,13 @@ public class Pathfind : MonoBehaviour
     {
         if (!isMovingHere && !MoveManager.instance.isMoving && !PauseManager.instance.paused && atStart)
         {
-            _segmentIndex = 1;
+            segmentIndex = 1;
             isMovingHere = true;
             MoveManager.instance.isMoving = true;
+
+            clickPath = new ClickPath(player, new YellowMaterial());
+            subject.AddObserver(clickPath);
+            subject.Notify();
         }
     }
 
@@ -80,64 +87,72 @@ public class Pathfind : MonoBehaviour
 
     public void StartPath()
     {
-        _segmentTimer += Time.deltaTime;
+        segmentTimer += Time.deltaTime;
 
-        if (_segmentTimer > _segmentTravelTime)
+        if (segmentTimer > segmentTravelTime)
         {
-            _segmentTimer = 0f;
-            _segmentIndex += 1;
+            segmentTimer = 0f;
+            segmentIndex += 1;
 
-            if (_segmentIndex >= originalNodes.Count)
+            if (segmentIndex >= originalNodes.Count)
             {
-                _segmentIndex = 0;
+                segmentIndex = 0;
                 isMovingHere = false;
                 MoveManager.instance.isMoving = false;
+
+                clickPath = new ClickPath(player, new GreenMaterial());
+                subject.AddObserver(clickPath);
+                subject.Notify();
             }
         }
 
-        float t = _segmentTimer / _segmentTravelTime;
+        float t = segmentTimer / segmentTravelTime;
 
-        Vector3 p0, p1;
-        int p0_index, p1_index;
+        Vector3 current, next;
+        int currentIndex, nextIndex;
 
-        p1_index = _segmentIndex;
-        p0_index = (p1_index == 0) ? originalNodes.Count - 1 : p1_index - 1;
+        nextIndex = segmentIndex;
+        currentIndex = (nextIndex == 0) ? originalNodes.Count - 1 : nextIndex - 1;
 
-        p0 = originalNodes[p0_index].transform.position;
-        p1 = originalNodes[p1_index].transform.position;
+        current = originalNodes[currentIndex].transform.position;
+        next = originalNodes[nextIndex].transform.position;
 
-        player.transform.position = LERP(p0, p1, t);
+        player.transform.position = LERP(current, next, t);
     }
 
     public void EndPath()
     {
-        _segmentTimer += Time.deltaTime;
+        segmentTimer += Time.deltaTime;
 
-        if (_segmentTimer > _segmentTravelTime)
+        if (segmentTimer > segmentTravelTime)
         {
-            _segmentTimer = 0f;
-            _segmentIndex += 1;
+            segmentTimer = 0f;
+            segmentIndex += 1;
 
-            if (_segmentIndex >= reverseNodes.Count)
+            if (segmentIndex >= reverseNodes.Count)
             {
-                _segmentIndex = 0;
+                segmentIndex = 0;
                 isMovingHere = false;
                 MoveManager.instance.isMoving = false;
+
+                clickPath = new ClickPath(player, new GreenMaterial());
+                subject.AddObserver(clickPath);
+                subject.Notify();
             }
         }
 
-        float t = _segmentTimer / _segmentTravelTime;
+        float t = segmentTimer / segmentTravelTime;
 
-        Vector3 p0, p1;
-        int p0_index, p1_index;
+        Vector3 current, next;
+        int currentIndex, nextIndex;
 
-        p1_index = _segmentIndex;
-        p0_index = (p1_index == 0) ? reverseNodes.Count - 1 : p1_index - 1;
+        nextIndex = segmentIndex;
+        currentIndex = (nextIndex == 0) ? reverseNodes.Count - 1 : nextIndex - 1;
 
-        p0 = reverseNodes[p0_index].transform.position;
-        p1 = reverseNodes[p1_index].transform.position;
+        current = reverseNodes[currentIndex].transform.position;
+        next = reverseNodes[nextIndex].transform.position;
 
-        player.transform.position = LERP(p0, p1, t);
+        player.transform.position = LERP(current, next, t);
     }
 
     public Vector3 LERP(Vector3 p0, Vector3 p1, float t)
