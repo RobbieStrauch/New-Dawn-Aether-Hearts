@@ -14,6 +14,7 @@ public class Pathfind : MonoBehaviour
     private int _segmentIndex = 1;
 
     private bool isMovingHere = false;
+    private bool atStart = false;
 
     private int start;
 
@@ -34,24 +35,30 @@ public class Pathfind : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isMovingHere)
-        {
-            Pathfinding();
-        }
-
         if (player.transform.position.z == nodes[nodes.Count - 1].transform.position.z)
         {
             start = nodes.Count - 1;
+            atStart = true;
         }
         if (player.transform.position.z == nodes[0].transform.position.z)
         {
             start = 0;
+            atStart = true;
+        }
+        if (MoveManager.instance.isMoving)
+        {
+            atStart = false;
+        }
+
+        if (isMovingHere)
+        {
+            Pathfinding();
         }
     }
 
     private void OnMouseDown()
     {
-        if (!isMovingHere && !MoveManager.instance.isMoving)
+        if (!isMovingHere && !MoveManager.instance.isMoving && !PauseManager.instance.paused && atStart)
         {
             _segmentIndex = 1;
             isMovingHere = true;
