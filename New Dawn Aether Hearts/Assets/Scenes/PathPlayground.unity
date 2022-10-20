@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -234,11 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 395267069}
-  - {fileID: 1677151406}
-  - {fileID: 1287585394}
-  - {fileID: 1265101634}
 --- !u!1001 &45666022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -787,9 +782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1632125054}
-  - {fileID: 1844821482}
 --- !u!1001 &116907655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1305,10 +1297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1096930172}
-  - {fileID: 390541303}
-  - {fileID: 838613653}
 --- !u!1001 &186197182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2126,10 +2114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1955008841}
-  - {fileID: 2022876687}
-  - {fileID: 1047123276}
 --- !u!1001 &262545625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2581,11 +2565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 2076338047}
-  - {fileID: 1083964729}
-  - {fileID: 1661636506}
-  - {fileID: 443477335}
 --- !u!1001 &306785420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4410,10 +4389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1551505771}
-  - {fileID: 1744825852}
-  - {fileID: 1096930172}
 --- !u!1001 &504821872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4861,9 +4836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1954112731}
-  - {fileID: 443477335}
 --- !u!1001 &546613861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5272,10 +5244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1955008841}
-  - {fileID: 2022876687}
-  - {fileID: 1047123276}
 --- !u!1001 &586431363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6265,9 +6233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 404491727}
-  - {fileID: 2076338047}
 --- !u!1001 &692050238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6444,7 +6409,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.85, y: 1.63, z: -128.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 763200940}
   m_Father: {fileID: 0}
@@ -6561,9 +6526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 878569694}
-  - {fileID: 1955008841}
 --- !u!1001 &706946555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7107,11 +7069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1687410830}
-  - {fileID: 1846370200}
-  - {fileID: 1403441125}
-  - {fileID: 1954112731}
 --- !u!1001 &816931641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7287,10 +7244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1551505771}
-  - {fileID: 1744825852}
-  - {fileID: 1096930172}
 --- !u!1001 &829197261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8512,11 +8465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1844821482}
-  - {fileID: 1953911741}
-  - {fileID: 1403441125}
-  - {fileID: 1954112731}
 --- !u!1 &1029483226
 GameObject:
   m_ObjectHideFlags: 0
@@ -8628,9 +8576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1632125054}
-  - {fileID: 1687410830}
 --- !u!1 &1034361269
 GameObject:
   m_ObjectHideFlags: 0
@@ -8742,9 +8687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 838613653}
-  - {fileID: 471456951}
 --- !u!1001 &1039254425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9655,9 +9597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 240425527}
-  - {fileID: 1551505771}
 --- !u!1 &1132147544
 GameObject:
   m_ObjectHideFlags: 0
@@ -10066,11 +10005,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 2121074712}
-  - {fileID: 109983867}
-  - {fileID: 1782599550}
-  - {fileID: 878569694}
 --- !u!1 &1182383848
 GameObject:
   m_ObjectHideFlags: 0
@@ -10182,10 +10116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1047123276}
-  - {fileID: 1132147544}
-  - {fileID: 404491727}
 --- !u!1001 &1184344788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11464,9 +11394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1265101634}
-  - {fileID: 1632125054}
 --- !u!1001 &1340130101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11714,11 +11641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 2121074712}
-  - {fileID: 109983867}
-  - {fileID: 569482036}
-  - {fileID: 240425527}
 --- !u!1001 &1355667663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12098,10 +12020,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1047123276}
-  - {fileID: 1132147544}
-  - {fileID: 404491727}
 --- !u!1001 &1388406463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12650,9 +12568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 209887996}
-  - {fileID: 1632125054}
 --- !u!1 &1421240597
 GameObject:
   m_ObjectHideFlags: 0
@@ -13345,9 +13260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 2121074712}
-  - {fileID: 395267069}
 --- !u!1001 &1516728356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13946,11 +13858,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 471456951}
-  - {fileID: 631757608}
-  - {fileID: 1661636506}
-  - {fileID: 443477335}
 --- !u!1001 &1570196865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15015,10 +14922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1096930172}
-  - {fileID: 390541303}
-  - {fileID: 838613653}
 --- !u!1001 &1738622438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17001,11 +16904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b05c4860b7d79749be8044b65af0188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 395267069}
-  - {fileID: 1677151406}
-  - {fileID: 1421240597}
-  - {fileID: 209887996}
 --- !u!1001 &1962942078
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -170,6 +170,54 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Scale"",
+            ""id"": ""8fa21155-6ee4-4b09-a2b0-b768641b24b9"",
+            ""actions"": [
+                {
+                    ""name"": ""Increase"",
+                    ""type"": ""Button"",
+                    ""id"": ""1c6cf4ff-3281-4a3c-a966-541866fc742a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Decrease"",
+                    ""type"": ""Button"",
+                    ""id"": ""ae0b6be8-f51c-48a5-af82-ac0da038ab5f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""fa427a85-d372-473c-ac3c-92cc48cace10"",
+                    ""path"": ""<Keyboard>/equals"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Increase"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b2ead44b-b095-459c-8655-e3e3de8a2e45"",
+                    ""path"": ""<Keyboard>/minus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Decrease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -183,6 +231,10 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_Camera_Stop = m_Camera.FindAction("Stop", throwIfNotFound: true);
         m_Camera_Undo = m_Camera.FindAction("Undo", throwIfNotFound: true);
         m_Camera_FifthTarget = m_Camera.FindAction("Fifth Target", throwIfNotFound: true);
+        // Scale
+        m_Scale = asset.FindActionMap("Scale", throwIfNotFound: true);
+        m_Scale_Increase = m_Scale.FindAction("Increase", throwIfNotFound: true);
+        m_Scale_Decrease = m_Scale.FindAction("Decrease", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -319,6 +371,47 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         }
     }
     public CameraActions @Camera => new CameraActions(this);
+
+    // Scale
+    private readonly InputActionMap m_Scale;
+    private IScaleActions m_ScaleActionsCallbackInterface;
+    private readonly InputAction m_Scale_Increase;
+    private readonly InputAction m_Scale_Decrease;
+    public struct ScaleActions
+    {
+        private @PlayerActions m_Wrapper;
+        public ScaleActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Increase => m_Wrapper.m_Scale_Increase;
+        public InputAction @Decrease => m_Wrapper.m_Scale_Decrease;
+        public InputActionMap Get() { return m_Wrapper.m_Scale; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ScaleActions set) { return set.Get(); }
+        public void SetCallbacks(IScaleActions instance)
+        {
+            if (m_Wrapper.m_ScaleActionsCallbackInterface != null)
+            {
+                @Increase.started -= m_Wrapper.m_ScaleActionsCallbackInterface.OnIncrease;
+                @Increase.performed -= m_Wrapper.m_ScaleActionsCallbackInterface.OnIncrease;
+                @Increase.canceled -= m_Wrapper.m_ScaleActionsCallbackInterface.OnIncrease;
+                @Decrease.started -= m_Wrapper.m_ScaleActionsCallbackInterface.OnDecrease;
+                @Decrease.performed -= m_Wrapper.m_ScaleActionsCallbackInterface.OnDecrease;
+                @Decrease.canceled -= m_Wrapper.m_ScaleActionsCallbackInterface.OnDecrease;
+            }
+            m_Wrapper.m_ScaleActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Increase.started += instance.OnIncrease;
+                @Increase.performed += instance.OnIncrease;
+                @Increase.canceled += instance.OnIncrease;
+                @Decrease.started += instance.OnDecrease;
+                @Decrease.performed += instance.OnDecrease;
+                @Decrease.canceled += instance.OnDecrease;
+            }
+        }
+    }
+    public ScaleActions @Scale => new ScaleActions(this);
     public interface ICameraActions
     {
         void OnPrimaryTarget(InputAction.CallbackContext context);
@@ -328,5 +421,10 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnStop(InputAction.CallbackContext context);
         void OnUndo(InputAction.CallbackContext context);
         void OnFifthTarget(InputAction.CallbackContext context);
+    }
+    public interface IScaleActions
+    {
+        void OnIncrease(InputAction.CallbackContext context);
+        void OnDecrease(InputAction.CallbackContext context);
     }
 }

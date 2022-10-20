@@ -148,6 +148,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Scale",
+            "id": "8fa21155-6ee4-4b09-a2b0-b768641b24b9",
+            "actions": [
+                {
+                    "name": "Increase",
+                    "type": "Button",
+                    "id": "1c6cf4ff-3281-4a3c-a966-541866fc742a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Decrease",
+                    "type": "Button",
+                    "id": "ae0b6be8-f51c-48a5-af82-ac0da038ab5f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fa427a85-d372-473c-ac3c-92cc48cace10",
+                    "path": "<Keyboard>/equals",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Increase",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b2ead44b-b095-459c-8655-e3e3de8a2e45",
+                    "path": "<Keyboard>/minus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Decrease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
