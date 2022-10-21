@@ -12,6 +12,9 @@ Used to Learn how to move the camera based on mouse position
 public class CameraController : MonoBehaviour
 {
     public static CameraController instance;
+    public GameObject cam;
+
+    ICommand command;
 
     private Vector3 Pos;
     private Vector3[] Past;
@@ -121,13 +124,17 @@ public class CameraController : MonoBehaviour
                 Pos.Set(-2, 41, 60);
                 a++;
                 Past[a] = Pos;
+                command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
                 break;
 
             case 2:
                 Pos.Set(-110, 41, 60);
                 a++;
-                Past[a] = Pos;              
+                Past[a] = Pos;
+                command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
                 break;
 
@@ -135,7 +142,9 @@ public class CameraController : MonoBehaviour
                 Pos.Set(105, 41, 60);
                 a++;
                 Past[a] = Pos;
-                
+                command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
+
 
                 break;
 
@@ -143,6 +152,8 @@ public class CameraController : MonoBehaviour
                 Pos.Set(-54, 41, 11);
                 a++;
                 Past[a] = Pos;
+                command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
 
                 break;
@@ -151,6 +162,8 @@ public class CameraController : MonoBehaviour
                 Pos.Set(47, 41, 105);
                 a++;
                 Past[a] = Pos;
+                command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
 
                 break;

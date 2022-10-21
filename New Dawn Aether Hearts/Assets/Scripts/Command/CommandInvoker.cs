@@ -17,7 +17,7 @@ public class CommandInvoker : MonoBehaviour
         commandBuffer = new Queue<ICommand>();
         commandHistory = new List<ICommand>();
 
-        InputAction = new PlayerActions();
+        InputAction = InputController.controller.InputAction;
 
         InputAction.Camera.Undo.performed += cntxt => UndoCommand();
     }
@@ -42,6 +42,19 @@ public class CommandInvoker : MonoBehaviour
                 commandHistory[counter].Undo();
             }
 
+        }
+    }
+
+    void Update()
+    {
+        if (commandBuffer.Count > 0)
+        {
+            ICommand c = commandBuffer.Dequeue();
+            c.Execute();
+
+            commandHistory.Add(c);
+            counter++;
+            Debug.Log("Command history lenght: " + commandHistory.Count);
         }
     }
 }
