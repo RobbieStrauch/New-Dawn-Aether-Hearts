@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class ClickEvents
 {
     public abstract Color playerEditorColor();
+    //public abstract AudioClip playerEditorSound();
 }
 
 public class CyanMaterial : ClickEvents
@@ -38,3 +39,15 @@ public class YellowMaterial : ClickEvents
         return Color.yellow;
     }
 }
+
+/*
+
+public class SoundEffect : ClickEvents
+{
+    public override AudioClip playerEditorSound()
+    {
+        return Audio;
+    }
+}
+
+*/
