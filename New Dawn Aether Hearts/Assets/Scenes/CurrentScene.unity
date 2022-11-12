@@ -3892,7 +3892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 10
-  thickness: 5
+  thickness: 15
   freeze: 1
 --- !u!1 &1469963883
 GameObject:
