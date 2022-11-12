@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.GetComponent<UnitHealth>() && other.gameObject.layer == 13)
+        if (other.gameObject.GetComponent<UnitHealth>())
         {
             other.gameObject.GetComponent<UnitHealth>().DecreaseHealth(5);
         }

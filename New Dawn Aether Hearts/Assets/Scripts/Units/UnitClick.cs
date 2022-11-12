@@ -13,6 +13,8 @@ public class UnitClick : MonoBehaviour
     public LayerMask selectable;
     public LayerMask ground;
 
+    public event System.Action<Vector3> NewTargetAcquired = delegate { };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,7 @@ public class UnitClick : MonoBehaviour
                 {
                     target.transform.position = hit.point;
                     target.SetActive(true);
+                    NewTargetAcquired.Invoke(hit.point);
                 }
             }
         }

@@ -45,9 +45,8 @@ GameObject:
   - component: {fileID: 5402078485329649450}
   - component: {fileID: -3668994855940627684}
   - component: {fileID: -7343831848951395383}
-  - component: {fileID: -7157254241501209443}
-  - component: {fileID: -2431143451534017900}
-  m_Layer: 10
+  - component: {fileID: -7107466212702368254}
+  m_Layer: 12
   m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +67,7 @@ Transform:
   m_Children:
   - {fileID: 8002424723289240732}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2716274801888876830
 MeshFilter:
@@ -167,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc0dbf9b2fd7444fba719a754126543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7157254241501209443
+--- !u!114 &-7107466212702368254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,29 +175,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8121902313589821381}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65c4f5cf9752ed543bd2da2a2b0c5051, type: 3}
+  m_Script: {fileID: 11500000, guid: 67a8915dc1dc37642a386094f2b9ac2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground:
-    serializedVersion: 2
-    m_Bits: 8192
---- !u!114 &-2431143451534017900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8121902313589821381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d24454dbd48bdf4c828dfaad01c0db4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1382097251607727358, guid: 7be88cfa1f98c2648afd1dfee71eae45, type: 3}
   player2:
     serializedVersion: 2
     m_Bits: 2048
   timeBetweenAttacks: 0.25
+  alreadyAttacked: 0
   projectile: {fileID: 5488129717929618976, guid: 9e2cf0c6a92f3c341b12d81cd5a2d2f5, type: 3}
   projectilePosition: {fileID: 2917401700886712802}
   forward: 32

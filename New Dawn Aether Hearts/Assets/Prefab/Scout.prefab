@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 769065343201977367}
   - component: {fileID: -8364409047423296087}
   - component: {fileID: -8766752951523353143}
-  - component: {fileID: 1142803866482264948}
-  - component: {fileID: -6490646312245200173}
-  m_Layer: 10
+  - component: {fileID: -3028475215981638977}
+  m_Layer: 12
   m_Name: Scout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 1739128854729957654}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7312050457836941199
 MeshFilter:
@@ -136,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc0dbf9b2fd7444fba719a754126543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1142803866482264948
+--- !u!114 &-3028475215981638977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,29 +144,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6056001283119818107}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65c4f5cf9752ed543bd2da2a2b0c5051, type: 3}
+  m_Script: {fileID: 11500000, guid: 67a8915dc1dc37642a386094f2b9ac2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground:
-    serializedVersion: 2
-    m_Bits: 8192
---- !u!114 &-6490646312245200173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6056001283119818107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d24454dbd48bdf4c828dfaad01c0db4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1382097251607727358, guid: 7be88cfa1f98c2648afd1dfee71eae45, type: 3}
   player2:
     serializedVersion: 2
     m_Bits: 2048
   timeBetweenAttacks: 0.25
+  alreadyAttacked: 0
   projectile: {fileID: 5488129717929618976, guid: 9e2cf0c6a92f3c341b12d81cd5a2d2f5, type: 3}
   projectilePosition: {fileID: 6359834481217282936}
   forward: 32
