@@ -23,6 +23,10 @@ public class CameraController : MonoBehaviour
 
     PlayerActions InputAction;
 
+    ICommand command;
+
+    GameObject cam;
+
 
     private void OnEnable()
     {
@@ -52,6 +56,7 @@ public class CameraController : MonoBehaviour
         InputAction.Camera.ThirdTarget.performed += cntxt => Move(3);
         InputAction.Camera.FourthTarget.performed += cntxt => Move(4);
         InputAction.Camera.FifthTarget.performed += cntxt => Move(5);
+        InputAction.Camera.SixithTarget.performed += cntxt => Move(6);
         InputAction.Camera.Undo.performed += cntxt => Undo();
     }
 
@@ -118,40 +123,54 @@ public class CameraController : MonoBehaviour
         switch (value)
         {
             case 1:
-                Pos.Set(-2, 41, 60);
+                Pos.Set(-4, 41, -16);
                 a++;
                 Past[a] = Pos;
-
+                command = new MoveCameraCommand(Pos, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
                 break;
 
             case 2:
-                Pos.Set(-110, 41, 60);
+                Pos.Set(-16, 41, -30);
                 a++;
-                Past[a] = Pos;              
-
+                Past[a] = Pos;
+                command = new MoveCameraCommand(Pos, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
                 break;
 
             case 3:
-                Pos.Set(105, 41, 60);
+                Pos.Set(-45, 41, -26);
                 a++;
                 Past[a] = Pos;
-                
+                command = new MoveCameraCommand(Pos, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
                 break;
 
             case 4:
-                Pos.Set(-54, 41, 11);
+                Pos.Set(-64, 41, -5);
                 a++;
                 Past[a] = Pos;
-
+                command = new MoveCameraCommand(Pos, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
                 break;
 
             case 5:
-                Pos.Set(47, 41, 105);
+                Pos.Set(-19, 41, -2);
                 a++;
                 Past[a] = Pos;
+                command = new MoveCameraCommand(Pos, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
+                break;
+
+            case 6:
+                Pos.Set(2, 41, 29);
+                a++;
+                Past[a] = Pos;
+                command = new MoveCameraCommand(Pos, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
                 break;
         }

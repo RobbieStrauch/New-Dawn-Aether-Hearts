@@ -89,6 +89,15 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sixith Target"",
+                    ""type"": ""Button"",
+                    ""id"": ""3bfa06c9-f26e-45ce-854a-0c18b33a1612"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -168,6 +177,17 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""action"": ""Fifth Target"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48b64fde-4942-4f08-bf27-bac64ca286e0"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sixith Target"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -231,6 +251,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_Camera_Stop = m_Camera.FindAction("Stop", throwIfNotFound: true);
         m_Camera_Undo = m_Camera.FindAction("Undo", throwIfNotFound: true);
         m_Camera_FifthTarget = m_Camera.FindAction("Fifth Target", throwIfNotFound: true);
+        m_Camera_SixithTarget = m_Camera.FindAction("Sixith Target", throwIfNotFound: true);
         // Scale
         m_Scale = asset.FindActionMap("Scale", throwIfNotFound: true);
         m_Scale_Increase = m_Scale.FindAction("Increase", throwIfNotFound: true);
@@ -301,6 +322,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Camera_Stop;
     private readonly InputAction m_Camera_Undo;
     private readonly InputAction m_Camera_FifthTarget;
+    private readonly InputAction m_Camera_SixithTarget;
     public struct CameraActions
     {
         private @PlayerActions m_Wrapper;
@@ -312,6 +334,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public InputAction @Stop => m_Wrapper.m_Camera_Stop;
         public InputAction @Undo => m_Wrapper.m_Camera_Undo;
         public InputAction @FifthTarget => m_Wrapper.m_Camera_FifthTarget;
+        public InputAction @SixithTarget => m_Wrapper.m_Camera_SixithTarget;
         public InputActionMap Get() { return m_Wrapper.m_Camera; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -342,6 +365,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @FifthTarget.started -= m_Wrapper.m_CameraActionsCallbackInterface.OnFifthTarget;
                 @FifthTarget.performed -= m_Wrapper.m_CameraActionsCallbackInterface.OnFifthTarget;
                 @FifthTarget.canceled -= m_Wrapper.m_CameraActionsCallbackInterface.OnFifthTarget;
+                @SixithTarget.started -= m_Wrapper.m_CameraActionsCallbackInterface.OnSixithTarget;
+                @SixithTarget.performed -= m_Wrapper.m_CameraActionsCallbackInterface.OnSixithTarget;
+                @SixithTarget.canceled -= m_Wrapper.m_CameraActionsCallbackInterface.OnSixithTarget;
             }
             m_Wrapper.m_CameraActionsCallbackInterface = instance;
             if (instance != null)
@@ -367,6 +393,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @FifthTarget.started += instance.OnFifthTarget;
                 @FifthTarget.performed += instance.OnFifthTarget;
                 @FifthTarget.canceled += instance.OnFifthTarget;
+                @SixithTarget.started += instance.OnSixithTarget;
+                @SixithTarget.performed += instance.OnSixithTarget;
+                @SixithTarget.canceled += instance.OnSixithTarget;
             }
         }
     }
@@ -421,6 +450,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnStop(InputAction.CallbackContext context);
         void OnUndo(InputAction.CallbackContext context);
         void OnFifthTarget(InputAction.CallbackContext context);
+        void OnSixithTarget(InputAction.CallbackContext context);
     }
     public interface IScaleActions
     {
