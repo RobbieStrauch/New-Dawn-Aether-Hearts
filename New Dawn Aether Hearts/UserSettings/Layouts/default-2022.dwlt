@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 96
+  controlID: 99
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -346,22 +346,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Command
+    - Assets/Scripts/Units
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Command
+  - Assets/Scripts/Units
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Robbie\Documents\Ontario Tech University\Year 3\GDW
     Game\New-Dawn-Aether-Hearts\New Dawn Aether Hearts
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: bc5f0000
-    m_LastClickedID: 24508
+    scrollPos: {x: 0, y: 102.20001}
+    m_SelectedIDs: ce5f0000
+    m_LastClickedID: 24526
     m_ExpandedIDs: 00000000805f0000825f0000845f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 70.400024
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -520,7 +520,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2cfbffff
+      m_ExpandedIDs: 42f8ffff2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -802,9 +802,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 455.79633, y: 232.26584, z: 599.98596}
+    m_Target: {x: -36.49713, y: -97.42048, z: 616.3358}
     speed: 2
-    m_Value: {x: 455.79633, y: 232.26584, z: 599.98596}
+    m_Value: {x: -36.49713, y: -97.42048, z: 616.3358}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -850,13 +850,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.037790343, y: -0.023383789, z: 0.0008844417, w: -0.99901533}
+    m_Target: {x: -0.14380789, y: 0.0050444356, z: -0.00073314446, w: -0.98959607}
     speed: 2
-    m_Value: {x: -0.03779021, y: -0.023383705, z: 0.0008844386, w: -0.99901175}
+    m_Value: {x: -0.1438074, y: 0.0050444184, z: -0.0007331419, w: -0.9895927}
   m_Size:
-    m_Target: 760.4766
+    m_Target: 752.808
     speed: 2
-    m_Value: 760.4766
+    m_Value: 752.808
   m_Ortho:
     m_Target: 0
     speed: 2

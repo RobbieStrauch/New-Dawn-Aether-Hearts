@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 95755da8be7c78443b26a3cab38fd128, type: 2}
+--- !u!1 &245391409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 245391410}
+  m_Layer: 0
+  m_Name: Bullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &245391410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245391409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -36.49713, y: -97.42048, z: 616.3358}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &257093969
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +735,7 @@ RectTransform:
   - {fileID: 1054621415}
   - {fileID: 770050361}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4517,7 +4548,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1676619674
 GameObject:
@@ -5720,6 +5751,7 @@ GameObject:
   - component: {fileID: 2131272766}
   - component: {fileID: 2131272764}
   - component: {fileID: 2131272755}
+  - component: {fileID: 2131272767}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -5852,3 +5884,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae3a35be7f25a1d4d98bf3402c2a1728, type: 2}
   buttonPanel: {fileID: 770050360}
   buttonPrefab: {fileID: 2456577475706748666, guid: 695f4240043a83146ae050c94047771f, type: 3}
+--- !u!114 &2131272767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131272754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca50a3f748d164c4188ce959f6d3756f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolParent: {fileID: 245391409}
+  pools:
+  - tag: Bullet
+    prefab: {fileID: 5488129717929618976, guid: 9e2cf0c6a92f3c341b12d81cd5a2d2f5, type: 3}
+    size: 40
