@@ -19,13 +19,15 @@ public class CameraMover : MonoBehaviour
         Movements.Add(newposition);
     }
 
-    public static void UndoMove(Vector3 position)
+    public static void UndoMove(Vector3 position, GameObject camera)
     {
         for (int i = 0; i < Movements.Count; i++)
         {
             if (Movements[i].position == position)
             {
-                //CameraController.Set(Movements[i].position);
+                camera.transform.position = position;
+                Movements.RemoveAt(i);
+                break;
             }
         }
     }

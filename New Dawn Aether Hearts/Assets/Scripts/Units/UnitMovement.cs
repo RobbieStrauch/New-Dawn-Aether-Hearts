@@ -5,11 +5,16 @@ using UnityEngine.AI;
 
 public class UnitMovement : MonoBehaviour
 {
+    Sound sound;
+
     Camera myCamera;
     NavMeshAgent agent;
     
     public LayerMask ground;
     private GameObject target;
+
+    ClickPath clickPath;
+    Subject subject = new Subject();
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +37,11 @@ public class UnitMovement : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
                 {
                     agent.SetDestination(hit.point);
+
+                    clickPath = new ClickPath(target, new YellowMaterial());
+                    subject.AddObserver(clickPath);
+                    subject.Notify();
+                    sound.noise();
                 }
             }
         }
@@ -39,6 +49,7 @@ public class UnitMovement : MonoBehaviour
         if (Vector3.Distance(transform.position, target.transform.position) <= 2)
         {
             agent.isStopped = true;
+            sound.stop();
         }
         else
         {
