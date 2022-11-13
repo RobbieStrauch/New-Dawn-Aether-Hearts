@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/*
- Refrence
-https://www.youtube.com/watch?v=tGAaj824i4s&t=130s
-Used to Learn how to move the camera based on mouse position
+/* 
+ Refrence 
+https://www.youtube.com/watch?v=tGAaj824i4s&t=130s 
+Used to Learn how to move the camera based on mouse position 
  */
 
 public class CameraController : MonoBehaviour
@@ -19,9 +19,13 @@ public class CameraController : MonoBehaviour
 
     public float movespeed;
     public float thickness;
- 
+
 
     PlayerActions InputAction;
+
+    ICommand command;
+
+    public GameObject cam;
 
 
     private void OnEnable()
@@ -52,6 +56,7 @@ public class CameraController : MonoBehaviour
         InputAction.Camera.ThirdTarget.performed += cntxt => Move(3);
         InputAction.Camera.FourthTarget.performed += cntxt => Move(4);
         InputAction.Camera.FifthTarget.performed += cntxt => Move(5);
+        InputAction.Camera.SixithTarget.performed += cntxt => Move(6);
         InputAction.Camera.Undo.performed += cntxt => Undo();
     }
 
@@ -60,8 +65,8 @@ public class CameraController : MonoBehaviour
 
         Pos = transform.position;
 
-       
-        if(a == 9)
+
+        if (a == 9)
         {
             Past[1] = Past[2];
             Past[2] = Past[3];
@@ -73,29 +78,29 @@ public class CameraController : MonoBehaviour
             Past[8] = Past[9];
             a--;
         }
-       
+
 
         if (freeze == false)
         {
-            //up
+            //up 
             if (Input.mousePosition.y >= Screen.height - thickness)
             {
                 Pos.z += movespeed * Time.deltaTime;
             }
 
-            //down
+            //down 
             if (Input.mousePosition.y <= thickness)
             {
                 Pos.z -= movespeed * Time.deltaTime;
             }
 
-            //right
-            if (Input.mousePosition.x >= Screen.width - thickness)
+            //right 
+            if (Input.mousePosition.x >= Screen.height - thickness)
             {
                 Pos.x += movespeed * Time.deltaTime;
             }
 
-            //left
+            //left 
             if (Input.mousePosition.x <= thickness)
             {
                 Pos.x -= movespeed * Time.deltaTime;
@@ -118,40 +123,54 @@ public class CameraController : MonoBehaviour
         switch (value)
         {
             case 1:
-                Pos.Set(-2, 41, 60);
+                Pos.Set(-4, 238, -16);
                 a++;
                 Past[a] = Pos;
-
+                command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
                 break;
 
             case 2:
-                Pos.Set(-110, 41, 60);
+                Pos.Set(-16, 238, -30);
                 a++;
-                Past[a] = Pos;              
-
+                Past[a] = Pos;
+                command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
                 break;
 
             case 3:
-                Pos.Set(105, 41, 60);
+                Pos.Set(-45, 238, -26);
                 a++;
                 Past[a] = Pos;
-                
+                command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
                 break;
 
             case 4:
-                Pos.Set(-54, 41, 11);
+                Pos.Set(-64, 238, -5);
                 a++;
                 Past[a] = Pos;
-
+                command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
                 break;
 
             case 5:
-                Pos.Set(47, 41, 105);
+                Pos.Set(-19, 238, -2);
                 a++;
                 Past[a] = Pos;
+                command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
+                break;
+
+            case 6:
+                Pos.Set(2, 238, 29);
+                a++;
+                Past[a] = Pos;
+                command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
+                CommandInvoker.AddCommand(command);
 
                 break;
         }
@@ -161,7 +180,7 @@ public class CameraController : MonoBehaviour
 
     private void Undo()
     {
-        if(a >= 2)
+        if (a >= 2)
         {
             a--;
             Pos = transform.position;

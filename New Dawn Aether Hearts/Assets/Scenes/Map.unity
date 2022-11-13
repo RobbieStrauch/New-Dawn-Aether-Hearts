@@ -474,6 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 50
   thickness: 1
+  cam: {fileID: 157916543}
   freeze: 1
 --- !u!1 &170252444
 GameObject:
@@ -677,6 +678,8 @@ GameObject:
   - component: {fileID: 226552338}
   - component: {fileID: 226552337}
   - component: {fileID: 226552339}
+  - component: {fileID: 226552340}
+  - component: {fileID: 226552341}
   m_Layer: 0
   m_Name: A Manager
   m_TagString: Untagged
@@ -735,6 +738,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad1c50f812c1e9f41ab667505478cdef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &226552340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226552336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9aab4134cb0f5439cb54a50cbd235a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &226552341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226552336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f4a0be048fe514f86fb56e2481d6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &236024617
