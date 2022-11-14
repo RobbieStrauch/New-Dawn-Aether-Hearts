@@ -20,7 +20,6 @@ public class CameraController : MonoBehaviour
     public float movespeed;
     public float thickness;
 
-
     PlayerActions InputAction;
 
     ICommand command;
@@ -128,6 +127,7 @@ public class CameraController : MonoBehaviour
                 Past[a] = Pos;
                 command = new MoveCameraCommand(cam.transform.position, cam.transform, cam);
                 CommandInvoker.AddCommand(command);
+
                 break;
 
             case 2:

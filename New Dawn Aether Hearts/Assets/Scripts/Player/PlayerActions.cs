@@ -266,6 +266,54 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Sound"",
+            ""id"": ""1e64067c-f78e-4262-9fa4-1d0dfc789a85"",
+            ""actions"": [
+                {
+                    ""name"": ""click"",
+                    ""type"": ""Button"",
+                    ""id"": ""75e0631b-04d1-4612-b384-c56301978493"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""send"",
+                    ""type"": ""Button"",
+                    ""id"": ""540c9458-63a0-48d2-84f4-7263aca3b767"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""7f65f880-906e-4e87-895f-75e4e75a5c5c"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2006fcba-86e7-499d-8be1-9cfc6d806dfc"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""send"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -287,6 +335,10 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         // Editor
         m_Editor = asset.FindActionMap("Editor", throwIfNotFound: true);
         m_Editor_DropItem = m_Editor.FindAction("DropItem", throwIfNotFound: true);
+        // Sound
+        m_Sound = asset.FindActionMap("Sound", throwIfNotFound: true);
+        m_Sound_click = m_Sound.FindAction("click", throwIfNotFound: true);
+        m_Sound_send = m_Sound.FindAction("send", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -505,6 +557,47 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         }
     }
     public EditorActions @Editor => new EditorActions(this);
+
+    // Sound
+    private readonly InputActionMap m_Sound;
+    private ISoundActions m_SoundActionsCallbackInterface;
+    private readonly InputAction m_Sound_click;
+    private readonly InputAction m_Sound_send;
+    public struct SoundActions
+    {
+        private @PlayerActions m_Wrapper;
+        public SoundActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @click => m_Wrapper.m_Sound_click;
+        public InputAction @send => m_Wrapper.m_Sound_send;
+        public InputActionMap Get() { return m_Wrapper.m_Sound; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SoundActions set) { return set.Get(); }
+        public void SetCallbacks(ISoundActions instance)
+        {
+            if (m_Wrapper.m_SoundActionsCallbackInterface != null)
+            {
+                @click.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnClick;
+                @click.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnClick;
+                @click.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnClick;
+                @send.started -= m_Wrapper.m_SoundActionsCallbackInterface.OnSend;
+                @send.performed -= m_Wrapper.m_SoundActionsCallbackInterface.OnSend;
+                @send.canceled -= m_Wrapper.m_SoundActionsCallbackInterface.OnSend;
+            }
+            m_Wrapper.m_SoundActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @click.started += instance.OnClick;
+                @click.performed += instance.OnClick;
+                @click.canceled += instance.OnClick;
+                @send.started += instance.OnSend;
+                @send.performed += instance.OnSend;
+                @send.canceled += instance.OnSend;
+            }
+        }
+    }
+    public SoundActions @Sound => new SoundActions(this);
     public interface ICameraActions
     {
         void OnPrimaryTarget(InputAction.CallbackContext context);
@@ -524,5 +617,10 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     public interface IEditorActions
     {
         void OnDropItem(InputAction.CallbackContext context);
+    }
+    public interface ISoundActions
+    {
+        void OnClick(InputAction.CallbackContext context);
+        void OnSend(InputAction.CallbackContext context);
     }
 }

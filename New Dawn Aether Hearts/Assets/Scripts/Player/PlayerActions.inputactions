@@ -244,6 +244,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Sound",
+            "id": "1e64067c-f78e-4262-9fa4-1d0dfc789a85",
+            "actions": [
+                {
+                    "name": "click",
+                    "type": "Button",
+                    "id": "75e0631b-04d1-4612-b384-c56301978493",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "send",
+                    "type": "Button",
+                    "id": "540c9458-63a0-48d2-84f4-7263aca3b767",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7f65f880-906e-4e87-895f-75e4e75a5c5c",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2006fcba-86e7-499d-8be1-9cfc6d806dfc",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "send",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

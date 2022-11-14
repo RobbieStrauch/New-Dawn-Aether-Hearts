@@ -41,7 +41,6 @@ public class UnitMovement : MonoBehaviour
                     clickPath = new ClickPath(target, new YellowMaterial());
                     subject.AddObserver(clickPath);
                     subject.Notify();
-                    sound.noise();
                 }
             }
         }
@@ -49,7 +48,6 @@ public class UnitMovement : MonoBehaviour
         if (Vector3.Distance(transform.position, target.transform.position) <= 2)
         {
             agent.isStopped = true;
-            sound.stop();
         }
         else
         {
