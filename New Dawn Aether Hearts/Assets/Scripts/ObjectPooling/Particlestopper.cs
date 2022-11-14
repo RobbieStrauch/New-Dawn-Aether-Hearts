@@ -7,9 +7,9 @@ public class Particlestopper : MonoBehaviour
     float ParticlelifeTime = 0.2f;
     void Update()
     {
-        StartCoroutine(WaitThenDie());
+        StartCoroutine(Disabler());
     }
-    IEnumerator WaitThenDie()
+    IEnumerator Disabler()
     {
         yield return new WaitForSeconds(ParticlelifeTime);
         gameObject.SetActive(false);
