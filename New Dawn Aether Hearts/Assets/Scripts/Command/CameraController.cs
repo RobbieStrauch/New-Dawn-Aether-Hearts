@@ -94,7 +94,7 @@ public class CameraController : MonoBehaviour
             }
 
             //right 
-            if (Input.mousePosition.x >= Screen.height - thickness)
+            if (Input.mousePosition.x >= Screen.width - thickness)
             {
                 Pos.x += movespeed * Time.deltaTime;
             }
