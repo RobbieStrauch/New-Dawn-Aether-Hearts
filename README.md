@@ -9,6 +9,9 @@ In this assignment, we were tasked to implement
 
 2 design patterns, 3 Management Systems, compare performance, and create a Flowchart
 
+------------------------------------------------------------------------------------
+
+Link to explination video: https://www.youtube.com/watch?v=aKxEFC8TU_I 
 
 ------------------------------------------------------------------------------------
 
