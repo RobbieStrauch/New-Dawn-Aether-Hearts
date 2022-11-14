@@ -13,6 +13,8 @@ In this assignment, we were tasked to implement
 
 Link to explination video: https://www.youtube.com/watch?v=aKxEFC8TU_I 
 
+All written parts such as FlowChart, Slide, Appendix, and Project Management tool can be found in the zip file labled "FlowChart, Slide, Appendix, and Project Management tool"
+
 ------------------------------------------------------------------------------------
 
 To play the demo go to the release titled "Group Assignment 2" and download the zip 
