@@ -1,10 +1,9 @@
 # New-Dawn-Aether-Hearts
 
-Group Assignment 2
 
-INFR - 3110U
+Group Assignment 2 - Temporary Studio
 
-Game Engine Design and Implementation
+INFR - 3110U - Game Engine Design and Implementation
 
 In this assignment, we were tasked to implement 
 
