@@ -21,9 +21,9 @@ public class MoveState : IState
 
     public void Enter()
     {
-        clickPath = new ClickPath(stateCycle.gameObject, new BlueMaterial());
-        subject.AddObserver(clickPath);
-        subject.Notify();
+        //clickPath = new ClickPath(stateCycle.gameObject, new BlueMaterial());
+        //subject.AddObserver(clickPath);
+        //subject.Notify();
     }
 
     public void Tick()

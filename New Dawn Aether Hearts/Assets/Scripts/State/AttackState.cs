@@ -26,9 +26,9 @@ public class AttackState : IState
 
     public void Enter()
     {
-        clickPath = new ClickPath(stateCycle.gameObject, new YellowMaterial());
-        subject.AddObserver(clickPath);
-        subject.Notify();
+        //clickPath = new ClickPath(stateCycle.gameObject, new YellowMaterial());
+        //subject.AddObserver(clickPath);
+        //subject.Notify();
 
         StartTimer();
     }

@@ -26,7 +26,7 @@ public class UnitSelection : MonoBehaviour
     {
         DeselectAll();
         unitSelectedList.Add(addUnit);
-        //addUnit.GetComponent<Renderer>().material = selectedMaterial;
+        addUnit.GetComponent<Renderer>().material = selectedMaterial;
         //addUnit.transform.GetComponent<UnitMovement>().enabled = true;
         addUnit.transform.GetComponent<StateCycle>().enabled = true;
     }
@@ -36,7 +36,7 @@ public class UnitSelection : MonoBehaviour
         if (!unitSelectedList.Contains(addUnit))
         {
             unitSelectedList.Add(addUnit);
-            //addUnit.GetComponent<Renderer>().material = selectedMaterial;
+            addUnit.GetComponent<Renderer>().material = selectedMaterial;
             //addUnit.transform.GetComponent<UnitMovement>().enabled = true;
             addUnit.transform.GetComponent<StateCycle>().enabled = true;
         }
@@ -44,7 +44,7 @@ public class UnitSelection : MonoBehaviour
         {
             //addUnit.transform.GetComponent<UnitMovement>().enabled = false;
             addUnit.transform.GetComponent<StateCycle>().enabled = false;
-            //addUnit.GetComponent<Renderer>().material = unselectedMaterial;
+            addUnit.GetComponent<Renderer>().material = unselectedMaterial;
             unitSelectedList.Remove(addUnit);
         }
     }
@@ -54,7 +54,7 @@ public class UnitSelection : MonoBehaviour
         if (!unitSelectedList.Contains(addUnit))
         {
             unitSelectedList.Add(addUnit);
-            //addUnit.GetComponent<Renderer>().material = selectedMaterial;
+            addUnit.GetComponent<Renderer>().material = selectedMaterial;
             //addUnit.transform.GetComponent<UnitMovement>().enabled = true;
             addUnit.transform.GetComponent<StateCycle>().enabled = true;
         }
@@ -66,7 +66,7 @@ public class UnitSelection : MonoBehaviour
         {
             //unit.transform.GetComponent<UnitMovement>().enabled = false;
             unit.transform.GetComponent<StateCycle>().enabled = false;
-            //unit.GetComponent<Renderer>().material = unselectedMaterial;
+            unit.GetComponent<Renderer>().material = unselectedMaterial;
         }
         unitSelectedList.Clear();
     }
@@ -77,7 +77,7 @@ public class UnitSelection : MonoBehaviour
         {
             //removeUnit.transform.GetComponent<UnitMovement>().enabled = false;
             removeUnit.transform.GetComponent<StateCycle>().enabled = false;
-            //removeUnit.GetComponent<Renderer>().material = unselectedMaterial;
+            removeUnit.GetComponent<Renderer>().material = unselectedMaterial;
             unitSelectedList.Remove(removeUnit);
         }
     }
