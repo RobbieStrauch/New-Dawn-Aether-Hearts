@@ -34,7 +34,7 @@ public class MoveState : IState
     public void FixedTick()
     {
         const int raycastCount = 30;
-        const int raycastDistance = 10;
+        //const int raycastDistance = 10;
 
         for (int i = 0; i < raycastCount; i++)
         {
@@ -43,13 +43,13 @@ public class MoveState : IState
             desiredDirection.y = 0;
 
             RaycastHit hit;
-            if (Physics.Raycast(stateCycle.transform.position, desiredDirection, out hit, raycastDistance, stateCycle.player2))
+            if (Physics.Raycast(stateCycle.transform.position, desiredDirection, out hit, stateCycle.attackRange, stateCycle.player2))
             {
                 stateCycle.ChangeState(stateCycle.attackState);
             }
             else
             {
-                Debug.DrawRay(stateCycle.transform.position, desiredDirection * raycastDistance, Color.white);
+                Debug.DrawRay(stateCycle.transform.position, desiredDirection * stateCycle.attackRange, Color.white);
             }
         }
 
