@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    public int gold = 1;
-    public int DelayAmount = 1; // Second count
-    public int teamB;
+    public int Agold = 1;
+    public int Bgold = 1;
+    public int DelayAmount = 20; // Second count
+
     public GameObject A1_1;
     public GameObject A1_2;
     public GameObject A1_3;
@@ -21,9 +22,22 @@ public class ResourceManager : MonoBehaviour
     public GameObject B1_4;
     public GameObject B2;
 
-    int zones1;
-    int zones2;
-    int zones3;
+    int zoneA1 = 0;
+    int zoneA2 = 0;
+    int zoneA3 = 0;
+    int zoneA4 = 0;
+    int zoneA = 0;
+
+    int zone3 = 0;
+
+    int zoneB1 = 0;
+    int zoneB2 = 0;
+    int zoneB3 = 0;
+    int zoneB4 = 0;
+    int zoneB = 0;
+
+    public Material RedShader;
+    public Material BlueShader;
 
     protected float Timer;
 
@@ -36,27 +50,241 @@ public class ResourceManager : MonoBehaviour
         if (Timer >= DelayAmount)
         {
             Timer = 0f;
-            gold++;
-            
-            if(zones1 >= 1)
-            {
-                gold += (1 * zones1);
-            }
+            Agold++;
+            Bgold++;
 
-            if(zones2 >= 1)
-            {
-                gold += (2 * zones2);
-            }
-
-            if(zones3 == 1)
-            {
-                gold += 3;
-            }
+            GoldA();
+            GoldB();
         }
     }
 
     private void zones()
     {
+        //A1
+        if(A1_1.GetComponent<Renderer>().material == RedShader)
+        {
+            zoneA1 = 1;
+        }
+        else if(A1_1.GetComponent<Renderer>().material == BlueShader)
+        {
+            zoneA1 = 2;
+        }
 
+        if (A1_2.GetComponent<Renderer>().material == RedShader)
+        {
+            zoneA2 = 1;
+        }
+        else if(A1_2.GetComponent<Renderer>().material == BlueShader)
+        {
+            zoneA2 = 2;
+        }
+
+        if (A1_3.GetComponent<Renderer>().material == RedShader)
+        {
+            zoneA3 = 1;
+        }
+        else if(A1_3.GetComponent<Renderer>().material == BlueShader)
+        {
+            zoneA3 = 2;
+        }
+
+        if (A1_4.GetComponent<Renderer>().material == RedShader)
+        {
+            zoneA4 = 1;
+        }
+        else if(A1_4.GetComponent<Renderer>().material == BlueShader)
+        {
+            zoneA4 = 2;
+        }
+
+        //B1
+        if (B1_1.GetComponent<Renderer>().material == RedShader)
+        {
+            zoneB1 = 1;
+        }
+        else if (B1_1.GetComponent<Renderer>().material == BlueShader)
+        {
+            zoneB1 = 2;
+        }
+
+        if (B1_2.GetComponent<Renderer>().material == RedShader)
+        {
+            zoneB2 = 1;
+        }
+        else if (B1_2.GetComponent<Renderer>().material == BlueShader)
+        {
+            zoneB2 = 2;
+        }
+
+        if (B1_3.GetComponent<Renderer>().material == RedShader)
+        {
+            zoneB3 = 1;
+        }
+        else if (B1_3.GetComponent<Renderer>().material == BlueShader)
+        {
+            zoneB3 = 2;
+        }
+
+        if (B1_4.GetComponent<Renderer>().material == RedShader)
+        {
+            zoneB4 = 1;
+        }
+        else if (B1_4.GetComponent<Renderer>().material == BlueShader)
+        {
+            zoneB4 = 2;
+        }
+
+        //2
+        if (A2.GetComponent<Renderer>().material == RedShader)
+        {
+            zoneA = 1;
+        }
+        else if(A2.GetComponent<Renderer>().material == BlueShader)
+        {
+            zoneB = 2;
+        }
+
+        if(B2.GetComponent<Renderer>().material == RedShader)
+        {
+            zoneB = 1;
+        }
+        else if(B2.GetComponent<Renderer>().material == BlueShader)
+        {
+            zoneB = 2;
+        }
+
+        //3
+        if(N3.GetComponent<Renderer>().material == RedShader)
+        {
+            zone3 = 1;
+        }
+        else if(N3.GetComponent<Renderer>().material == BlueShader)
+        {
+            zone3 = 2;
+        }
+    }
+
+    private void GoldA()
+    {
+        //A
+        if (zoneA1 == 1)
+        {
+            Agold += 1;
+        }
+
+        if (zoneA2 == 1)
+        {
+            Agold += 1;
+        }
+
+        if (zoneA3 == 1)
+        {
+            Agold += 1;
+        }
+
+        if (zoneA4 == 1)
+        {
+            Agold += 1;
+        }
+
+        //B
+        if (zoneB1 == 1)
+        {
+            Agold += 1;
+        }
+
+        if (zoneB2 == 1)
+        {
+            Agold += 1;
+        }
+
+        if (zoneB3 == 1)
+        {
+            Agold += 1;
+        }
+
+        if (zoneB4 == 1)
+        {
+            Agold += 1;
+        }
+
+        //2
+        if (zoneA == 1)
+        {
+            Agold += 2;
+        }
+
+        if (zoneB == 1)
+        {
+            Agold += 2;
+        }
+
+        //3
+        if (zone3 == 1)
+        {
+            Agold += 3;
+        }
+    }
+
+    private void GoldB()
+    {
+        //A
+        if (zoneA1 == 2)
+        {
+            Bgold += 1;
+        }
+
+        if (zoneA2 == 2)
+        {
+            Bgold += 1;
+        }
+
+        if (zoneA3 == 2)
+        {
+            Bgold += 1;
+        }
+
+        if (zoneA4 == 2)
+        {
+            Bgold += 1;
+        }
+
+        //B
+        if (zoneB1 == 2)
+        {
+            Bgold += 1;
+        }
+
+        if (zoneB2 == 2)
+        {
+            Bgold += 1;
+        }
+
+        if (zoneB3 == 2)
+        {
+            Bgold += 1;
+        }
+
+        if (zoneB4 == 2)
+        {
+            Bgold += 1;
+        }
+
+        //2
+        if (zoneA == 2)
+        {
+            Bgold += 2;
+        }
+
+        if (zoneB == 2)
+        {
+            Bgold += 2;
+        }
+        
+        //3
+        if (zone3 == 2)
+        {
+            Bgold += 3;
+        }
     }
 }

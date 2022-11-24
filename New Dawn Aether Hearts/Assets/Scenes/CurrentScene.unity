@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 599121713}
   - component: {fileID: 599121715}
   m_Layer: 13
-  m_Name: B 1 L
+  m_Name: B 1 L point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3068,7 +3068,8 @@ GameObject:
   - component: {fileID: 1069419136}
   - component: {fileID: 1069419139}
   - component: {fileID: 1069419138}
-  - component: {fileID: 1069419140}
+  - component: {fileID: 1069419141}
+  - component: {fileID: 1069419142}
   m_Layer: 13
   m_Name: B 1 point
   m_TagString: Untagged
@@ -3141,7 +3142,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069419135}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &1069419140
+--- !u!114 &1069419141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069419135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
+  BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}
+  CaptureTime: 5
+--- !u!65 &1069419142
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3153,7 +3169,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000006, y: 1, z: 1.0000006}
-  m_Center: {x: 0, y: 0, z: 0.0000019073486}
+  m_Center: {x: 0.0000038146973, y: 0, z: 0}
 --- !u!1 &1148322216
 GameObject:
   m_ObjectHideFlags: 0
@@ -4432,7 +4448,8 @@ GameObject:
   - component: {fileID: 1555600610}
   - component: {fileID: 1555600613}
   - component: {fileID: 1555600612}
-  - component: {fileID: 1555600614}
+  - component: {fileID: 1555600615}
+  - component: {fileID: 1555600616}
   m_Layer: 13
   m_Name: A 2 point
   m_TagString: Untagged
@@ -4505,7 +4522,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555600609}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &1555600614
+--- !u!114 &1555600615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555600609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RedShader: {fileID: 0}
+  BlueShader: {fileID: 0}
+  CaptureTime: 5
+--- !u!65 &1555600616
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4516,8 +4548,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: -0.0000009536743, y: 0, z: 0}
+  m_Size: {x: 1, y: 0, z: 1.0212505}
+  m_Center: {x: 0, y: 0.5, z: 0.010625409}
 --- !u!1 &1594706082
 GameObject:
   m_ObjectHideFlags: 0
@@ -4899,7 +4931,7 @@ GameObject:
   - component: {fileID: 1731098065}
   - component: {fileID: 1731098067}
   m_Layer: 13
-  m_Name: A 1 L
+  m_Name: A 1 L point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5894,6 +5926,7 @@ GameObject:
   - component: {fileID: 2131272764}
   - component: {fileID: 2131272755}
   - component: {fileID: 2131272767}
+  - component: {fileID: 2131272768}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -6046,3 +6079,31 @@ MonoBehaviour:
   - tag: Flash
     prefab: {fileID: 988566486173805015, guid: fdc9d3cd476115b40971cd59321bfc37, type: 3}
     size: 10
+--- !u!114 &2131272768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131272754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8b8bf5ce8b1e3448c3bbe314124a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Agold: 1
+  Bgold: 1
+  DelayAmount: 1
+  A1_1: {fileID: 2076466317}
+  A1_2: {fileID: 726832985}
+  A1_3: {fileID: 1333160097}
+  A1_4: {fileID: 1731098062}
+  A2: {fileID: 1555600609}
+  N3: {fileID: 1000876442}
+  B1_1: {fileID: 1069419135}
+  B1_2: {fileID: 1594706082}
+  B1_3: {fileID: 908713539}
+  B1_4: {fileID: 599121710}
+  B2: {fileID: 627119052}
+  RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
+  BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}

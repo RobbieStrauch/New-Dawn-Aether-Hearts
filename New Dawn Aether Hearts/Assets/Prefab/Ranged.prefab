@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: -3606633647801347208}
   m_Layer: 12
   m_Name: Ranged
-  m_TagString: Player
+  m_TagString: ATeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 9114603082957145154}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
