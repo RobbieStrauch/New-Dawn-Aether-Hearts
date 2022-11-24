@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Particlestopper : MonoBehaviour
+public class ParticleStopper : MonoBehaviour
 {
     float ParticlelifeTime = 0.2f;
     void Update()

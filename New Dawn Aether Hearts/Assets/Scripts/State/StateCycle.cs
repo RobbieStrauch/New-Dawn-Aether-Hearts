@@ -17,7 +17,9 @@ public class StateCycle : StateMachine
     public Vector3 targetPosition { get; set; }
 
     public LayerMask player2;
-    public float timeBetweenAttacks;
+    public float bulletAttackTime;
+    public float swordAttackTime;
+    public int attackRange = 10;
     public bool alreadyAttacked = false;
     public GameObject projectile;
     public GameObject projectilePosition;

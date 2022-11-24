@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc0dbf9b2fd7444fba719a754126543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitType: 0
 --- !u!114 &-3028475215981638977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +151,9 @@ MonoBehaviour:
   player2:
     serializedVersion: 2
     m_Bits: 2048
-  timeBetweenAttacks: 0.25
+  bulletAttackTime: 0.5
+  swordAttackTime: 0
+  attackRange: 10
   alreadyAttacked: 0
   projectile: {fileID: 5488129717929618976, guid: 9e2cf0c6a92f3c341b12d81cd5a2d2f5, type: 3}
   projectilePosition: {fileID: 6359834481217282936}

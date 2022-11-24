@@ -20,9 +20,9 @@ public class StartState : IState
 
     public void Enter()
     {
-        clickPath = new ClickPath(stateCycle.gameObject, new CyanMaterial());
-        subject.AddObserver(clickPath);
-        subject.Notify();
+        //clickPath = new ClickPath(stateCycle.gameObject, new CyanMaterial());
+        //subject.AddObserver(clickPath);
+        //subject.Notify();
 
         unitClick.NewTargetAcquired += OnNewTargetAcquired;
     }

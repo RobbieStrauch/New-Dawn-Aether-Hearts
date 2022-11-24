@@ -7,8 +7,7 @@ using TMPro;
 public class UnitPrototype : MonoBehaviour
 {
     public List<UnitData> allData;
-    public GameObject buttonPanel;
-    public GameObject buttonPrefab;
+    public List<GameObject> unitPanels;
 
     Scout scout;
     Ranged ranged;
@@ -22,33 +21,24 @@ public class UnitPrototype : MonoBehaviour
         ranged = new Ranged(allData[1]._prefab, allData[1]._cost);
         melee = new Melee(allData[2]._prefab, allData[2]._cost);
         tank = new Tank(allData[3]._prefab, allData[3]._cost);
-
-        for (int i = 0; i < allData.Count; i++)
-        {
-            var button = Instantiate(buttonPrefab);
-            button.transform.SetParent(buttonPanel.transform);
-            button.gameObject.name = allData[i]._name + " Button";
-            button.GetComponentInChildren<TextMeshProUGUI>().text = allData[i]._name;
-            button.GetComponent<Button>().onClick.AddListener(delegate { Spawner(button); });
-        }
     }
 
-    void Spawner(GameObject button)
+    public void Spawner(GameObject button)
     {
         var b = button.GetComponentInChildren<TextMeshProUGUI>();
 
-        switch (b.text)
+        switch (button.gameObject.transform.parent.name)
         {
-            case "Scout":
+            case "ScoutPanel":
                 EditorManager.instance.item = scout.Clone().Spawn();
                 break;
-            case "Ranged":
+            case "RangedPanel":
                 EditorManager.instance.item = ranged.Clone().Spawn();
                 break;
-            case "Melee":
+            case "MeleePanel":
                 EditorManager.instance.item = melee.Clone().Spawn();
                 break;
-            case "Tank":
+            case "TankPanel":
                 EditorManager.instance.item = tank.Clone().Spawn();
                 break;
             default:
@@ -56,5 +46,40 @@ public class UnitPrototype : MonoBehaviour
         }
 
         EditorManager.instance.instantiated = true;
+    }
+
+    public void OpenPanel(GameObject button)
+    {
+        var b = button.GetComponentInChildren<TextMeshProUGUI>();
+
+        switch (b.text)
+        {
+            case "Scout":
+                unitPanels[0].SetActive(true);
+                unitPanels[1].SetActive(false);
+                unitPanels[2].SetActive(false);
+                unitPanels[3].SetActive(false);
+                break;
+            case "Ranged":
+                unitPanels[0].SetActive(false);
+                unitPanels[1].SetActive(true);
+                unitPanels[2].SetActive(false);
+                unitPanels[3].SetActive(false);
+                break;
+            case "Melee":
+                unitPanels[0].SetActive(false);
+                unitPanels[1].SetActive(false);
+                unitPanels[2].SetActive(true);
+                unitPanels[3].SetActive(false);
+                break;
+            case "Tank":
+                unitPanels[0].SetActive(false);
+                unitPanels[1].SetActive(false);
+                unitPanels[2].SetActive(false);
+                unitPanels[3].SetActive(true);
+                break;
+            default:
+                break;
+        }
     }
 }

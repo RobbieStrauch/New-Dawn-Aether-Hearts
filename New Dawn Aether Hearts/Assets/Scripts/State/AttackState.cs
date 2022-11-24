@@ -26,9 +26,9 @@ public class AttackState : IState
 
     public void Enter()
     {
-        clickPath = new ClickPath(stateCycle.gameObject, new YellowMaterial());
-        subject.AddObserver(clickPath);
-        subject.Notify();
+        //clickPath = new ClickPath(stateCycle.gameObject, new YellowMaterial());
+        //subject.AddObserver(clickPath);
+        //subject.Notify();
 
         StartTimer();
     }
@@ -40,14 +40,20 @@ public class AttackState : IState
             elapsedTime += Time.deltaTime;
         }
 
-        if (elapsedTime > stateCycle.timeBetweenAttacks)
+        if (elapsedTime > stateCycle.bulletAttackTime && stateCycle.gameObject.GetComponent<Unit>().unitType != Unit.UnitType.Melee)
         {
-            ResetAttack();
+            ResetBulletAttack();
+            elapsedTime = 0f;
+        }
+
+        if (elapsedTime > stateCycle.swordAttackTime && stateCycle.gameObject.GetComponent<Unit>().unitType == Unit.UnitType.Melee)
+        {
+            ResetSwordAttack();
             elapsedTime = 0f;
         }
 
         const int raycastCount = 30;
-        const int raycastDistance = 10;
+        //const int raycastDistance = 10;
 
         for (int i = 0; i < raycastCount; i++)
         {
@@ -56,11 +62,11 @@ public class AttackState : IState
             desiredDirection.y = 0;
 
             RaycastHit hit;
-            if (Physics.Raycast(stateCycle.transform.position, desiredDirection, out hit, raycastDistance, stateCycle.player2))
+            if (Physics.Raycast(stateCycle.transform.position, desiredDirection, out hit, stateCycle.attackRange, stateCycle.player2))
             {
                 saveObject = hit.collider.gameObject;
 
-                Debug.DrawRay(stateCycle.transform.position, desiredDirection * raycastDistance, Color.red);
+                Debug.DrawRay(stateCycle.transform.position, desiredDirection * stateCycle.attackRange, Color.red);
                 agent.SetDestination(stateCycle.transform.position);
                 stateCycle.transform.LookAt(hit.point);
                 stateCycle.projectilePosition.transform.LookAt(hit.point);
@@ -86,19 +92,39 @@ public class AttackState : IState
 
     private void AttackUnit()
     {
-        if (!stateCycle.alreadyAttacked)
+        if (stateCycle.gameObject.GetComponent<Unit>().unitType == Unit.UnitType.Melee)
         {
-            Rigidbody flashrb = ObjectPooler.instance.SpawnFromPool("Flash", stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            //Rigidbody rb = MonoBehaviour.Instantiate(stateCycle.projectile, stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            Rigidbody rb = ObjectPooler.instance.SpawnFromPool("Bullet", stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(stateCycle.transform.forward * stateCycle.forward, ForceMode.Impulse);
-            rb.AddForce(stateCycle.transform.up * stateCycle.upward, ForceMode.Impulse);
+            if (!stateCycle.alreadyAttacked)
+            {
+                //stateCycle.gameObject.transform.GetChild(1).rotation = new Quaternion(90f, 0f, 0f, 1f);
+                //stateCycle.gameObject.transform.GetChild(1).position += new Vector3(0.0f, -0.5f, 0.8f);
 
-            stateCycle.alreadyAttacked = true;
+                stateCycle.alreadyAttacked = true;
+            }
+        }
+        else
+        {
+            if (!stateCycle.alreadyAttacked)
+            {
+                //Rigidbody rb = MonoBehaviour.Instantiate(stateCycle.projectile, stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                Rigidbody rb = ObjectPooler.instance.SpawnFromPool("Bullet", stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                rb.AddForce(stateCycle.transform.forward * stateCycle.forward, ForceMode.Impulse);
+                rb.AddForce(stateCycle.transform.up * stateCycle.upward, ForceMode.Impulse);
+
+                stateCycle.alreadyAttacked = true;
+            }
         }
     }
-    private void ResetAttack()
+
+    private void ResetBulletAttack()
     {
+        stateCycle.alreadyAttacked = false;
+    }
+
+    private void ResetSwordAttack()
+    {
+        //stateCycle.gameObject.transform.GetChild(1).rotation = new Quaternion(0f, 0f, 0f, 1f);
+        //stateCycle.gameObject.transform.GetChild(1).position += new Vector3(0.0f, 0.5f, -0.8f);
         stateCycle.alreadyAttacked = false;
     }
 
