@@ -29,17 +29,17 @@ public class Sound : MonoBehaviour
     {
         InputAction = new PlayerActions();
 
-        InputAction.Sound.click.performed += cntxt => noise();
-        InputAction.Sound.send.performed += cntxt => stop();
+        //InputAction.Sound.click.performed += cntxt => noise();
+        //InputAction.Sound.send.performed += cntxt => stop();
     }
 
-    void noise()
-    {
-        source.Play();
-    }
+    //void noise()
+    //{
+    //    source.Play();
+    //}
 
-    void stop()
-    {
-        source.Stop();
-    }
+    //void stop()
+    //{
+    //    source.Stop();
+    //}
 }
