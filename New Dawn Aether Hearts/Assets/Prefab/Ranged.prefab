@@ -206,5 +206,5 @@ MonoBehaviour:
   alreadyAttacked: 0
   projectile: {fileID: 5488129717929618976, guid: 9e2cf0c6a92f3c341b12d81cd5a2d2f5, type: 3}
   projectilePosition: {fileID: 1333585710482556033}
-  forward: 32
+  forward: 64
   upward: 1

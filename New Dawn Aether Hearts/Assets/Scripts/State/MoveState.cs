@@ -21,11 +21,7 @@ public class MoveState : IState
 
     public void Enter()
     {
-        //Debug.Log(stateCycle.gameObject.name +  " Move State");
 
-        //clickPath = new ClickPath(stateCycle.gameObject, new BlueMaterial());
-        //subject.AddObserver(clickPath);
-        //subject.Notify();
     }
 
     public void Tick()
@@ -36,7 +32,6 @@ public class MoveState : IState
     public void FixedTick()
     {
         const int raycastCount = 30;
-        //const int raycastDistance = 10;
 
         for (int i = 0; i < raycastCount; i++)
         {

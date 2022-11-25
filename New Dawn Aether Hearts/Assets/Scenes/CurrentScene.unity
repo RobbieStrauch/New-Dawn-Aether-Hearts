@@ -682,7 +682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2.1558075}
+  m_AnchoredPosition: {x: 0, y: 2.1558228}
   m_SizeDelta: {x: 800, y: -1.1116}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &187295868
@@ -1021,7 +1021,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245391409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.49713, y: -97.42048, z: 616.3358}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13352,7 +13352,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131272754}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca50a3f748d164c4188ce959f6d3756f, type: 3}
   m_Name: 
@@ -13364,7 +13364,7 @@ MonoBehaviour:
     size: 40
   - tag: Flash
     prefab: {fileID: 988566486173805015, guid: fdc9d3cd476115b40971cd59321bfc37, type: 3}
-    size: 10
+    size: 40
 --- !u!114 &2131272768
 MonoBehaviour:
   m_ObjectHideFlags: 0
