@@ -18,6 +18,9 @@ public class Capture : MonoBehaviour
     bool ACaptureStatus;
     bool BCaptureStatus;
 
+    private bool isTriggered = false;
+    private string colliderTag = "";
+
     void Start()
     {
         ACaptureStatus = false;
@@ -29,6 +32,11 @@ public class Capture : MonoBehaviour
 
     void Update()
     {
+        if (isTriggered)
+        {
+            DoCapture();
+        }
+
         if (ACaptureStatus == true)
         {
             GetComponent<Renderer>().material = RedShader;
@@ -50,10 +58,11 @@ public class Capture : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void DoCapture()
     {
-        if (collision.collider.tag == "ATeam")
+        if (colliderTag == "ATeam")
         {
+
             if (ACapture < CaptureTime)
             {
                 ACapture += Time.deltaTime;
@@ -71,7 +80,7 @@ public class Capture : MonoBehaviour
             }
         }
 
-        if (collision.collider.tag == "BTeam")
+        if (colliderTag == "BTeam")
         {
             if (BCapture < CaptureTime)
             {
@@ -92,5 +101,16 @@ public class Capture : MonoBehaviour
 
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        colliderTag = other.tag;
+        isTriggered = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isTriggered = false;
     }
 }
