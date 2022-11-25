@@ -26,6 +26,8 @@ public class AttackState : IState
 
     public void Enter()
     {
+        //Debug.Log(stateCycle.gameObject.name + " Attack State");
+
         //clickPath = new ClickPath(stateCycle.gameObject, new YellowMaterial());
         //subject.AddObserver(clickPath);
         //subject.Notify();
@@ -107,6 +109,9 @@ public class AttackState : IState
             if (!stateCycle.alreadyAttacked)
             {
                 //Rigidbody rb = MonoBehaviour.Instantiate(stateCycle.projectile, stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                //Debug.Log(stateCycle.transform.rotation);
+                //Debug.Log(stateCycle.projectilePosition.transform.rotation);
+                //Debug.Log(Quaternion.identity + "\n");
                 Rigidbody rb = ObjectPooler.instance.SpawnFromPool("Bullet", stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
                 rb.AddForce(stateCycle.transform.forward * stateCycle.forward, ForceMode.Impulse);
                 rb.AddForce(stateCycle.transform.up * stateCycle.upward, ForceMode.Impulse);

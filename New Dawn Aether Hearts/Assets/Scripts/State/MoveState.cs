@@ -21,6 +21,8 @@ public class MoveState : IState
 
     public void Enter()
     {
+        //Debug.Log(stateCycle.gameObject.name +  " Move State");
+
         //clickPath = new ClickPath(stateCycle.gameObject, new BlueMaterial());
         //subject.AddObserver(clickPath);
         //subject.Notify();

@@ -20,6 +20,8 @@ public class StartState : IState
 
     public void Enter()
     {
+        //Debug.Log(stateCycle.gameObject.name + " Start State");
+
         //clickPath = new ClickPath(stateCycle.gameObject, new CyanMaterial());
         //subject.AddObserver(clickPath);
         //subject.Notify();
