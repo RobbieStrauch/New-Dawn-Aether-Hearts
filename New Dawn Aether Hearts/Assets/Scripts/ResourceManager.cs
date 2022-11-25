@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    public int Agold = 1;
-    public int Bgold = 1;
-    public int DelayAmount = 20; // Second count
+    public int Agold;
+    public int Bgold;
+    public int DelayAmount;
 
     public GameObject A1_1;
     public GameObject A1_2;

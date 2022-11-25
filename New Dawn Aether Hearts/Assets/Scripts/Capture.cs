@@ -12,9 +12,6 @@ public class Capture : MonoBehaviour
     float ACapture;
     float BCapture;
 
-    float APoints = 0;
-    float BPoints = 0;
-
     bool ACaptureStatus;
     bool BCaptureStatus;
 
@@ -40,21 +37,11 @@ public class Capture : MonoBehaviour
         if (ACaptureStatus == true)
         {
             GetComponent<Renderer>().material = RedShader;
-
-            APoints += Time.deltaTime;
-
-            string score = "A score is " + APoints;
-            Debug.Log(score);
         }
 
         if (BCaptureStatus == true)
         {
             GetComponent<Renderer>().material = BlueShader;
-
-            BPoints += Time.deltaTime;
-
-            string score = "B score is " + BPoints;
-            Debug.Log(score);
         }
     }
 
@@ -84,7 +71,6 @@ public class Capture : MonoBehaviour
         {
             if (BCapture < CaptureTime)
             {
-
                 BCapture += Time.deltaTime;
 
                 if (ACapture > 0)
@@ -92,7 +78,6 @@ public class Capture : MonoBehaviour
                     ACapture -= Time.deltaTime;
                 }
             }
-
 
             else
             {
