@@ -36,11 +36,13 @@ public class Capture : MonoBehaviour
 
         if (ACaptureStatus == true)
         {
+            tag = "ATeam";
             GetComponent<Renderer>().material = RedShader;
         }
 
         if (BCaptureStatus == true)
         {
+            tag = "BTeam";
             GetComponent<Renderer>().material = BlueShader;
         }
     }
