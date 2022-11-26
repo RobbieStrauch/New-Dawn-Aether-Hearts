@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ResourceManager : MonoBehaviour
 {
-    public Text Scoretxt;
+    public TMP_Text Scoretxt;
     public int Agold;
     public int Bgold;
     public int DelayAmount;
@@ -73,7 +74,7 @@ public class ResourceManager : MonoBehaviour
             GoldA();
             GoldB();
         }
-        string score = "" + Agold;
+        string score = "$" + Agold;
         Scoretxt.text = score;
     }
 

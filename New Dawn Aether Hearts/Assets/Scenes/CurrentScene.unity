@@ -3220,11 +3220,28 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599121710}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000006, y: 1, z: 1.0000006}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0000006, y: 2.4674327, z: 1.0000006}
+  m_Center: {x: 0, y: 0.7337163, z: -0}
+--- !u!114 &599121716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599121710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backCircle: {fileID: 1996243937}
+  frontCircle: {fileID: 1336965948}
+  RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
+  BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}
+  CaptureTime: 5
 --- !u!1 &604105011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3470,11 +3487,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627119052}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000006, y: 1, z: 1.0000006}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0000006, y: 2.7531097, z: 1.0000006}
+  m_Center: {x: 0, y: 0.8765548, z: -0}
 --- !u!114 &627119058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3487,6 +3504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backCircle: {fileID: 540463532}
+  frontCircle: {fileID: 2037459970}
   RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
   BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}
   CaptureTime: 5
@@ -4825,11 +4844,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726832985}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.9403962, z: 1}
+  m_Center: {x: 0, y: 0.47019807, z: 0}
 --- !u!114 &726832991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4842,6 +4861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backCircle: {fileID: 739201643}
+  frontCircle: {fileID: 1104082749}
   RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
   BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}
   CaptureTime: 5
@@ -5495,11 +5516,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908713539}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000006, y: 1, z: 1.0000006}
-  m_Center: {x: 0, y: 0, z: 0.0000019073486}
+  m_Size: {x: 1.0000006, y: 3.7250273, z: 1.0000006}
+  m_Center: {x: 2.94687e-17, y: 1.3625133, z: 0.0000018906416}
 --- !u!114 &908713545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5512,6 +5533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backCircle: {fileID: 1816462694}
+  frontCircle: {fileID: 160987021}
   RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
   BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}
   CaptureTime: 5
@@ -6441,11 +6464,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000876442}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 1, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.99999994, y: 53.227234, z: 0.99999994}
+  m_Center: {x: 0, y: 26.113619, z: 0}
 --- !u!114 &1000876448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6458,6 +6481,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backCircle: {fileID: 719640819}
+  frontCircle: {fileID: 604105013}
   RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
   BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}
   CaptureTime: 5
@@ -7211,8 +7236,8 @@ GameObject:
   - component: {fileID: 1069419136}
   - component: {fileID: 1069419139}
   - component: {fileID: 1069419138}
-  - component: {fileID: 1069419141}
   - component: {fileID: 1069419142}
+  - component: {fileID: 1069419141}
   m_Layer: 13
   m_Name: B 1 point
   m_TagString: Untagged
@@ -8996,11 +9021,28 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333160097}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: -0.0000038146973, y: 0, z: 0}
+  m_Size: {x: 1, y: 2.3434231, z: 1}
+  m_Center: {x: -0.0000038242524, y: 0.6717112, z: 0}
+--- !u!114 &1333160103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333160097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backCircle: {fileID: 2084494533}
+  frontCircle: {fileID: 630133857}
+  RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
+  BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}
+  CaptureTime: 5
 --- !u!1 &1336965946
 GameObject:
   m_ObjectHideFlags: 0
@@ -10115,7 +10157,6 @@ GameObject:
   - component: {fileID: 1555600610}
   - component: {fileID: 1555600613}
   - component: {fileID: 1555600612}
-  - component: {fileID: 1555600615}
   - component: {fileID: 1555600616}
   - component: {fileID: 1555600617}
   m_Layer: 13
@@ -10190,23 +10231,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555600609}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1555600615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555600609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backCircle: {fileID: 0}
-  frontCircle: {fileID: 0}
-  RedShader: {fileID: 0}
-  BlueShader: {fileID: 0}
-  CaptureTime: 5
 --- !u!65 &1555600616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10215,11 +10239,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555600609}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0, z: 1.0212505}
-  m_Center: {x: 0, y: 0.5, z: 0.010625409}
+  m_Size: {x: 1, y: 7.8466973, z: 1.0212505}
+  m_Center: {x: 0, y: 3.4060786, z: 0.010625409}
 --- !u!114 &1555600617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10232,6 +10256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backCircle: {fileID: 21848703}
+  frontCircle: {fileID: 30660138}
   RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
   BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}
   CaptureTime: 5
@@ -10483,11 +10509,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594706082}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000006, y: 1, z: 1.0000006}
-  m_Center: {x: 0, y: 0, z: 0.0000019073486}
+  m_Size: {x: 1.0000006, y: 3.1148384, z: 1.0000006}
+  m_Center: {x: 2.94687e-17, y: 1.0574188, z: 0.0000018906416}
 --- !u!114 &1594706088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10500,6 +10526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backCircle: {fileID: 1625979727}
+  frontCircle: {fileID: 586895356}
   RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
   BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}
   CaptureTime: 5
@@ -10697,7 +10725,6 @@ RectTransform:
   - {fileID: 2084494532}
   - {fileID: 1701914698}
   - {fileID: 21848702}
-  - {fileID: 1113687365}
   m_Father: {fileID: 1283240462}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11278,11 +11305,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731098062}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5.2915397, z: 1}
+  m_Center: {x: 0, y: 2.1457696, z: 0}
 --- !u!114 &1731098068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11295,6 +11322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backCircle: {fileID: 1701914699}
+  frontCircle: {fileID: 1103589882}
   RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
   BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}
   CaptureTime: 5
@@ -12995,11 +13024,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076466317}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: -0.0000009536743}
+  m_Size: {x: 1, y: 3.9426947, z: 1}
+  m_Center: {x: 0, y: 1.4713471, z: -0.0000009453209}
 --- !u!114 &2076466323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13012,6 +13041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5e4e677a17c3c4eaea98f77a5cae6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backCircle: {fileID: 1178305313}
+  frontCircle: {fileID: 1580407742}
   RedShader: {fileID: 2100000, guid: 50401f2b55d4cb34c83f433245258d67, type: 2}
   BlueShader: {fileID: 2100000, guid: 3292cb3fa1a751f428acd19f50c23718, type: 2}
   CaptureTime: 5
@@ -13505,7 +13536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8b8bf5ce8b1e3448c3bbe314124a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scoretxt: {fileID: 1113687366}
+  Scoretxt: {fileID: 1658405231}
   Agold: 1
   Bgold: 1
   DelayAmount: 1
