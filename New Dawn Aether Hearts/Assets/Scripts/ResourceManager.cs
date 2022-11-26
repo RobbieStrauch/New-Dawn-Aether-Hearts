@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour
 {
+    public Text Scoretxt;
     public int Agold;
     public int Bgold;
     public int DelayAmount;
@@ -71,6 +73,8 @@ public class ResourceManager : MonoBehaviour
             GoldA();
             GoldB();
         }
+        string score = "" + Agold;
+        Scoretxt.text = score;
     }
 
     private void zones(string A1, string A2, string A3, string A4, string A, string N, string B1, string B2, string B3,  string B4, string B)
