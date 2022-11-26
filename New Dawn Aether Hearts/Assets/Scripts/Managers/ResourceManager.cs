@@ -6,6 +6,8 @@ using TMPro;
 
 public class ResourceManager : MonoBehaviour
 {
+    public static ResourceManager instance;
+
     public TMP_Text Scoretxt;
     public int Agold;
     public int Bgold;
@@ -43,6 +45,14 @@ public class ResourceManager : MonoBehaviour
     public Material BlueShader;
 
     protected float Timer;
+
+    void Start()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     void Update()
     {

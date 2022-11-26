@@ -7,6 +7,7 @@ public abstract class UnitTypes
 {
     public abstract GameObject Spawn();
     public abstract UnitTypes Clone();
+    public abstract int Cost();
 }
 
 public class Scout : UnitTypes
@@ -28,6 +29,11 @@ public class Scout : UnitTypes
     public override UnitTypes Clone()
     {
         return new Scout(MonoBehaviour.Instantiate(clone), cost);
+    }
+
+    public override int Cost()
+    {
+        return cost;
     }
 }
 
@@ -51,6 +57,11 @@ public class Ranged : UnitTypes
     {
         return new Ranged(MonoBehaviour.Instantiate(clone), cost);
     }
+
+    public override int Cost()
+    {
+        return cost;
+    }
 }
 
 public class Melee : UnitTypes
@@ -73,6 +84,11 @@ public class Melee : UnitTypes
     {
         return new Melee(MonoBehaviour.Instantiate(clone), cost);
     }
+
+    public override int Cost()
+    {
+        return cost;
+    }
 }
 
 public class Tank : UnitTypes
@@ -94,5 +110,10 @@ public class Tank : UnitTypes
     public override UnitTypes Clone()
     {
         return new Tank(MonoBehaviour.Instantiate(clone), cost);
+    }
+
+    public override int Cost()
+    {
+        return cost;
     }
 }

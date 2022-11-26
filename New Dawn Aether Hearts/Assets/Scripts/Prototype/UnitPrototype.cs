@@ -26,26 +26,32 @@ public class UnitPrototype : MonoBehaviour
     public void Spawner(GameObject button)
     {
         var b = button.GetComponentInChildren<TextMeshProUGUI>();
+        ResourceManager resource = ResourceManager.instance;
 
-        switch (button.gameObject.transform.parent.name)
+        if (button.gameObject.transform.parent.name == "ScoutPanel" && resource.Agold >= scout.Cost())
         {
-            case "ScoutPanel":
-                EditorManager.instance.item = scout.Clone().Spawn();
-                break;
-            case "RangedPanel":
-                EditorManager.instance.item = ranged.Clone().Spawn();
-                break;
-            case "MeleePanel":
-                EditorManager.instance.item = melee.Clone().Spawn();
-                break;
-            case "TankPanel":
-                EditorManager.instance.item = tank.Clone().Spawn();
-                break;
-            default:
-                break;
+            resource.Agold -= scout.Cost();
+            EditorManager.instance.item = scout.Clone().Spawn();
+            EditorManager.instance.instantiated = true;
         }
-
-        EditorManager.instance.instantiated = true;
+        if (button.gameObject.transform.parent.name == "RangedPanel" && resource.Agold >= ranged.Cost())
+        {
+            resource.Agold -= ranged.Cost();
+            EditorManager.instance.item = ranged.Clone().Spawn();
+            EditorManager.instance.instantiated = true;
+        }
+        if (button.gameObject.transform.parent.name == "MeleePanel" && resource.Agold >= melee.Cost())
+        {
+            resource.Agold -= melee.Cost();
+            EditorManager.instance.item = melee.Clone().Spawn();
+            EditorManager.instance.instantiated = true;
+        }
+        if (button.gameObject.transform.parent.name == "TankPanel" && resource.Agold >= tank.Cost())
+        {
+            resource.Agold -= tank.Cost();
+            EditorManager.instance.item = tank.Clone().Spawn();
+            EditorManager.instance.instantiated = true;
+        }
     }
 
     public void OpenPanel(GameObject button)
