@@ -40,6 +40,9 @@ public class StartState : IState
 
     public void OnNewTargetAcquired(Vector3 newPosition)
     {
-        stateCycle.ChangeState(stateCycle.moveState);
+        if (stateCycle.isSelected)
+        {
+            stateCycle.ChangeState(stateCycle.moveState);
+        }
     }
 }

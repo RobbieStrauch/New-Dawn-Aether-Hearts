@@ -160,7 +160,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6056001283119818107}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a8915dc1dc37642a386094f2b9ac2e, type: 3}
   m_Name: 
@@ -176,6 +176,7 @@ MonoBehaviour:
   projectilePosition: {fileID: 6359834481217282936}
   forward: 32
   upward: 1
+  isSelected: 0
 --- !u!1 &6359834481217282936
 GameObject:
   m_ObjectHideFlags: 0

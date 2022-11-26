@@ -98,8 +98,7 @@ public class AttackState : IState
             if (!stateCycle.alreadyAttacked)
             {
                 Rigidbody rb = MonoBehaviour.Instantiate(stateCycle.projectile, stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-                //Rigidbody flashRB = ObjectPooler.instance.SpawnFromPool("Flash", stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-                //Rigidbody rb = ObjectPooler.instance.SpawnFromPool("Bullet", stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                Rigidbody flashRB = ObjectPooler.instance.SpawnFromPool("Flash", stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
                 rb.AddForce(stateCycle.transform.forward * stateCycle.forward, ForceMode.Impulse);
                 rb.AddForce(stateCycle.transform.up * stateCycle.upward, ForceMode.Impulse);
 

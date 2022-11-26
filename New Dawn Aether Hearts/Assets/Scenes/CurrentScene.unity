@@ -1007,7 +1007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245391410}
   m_Layer: 0
-  m_Name: Bullets
+  m_Name: Flashes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13352,19 +13352,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131272754}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca50a3f748d164c4188ce959f6d3756f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   poolParent: {fileID: 245391409}
   pools:
-  - tag: Bullet
-    prefab: {fileID: 5488129717929618976, guid: 9e2cf0c6a92f3c341b12d81cd5a2d2f5, type: 3}
-    size: 40
   - tag: Flash
     prefab: {fileID: 988566486173805015, guid: fdc9d3cd476115b40971cd59321bfc37, type: 3}
-    size: 40
+    size: 10
 --- !u!114 &2131272768
 MonoBehaviour:
   m_ObjectHideFlags: 0
