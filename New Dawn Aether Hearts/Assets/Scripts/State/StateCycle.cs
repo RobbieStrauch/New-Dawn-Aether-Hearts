@@ -26,6 +26,8 @@ public class StateCycle : StateMachine
     public float forward = 32f;
     public float upward = 1f;
 
+    public bool isSelected = false;
+
     ClickPath clickPath;
     Subject subject = new Subject();
 

@@ -20,10 +20,6 @@ public class StartState : IState
 
     public void Enter()
     {
-        //clickPath = new ClickPath(stateCycle.gameObject, new CyanMaterial());
-        //subject.AddObserver(clickPath);
-        //subject.Notify();
-
         unitClick.NewTargetAcquired += OnNewTargetAcquired;
     }
 
@@ -44,6 +40,9 @@ public class StartState : IState
 
     public void OnNewTargetAcquired(Vector3 newPosition)
     {
-        stateCycle.ChangeState(stateCycle.moveState);
+        if (stateCycle.isSelected)
+        {
+            stateCycle.ChangeState(stateCycle.moveState);
+        }
     }
 }

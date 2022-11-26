@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
             other.gameObject.GetComponent<UnitHealth>().DecreaseHealth(5);
         }
 
-        //Destroy(gameObject);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
+        //gameObject.SetActive(false);
     }
 }

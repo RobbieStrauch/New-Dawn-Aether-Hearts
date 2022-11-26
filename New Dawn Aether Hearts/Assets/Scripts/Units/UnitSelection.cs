@@ -27,8 +27,7 @@ public class UnitSelection : MonoBehaviour
         DeselectAll();
         unitSelectedList.Add(addUnit);
         addUnit.GetComponent<Renderer>().material = selectedMaterial;
-        //addUnit.transform.GetComponent<UnitMovement>().enabled = true;
-        addUnit.transform.GetComponent<StateCycle>().enabled = true;
+        addUnit.transform.GetComponent<StateCycle>().isSelected = true;
     }
 
     public void ContinueClickSelect(GameObject addUnit)
@@ -37,13 +36,11 @@ public class UnitSelection : MonoBehaviour
         {
             unitSelectedList.Add(addUnit);
             addUnit.GetComponent<Renderer>().material = selectedMaterial;
-            //addUnit.transform.GetComponent<UnitMovement>().enabled = true;
-            addUnit.transform.GetComponent<StateCycle>().enabled = true;
+            addUnit.transform.GetComponent<StateCycle>().isSelected = true;
         }
         else
         {
-            //addUnit.transform.GetComponent<UnitMovement>().enabled = false;
-            addUnit.transform.GetComponent<StateCycle>().enabled = false;
+            addUnit.transform.GetComponent<StateCycle>().isSelected = false;
             addUnit.GetComponent<Renderer>().material = unselectedMaterial;
             unitSelectedList.Remove(addUnit);
         }
@@ -55,8 +52,7 @@ public class UnitSelection : MonoBehaviour
         {
             unitSelectedList.Add(addUnit);
             addUnit.GetComponent<Renderer>().material = selectedMaterial;
-            //addUnit.transform.GetComponent<UnitMovement>().enabled = true;
-            addUnit.transform.GetComponent<StateCycle>().enabled = true;
+            addUnit.transform.GetComponent<StateCycle>().isSelected = true;
         }
     }
 
@@ -64,8 +60,7 @@ public class UnitSelection : MonoBehaviour
     {
         foreach (GameObject unit in unitSelectedList)
         {
-            //unit.transform.GetComponent<UnitMovement>().enabled = false;
-            unit.transform.GetComponent<StateCycle>().enabled = false;
+            unit.transform.GetComponent<StateCycle>().isSelected = false;
             unit.GetComponent<Renderer>().material = unselectedMaterial;
         }
         unitSelectedList.Clear();
@@ -75,8 +70,7 @@ public class UnitSelection : MonoBehaviour
     {
         if (unitSelectedList.Contains(removeUnit))
         {
-            //removeUnit.transform.GetComponent<UnitMovement>().enabled = false;
-            removeUnit.transform.GetComponent<StateCycle>().enabled = false;
+            removeUnit.transform.GetComponent<StateCycle>().isSelected = false;
             removeUnit.GetComponent<Renderer>().material = unselectedMaterial;
             unitSelectedList.Remove(removeUnit);
         }

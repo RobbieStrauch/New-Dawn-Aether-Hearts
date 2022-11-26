@@ -26,10 +26,6 @@ public class AttackState : IState
 
     public void Enter()
     {
-        //clickPath = new ClickPath(stateCycle.gameObject, new YellowMaterial());
-        //subject.AddObserver(clickPath);
-        //subject.Notify();
-
         StartTimer();
     }
 
@@ -53,7 +49,6 @@ public class AttackState : IState
         }
 
         const int raycastCount = 30;
-        //const int raycastDistance = 10;
 
         for (int i = 0; i < raycastCount; i++)
         {
@@ -69,7 +64,6 @@ public class AttackState : IState
                 Debug.DrawRay(stateCycle.transform.position, desiredDirection * stateCycle.attackRange, Color.red);
                 agent.SetDestination(stateCycle.transform.position);
                 stateCycle.transform.LookAt(hit.point);
-                stateCycle.projectilePosition.transform.LookAt(hit.point);
                 AttackUnit();
             }
 
@@ -96,9 +90,6 @@ public class AttackState : IState
         {
             if (!stateCycle.alreadyAttacked)
             {
-                //stateCycle.gameObject.transform.GetChild(1).rotation = new Quaternion(90f, 0f, 0f, 1f);
-                //stateCycle.gameObject.transform.GetChild(1).position += new Vector3(0.0f, -0.5f, 0.8f);
-
                 stateCycle.alreadyAttacked = true;
             }
         }
@@ -106,8 +97,8 @@ public class AttackState : IState
         {
             if (!stateCycle.alreadyAttacked)
             {
-                //Rigidbody rb = MonoBehaviour.Instantiate(stateCycle.projectile, stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-                Rigidbody rb = ObjectPooler.instance.SpawnFromPool("Bullet", stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                Rigidbody rb = MonoBehaviour.Instantiate(stateCycle.projectile, stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                Rigidbody flashRB = ObjectPooler.instance.SpawnFromPool("Flash", stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
                 rb.AddForce(stateCycle.transform.forward * stateCycle.forward, ForceMode.Impulse);
                 rb.AddForce(stateCycle.transform.up * stateCycle.upward, ForceMode.Impulse);
 
@@ -123,8 +114,6 @@ public class AttackState : IState
 
     private void ResetSwordAttack()
     {
-        //stateCycle.gameObject.transform.GetChild(1).rotation = new Quaternion(0f, 0f, 0f, 1f);
-        //stateCycle.gameObject.transform.GetChild(1).position += new Vector3(0.0f, 0.5f, -0.8f);
         stateCycle.alreadyAttacked = false;
     }
 
