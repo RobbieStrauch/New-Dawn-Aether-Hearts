@@ -8,8 +8,10 @@ public class OptionsManager : MonoBehaviour
 
     // Video
     public float FOV;
-    public Vector2 viewportXY;
-    public Vector2 viewportWH;
+
+    // Audio
+    public float musicVolume;
+    public float soundEffectVolume;
 
     // Start is called before the first frame update
     void Start()
