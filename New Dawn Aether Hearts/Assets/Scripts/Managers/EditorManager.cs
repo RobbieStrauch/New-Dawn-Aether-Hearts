@@ -12,14 +12,12 @@ public class EditorManager : MonoBehaviour
 
     Camera mainCamera;
     public LayerMask ground;
+    public GameObject groundObject;
     public Material transparentMaterial;
     public Material normalMaterial;
 
     public bool instantiated = false;
     public GameObject item;
-
-    Subject subject = new Subject();
-    ICommand command;
 
     void Start()
     {
@@ -36,15 +34,16 @@ public class EditorManager : MonoBehaviour
 
     private void DropItem()
     {
-        if (instantiated)
+        RaycastHit hit;
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+        groundObject.layer = 13;
+
+        if (instantiated && Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
         {
             item.GetComponent<Renderer>().material = normalMaterial;
             item.GetComponent<Collider>().enabled = true;
             item.GetComponent<NavMeshAgent>().enabled = true;
-
-            //command = new PlaceItemCommand(item.transform.position, item.transform);
-            //CommandInvoker.AddCommand(command);
-
             instantiated = false;
         }
     }
@@ -54,6 +53,7 @@ public class EditorManager : MonoBehaviour
         if (instantiated)
         {
             item.GetComponent<Renderer>().material = transparentMaterial;
+            groundObject.layer = 0;
 
             RaycastHit hit;
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
