@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
+using System.IO;
 
 public class PlayerSettingsPlugin : MonoBehaviour
 {
@@ -30,13 +31,10 @@ public class PlayerSettingsPlugin : MonoBehaviour
     public static extern void StartWriting(string fileName);
 
     [DllImport("SettingsPlugin")]
-    public static extern void StartReading(string fileName);
+    public static extern float ReadFile(int j, string fileName);
 
     [DllImport("SettingsPlugin")]
-    public static extern void EndReading();
-
-    [DllImport("SettingsPlugin")]
-    public static extern float GetReadingValue(int index);
+    public static extern int GetValue(string fileName);
 
     [DllImport("SettingsPlugin")]
     public static extern void EndWriting();
@@ -45,22 +43,25 @@ public class PlayerSettingsPlugin : MonoBehaviour
     string fn;
     Camera mainCamera;
 
+    List<float> values = new List<float>(3);
+
     public OptionsManager options;
 
     // Start is called before the first frame update
     void Start()
     {
+        
+
         path = Application.dataPath;
         fn = path + "/PlayerSettings.txt";
 
         mainCamera = Camera.main;
 
-        StartReading(fn);
-        EndReading();
+        Read(fn);
 
-        SetFOV(GetReadingValue(0));
-        SetMusicVolume(GetReadingValue(1));
-        SetSoundEffectVolume(GetReadingValue(2));
+        SetFOV(values[0]);
+        SetMusicVolume(values[1]);
+        SetSoundEffectVolume(values[2]);
 
         StartWriting(fn);
         SaveToFile(GetFOV(), GetMusicVolume(), GetSoundEffectVolume());
@@ -90,5 +91,18 @@ public class PlayerSettingsPlugin : MonoBehaviour
         EndWriting();
 
         mainCamera.fieldOfView = GetFOV();
+    }
+
+    void Read(string path)
+    {
+        StreamReader streamReader = new StreamReader(path);
+
+        while (!streamReader.EndOfStream)
+        {
+            string line = streamReader.ReadLine();
+            values.Add(float.Parse(line));
+        }
+
+        streamReader.Close();
     }
 }

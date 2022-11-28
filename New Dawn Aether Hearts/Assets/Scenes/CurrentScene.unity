@@ -17169,6 +17169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 187295866}
+  optionsPanel: {fileID: 1996409831}
 --- !u!114 &2131272771
 MonoBehaviour:
   m_ObjectHideFlags: 0
