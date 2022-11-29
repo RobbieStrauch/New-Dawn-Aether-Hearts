@@ -5,13 +5,22 @@ using UnityEngine;
 public abstract class ClickEvents
 {
     public abstract Color playerEditorColor();
+    //public abstract AudioClip playerEditorSound();
 }
 
-public class YellowMaterial : ClickEvents
+public class CyanMaterial : ClickEvents
 {
     public override Color playerEditorColor()
     {
-        return Color.yellow;
+        return Color.cyan;
+    }
+}
+
+public class BlueMaterial: ClickEvents
+{
+    public override Color playerEditorColor()
+    {
+        return Color.blue;
     }
 }
 
@@ -22,3 +31,23 @@ public class GreenMaterial : ClickEvents
         return Color.green;
     }
 }
+
+public class YellowMaterial : ClickEvents
+{
+    public override Color playerEditorColor()
+    {
+        return Color.yellow;
+    }
+}
+
+/*
+
+public class SoundEffect : ClickEvents
+{
+    public override AudioClip playerEditorSound()
+    {
+        return Audio;
+    }
+}
+
+*/

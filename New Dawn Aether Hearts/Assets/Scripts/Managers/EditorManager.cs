@@ -2,118 +2,66 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
 
 public class EditorManager : MonoBehaviour
 {
     public static EditorManager instance;
 
-    public PlayerActions inputAction;
+    PlayerActions playerAction;
 
-    public Camera mainCam;
-    public Camera editorCam;
+    Camera mainCamera;
+    public LayerMask ground;
+    public GameObject groundObject;
+    public Material transparentMaterial;
+    public Material normalMaterial;
 
-    public bool editorMode = false;
-
-    Vector3 mousePos;
-    public GameObject prefab1;
-    public GameObject prefab2;
-    public GameObject item;
     public bool instantiated = false;
+    public GameObject item;
 
-    public Canvas editorPanel;
-
-    //Will send notifications that something has happened to whoever is interested
-    Subject subject = new Subject();
-
-    // Command
-    ICommand command;
-
-    // Start is called before the first frame update
     void Start()
     {
+        mainCamera = Camera.main;
+
         if (instance == null)
         {
             instance = this;
         }
 
-        inputAction = PlayerInputController.controller.inputAction;
-
-        inputAction.Editor1.EditorMode.performed += cntxt => EnterEditorMode();
-
-        inputAction.Editor1.AddItem1.performed += cntxt => AddItem(1);
-        inputAction.Editor1.AddItem2.performed += cntxt => AddItem(2);
-        inputAction.Editor1.DropItem.performed += cntxt => DropItem();
-
-        mainCam.enabled = true;
-        editorCam.enabled = false;
-
+        playerAction = InputController.controller.InputAction;
+        playerAction.Editor.DropItem.performed += cntxt => DropItem();
     }
 
-    public void EnterEditorMode()
+    private void DropItem()
     {
-        mainCam.enabled = !mainCam.enabled;
-        editorCam.enabled = !editorCam.enabled;
-    }
+        RaycastHit hit;
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-    public void AddItem(int itemId)
-    {
-        if (editorMode && !instantiated)
+        groundObject.layer = 13;
+
+        if (instantiated && Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
         {
-            switch (itemId)
-            {
-                case 1:
-                    item = Instantiate(prefab1);
-                    break;
-                case 2:
-                    item = Instantiate(prefab2);
-                    break;
-                default:
-                    break;
-            }
-            subject.Notify();
-            instantiated = true;
-        }
-    }
-
-    public void DropItem()
-    {
-        if (editorMode && instantiated)
-        {
-            item.GetComponent<Rigidbody>().useGravity = true;
+            item.GetComponent<Renderer>().material = normalMaterial;
             item.GetComponent<Collider>().enabled = true;
-
-            // Add item transform to items list
-            command = new PlaceItemCommand(item.transform.position, item.transform);
-            CommandInvoker.AddCommand(command);
-
+            item.GetComponent<NavMeshAgent>().enabled = true;
             instantiated = false;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Checking if we are in editor mode
-        if (mainCam.enabled == false && editorCam.enabled == true)
-        {
-            editorMode = true;
-            editorPanel.enabled = true;
-
-        }
-        else
-        {
-            editorMode = false;
-            editorPanel.enabled = false;
-
-        }
-
         if (instantiated)
         {
-            mousePos = Mouse.current.position.ReadValue();
-            mousePos = new Vector3(mousePos.x, mousePos.y, 40);
+            item.GetComponent<Renderer>().material = transparentMaterial;
+            groundObject.layer = 0;
 
-            item.transform.position = editorCam.ScreenToWorldPoint(mousePos);
+            RaycastHit hit;
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
+            {
+                item.transform.position = hit.point + Vector3.up * 2;
+            }
         }
-
     }
 }

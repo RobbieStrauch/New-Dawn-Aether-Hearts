@@ -12,10 +12,8 @@ public class SliderDisplay : MonoBehaviour
     public enum SliderType 
     { 
         fov,
-        viewportX,
-        viewportY,
-        viewportW,
-        viewportH
+        music,
+        soundEffects
     };
 
     public SliderType type;
@@ -39,21 +37,13 @@ public class SliderDisplay : MonoBehaviour
                     valueText.text = OptionsManager.instance.FOV.ToString();
                     sliderValue.value = OptionsManager.instance.FOV;
                     break;
-                case SliderType.viewportX:
-                    valueText.text = OptionsManager.instance.viewportXY.x.ToString();
-                    sliderValue.value = OptionsManager.instance.viewportXY.x;
+                case SliderType.music:
+                    valueText.text = OptionsManager.instance.musicVolume.ToString();
+                    sliderValue.value = OptionsManager.instance.musicVolume;
                     break;
-                case SliderType.viewportY:
-                    valueText.text = OptionsManager.instance.viewportXY.y.ToString();
-                    sliderValue.value = OptionsManager.instance.viewportXY.y;
-                    break;
-                case SliderType.viewportW:
-                    valueText.text = OptionsManager.instance.viewportWH.x.ToString();
-                    sliderValue.value = OptionsManager.instance.viewportWH.x;
-                    break;
-                case SliderType.viewportH:
-                    valueText.text = OptionsManager.instance.viewportWH.y.ToString();
-                    sliderValue.value = OptionsManager.instance.viewportWH.y;
+                case SliderType.soundEffects:
+                    valueText.text = OptionsManager.instance.soundEffectVolume.ToString();
+                    sliderValue.value = OptionsManager.instance.soundEffectVolume;
                     break;
                 default:
                     break;
@@ -69,17 +59,11 @@ public class SliderDisplay : MonoBehaviour
             case SliderType.fov:
                 OptionsManager.instance.FOV = value;
                 break;
-            case SliderType.viewportX:
-                OptionsManager.instance.viewportXY.x = value;
+            case SliderType.music:
+                OptionsManager.instance.musicVolume = value;
                 break;
-            case SliderType.viewportY:
-                OptionsManager.instance.viewportXY.y = value;
-                break;
-            case SliderType.viewportW:
-                OptionsManager.instance.viewportWH.x = value;
-                break;
-            case SliderType.viewportH:
-                OptionsManager.instance.viewportWH.y = value;
+            case SliderType.soundEffects:
+                OptionsManager.instance.soundEffectVolume = value;
                 break;
             default:
                 break;

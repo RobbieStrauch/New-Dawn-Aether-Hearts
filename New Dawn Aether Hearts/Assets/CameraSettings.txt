@@ -1,9 +1,0 @@
-<<<<<<< Updated upstream
-36.6
-=======
-74.1
->>>>>>> Stashed changes
-0
-0
-1
-1
