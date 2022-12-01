@@ -11,7 +11,7 @@ For our game, we were tasked to implement
 
 ------------------------------------------------------------------------------------
 
-Link to explination video:  https://youtu.be/EUlyWfaiMus
+Link to explination video:  https://youtu.be/4PaFO8clvRA
 
 All written parts such as the Written Component, Proof of Commits, Slide, Appendix, and Project Management tool can be found in the zip file labled "Written Component, Proof of Commits, Slide, Appendix, and Project Management tool"
 
