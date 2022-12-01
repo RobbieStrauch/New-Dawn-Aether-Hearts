@@ -5,7 +5,7 @@ GDW Course Project - Temporary Studio
 
 INFR - 3110U - Game Engine Design and Implementation
 
-In this for our game, we were tasked to implement 
+For our game, we were tasked to implement 
 
 2 design patterns, 3 Management Systems with one being a DLL, compare performance, and a bonus Management System
 
@@ -13,7 +13,7 @@ In this for our game, we were tasked to implement
 
 Link to explination video: 
 
-All written parts such as the Written Component, Slide, Appendix, and Project Management tool can be found in the zip file labled "Written Component, Slide, Appendix, and Project Management tool"
+All written parts such as the Written Component, Proof of Commits, Slide, Appendix, and Project Management tool can be found in the zip file labled "Written Component, Proof of Commits, Slide, Appendix, and Project Management tool"
 
 ------------------------------------------------------------------------------------
 
