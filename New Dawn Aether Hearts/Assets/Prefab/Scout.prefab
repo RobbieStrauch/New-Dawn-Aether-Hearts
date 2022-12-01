@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3233764608188679959}
   - component: {fileID: 836202992792402541}
   - component: {fileID: 2329801374269885603}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 909477254163840085}
   - component: {fileID: -8766752951523353143}
   - component: {fileID: -3028475215981638977}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Scout
   m_TagString: ATeam
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1739128854729957654}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Projectile Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}

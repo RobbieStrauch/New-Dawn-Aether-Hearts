@@ -54,7 +54,7 @@ public class MoveState : IState
             }
         }
 
-        if (Vector3.Distance(stateCycle.gameObject.transform.position, stateCycle.targetPosition) <= 5)
+        if (Vector3.Distance(stateCycle.gameObject.transform.position, stateCycle.targetPosition) <= 2)
         {
             stateCycle.ChangeState(stateCycle.startState);
         }

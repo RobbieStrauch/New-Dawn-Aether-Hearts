@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8002424723289240732}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Projectile Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2167646718687390640}
   - component: {fileID: 3105707635902663550}
   - component: {fileID: 7505489758489073461}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: -4366596279285207387}
   - component: {fileID: -7343831848951395383}
   - component: {fileID: -7107466212702368254}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Tank
   m_TagString: ATeam
   m_Icon: {fileID: 0}

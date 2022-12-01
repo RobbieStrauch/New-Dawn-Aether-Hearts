@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4029578662666594690}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Projectile Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 4579606931330884600}
   - component: {fileID: 5804780903592164145}
   - component: {fileID: -3606633647801347208}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Ranged
   m_TagString: ATeam
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1219572821335862045}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,9 +46,9 @@ GameObject:
   - component: {fileID: 5478565859814121260}
   - component: {fileID: 7524940184652755133}
   - component: {fileID: 6055980122092337287}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TankModel
-  m_TagString: Untagged
+  m_TagString: ATeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,7 +86,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!195 &2055788433439329941
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 3245956887259868949}
   - component: {fileID: 7355084528994668416}
   - component: {fileID: 8209829219639940802}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 3822763101071679184}
   - component: {fileID: 299653100673317444}
   - component: {fileID: 3987258343825666148}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
