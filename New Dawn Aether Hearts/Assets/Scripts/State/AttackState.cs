@@ -94,7 +94,10 @@ public class AttackState : IState
         {
             if (!stateCycle.alreadyAttacked)
             {
-                stateCycle.gameObject.transform.GetComponentInChildren<Animation>().Play();
+                if (stateCycle.gameObject.transform.GetComponentInChildren<Animation>())
+                {
+                    stateCycle.gameObject.transform.GetComponentInChildren<Animation>().Play();
+                }
                 stateCycle.alreadyAttacked = true;
             }
         }

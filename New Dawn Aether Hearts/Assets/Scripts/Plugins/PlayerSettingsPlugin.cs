@@ -72,6 +72,7 @@ public class PlayerSettingsPlugin : MonoBehaviour
         options.soundEffectVolume = GetSoundEffectVolume();
 
         mainCamera.fieldOfView = GetFOV();
+        mainCamera.GetComponentInChildren<AudioSource>().volume = GetMusicVolume();
     }
 
     // Update is called once per frame
@@ -91,6 +92,7 @@ public class PlayerSettingsPlugin : MonoBehaviour
         EndWriting();
 
         mainCamera.fieldOfView = GetFOV();
+        mainCamera.GetComponentInChildren<AudioSource>().volume = GetMusicVolume() / 100f;
     }
 
     void Read(string path)
