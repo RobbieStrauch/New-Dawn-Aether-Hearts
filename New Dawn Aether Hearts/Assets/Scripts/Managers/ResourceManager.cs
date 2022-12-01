@@ -73,7 +73,7 @@ public class ResourceManager : MonoBehaviour
             GoldA();
             GoldB();
         }
-        string score = "" + Agold;
+        string score = "$" + Agold;
         Scoretxt.text = score;
     }
 
