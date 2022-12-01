@@ -20,6 +20,10 @@ public class StartState : IState
 
     public void Enter()
     {
+        if (stateCycle.GetComponent<Animator>())
+        {
+            stateCycle.GetComponent<Animator>().SetBool("isStart", true);
+        }
         unitClick.NewTargetAcquired += OnNewTargetAcquired;
     }
 
@@ -36,6 +40,10 @@ public class StartState : IState
     public void Exit()
     {
         unitClick.NewTargetAcquired -= OnNewTargetAcquired;
+        if (stateCycle.GetComponent<Animator>())
+        {
+            stateCycle.GetComponent<Animator>().SetBool("isStart", false);
+        }
     }
 
     public void OnNewTargetAcquired(Vector3 newPosition)

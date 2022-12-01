@@ -41,7 +41,7 @@ public class EditorManager : MonoBehaviour
 
         if (instantiated && Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
         {
-            item.GetComponent<Renderer>().material = normalMaterial;
+            //item.GetComponent<Renderer>().material = normalMaterial;
             item.GetComponent<Collider>().enabled = true;
             item.GetComponent<NavMeshAgent>().enabled = true;
             instantiated = false;
@@ -52,7 +52,7 @@ public class EditorManager : MonoBehaviour
     {
         if (instantiated)
         {
-            item.GetComponent<Renderer>().material = transparentMaterial;
+            //item.GetComponent<Renderer>().material = transparentMaterial;
             groundObject.layer = 0;
 
             RaycastHit hit;

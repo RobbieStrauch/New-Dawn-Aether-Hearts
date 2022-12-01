@@ -26,6 +26,10 @@ public class AttackState : IState
 
     public void Enter()
     {
+        if (stateCycle.GetComponent<Animator>())
+        {
+            stateCycle.GetComponent<Animator>().SetBool("isAttack", true);
+        }
         StartTimer();
     }
 
@@ -48,7 +52,7 @@ public class AttackState : IState
             elapsedTime = 0f;
         }
 
-        const int raycastCount = 30;
+        const int raycastCount = 100;
 
         for (int i = 0; i < raycastCount; i++)
         {
@@ -98,10 +102,23 @@ public class AttackState : IState
         {
             if (!stateCycle.alreadyAttacked)
             {
-                Rigidbody rb = MonoBehaviour.Instantiate(stateCycle.projectile, stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                if (stateCycle.GetComponent<Animator>())
+                {
+                    stateCycle.GetComponent<Animator>().Play("Attack", 0, 0f);
+                }
+
+                GameObject bullet = MonoBehaviour.Instantiate(stateCycle.projectile, stateCycle.projectilePosition.transform.position, Quaternion.identity);
+                bullet.GetComponent<Bullet>().ChangeDamage(stateCycle.attackDamage);
+                Rigidbody rb = bullet.GetComponent<Rigidbody>();
+
                 Rigidbody flashRB = ObjectPooler.instance.SpawnFromPool("Flash", stateCycle.projectilePosition.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+
                 rb.AddForce(stateCycle.transform.forward * stateCycle.forward, ForceMode.Impulse);
                 rb.AddForce(stateCycle.transform.up * stateCycle.upward, ForceMode.Impulse);
+                if (stateCycle.GetComponent<Animator>())
+                {
+                    rb.AddForce(stateCycle.transform.right * (stateCycle.transform.rotation.y + stateCycle.right), ForceMode.Impulse);
+                }
 
                 stateCycle.alreadyAttacked = true;
             }

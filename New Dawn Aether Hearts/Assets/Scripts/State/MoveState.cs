@@ -21,7 +21,11 @@ public class MoveState : IState
 
     public void Enter()
     {
-
+        if (stateCycle.GetComponent<Animator>())
+        {
+            stateCycle.GetComponent<Animator>().SetBool("isStart", false);
+            stateCycle.GetComponent<Animator>().SetBool("isAttack", false);
+        }
     }
 
     public void Tick()
@@ -31,7 +35,7 @@ public class MoveState : IState
 
     public void FixedTick()
     {
-        const int raycastCount = 30;
+        const int raycastCount = 100;
 
         for (int i = 0; i < raycastCount; i++)
         {

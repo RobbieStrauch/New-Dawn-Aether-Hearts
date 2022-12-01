@@ -44,6 +44,8 @@ public class ResourceManager : MonoBehaviour
     public Material RedShader;
     public Material BlueShader;
 
+    public List<int> allZones = new List<int>();
+
     protected float Timer;
 
     void Start()
@@ -70,6 +72,7 @@ public class ResourceManager : MonoBehaviour
         string B4 = B1_4.tag;
         string Bp2 = B.tag;
 
+        allZones = new List<int> { zoneA1, zoneA2, zoneA3, zoneA4, zoneA, zone3, zoneB1, zoneB2, zoneB3, zoneB4, zoneB };
 
         zones(A1, A2, A3, A4, Ap2, N, B1, B2, B3, B4, Bp2);
 

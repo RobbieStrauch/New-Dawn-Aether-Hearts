@@ -17,6 +17,7 @@ public class StateCycle : StateMachine
     public Vector3 targetPosition { get; set; }
 
     public LayerMask player2;
+    public int attackDamage = 5;
     public float bulletAttackTime;
     public float swordAttackTime;
     public int attackRange = 10;
@@ -25,6 +26,7 @@ public class StateCycle : StateMachine
     public GameObject projectilePosition;
     public float forward = 32f;
     public float upward = 1f;
+    public float right = 1f;
 
     public bool isSelected = false;
 
