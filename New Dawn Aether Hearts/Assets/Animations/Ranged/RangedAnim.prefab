@@ -3042,6 +3042,7 @@ GameObject:
   - component: {fileID: 6788773688254314947}
   - component: {fileID: 6788773688254314944}
   - component: {fileID: 6788773688254314945}
+  - component: {fileID: -5821021985716655607}
   - component: {fileID: 7100023938970801579}
   m_Layer: 12
   m_Name: RangedAnim
@@ -3196,6 +3197,19 @@ MonoBehaviour:
   upward: 1
   right: -15
   isSelected: 0
+--- !u!114 &-5821021985716655607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5978520132402425928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5adac1f8ebfc10d4d84b107b13b859f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!65 &7100023938970801579
 BoxCollider:
   m_ObjectHideFlags: 0

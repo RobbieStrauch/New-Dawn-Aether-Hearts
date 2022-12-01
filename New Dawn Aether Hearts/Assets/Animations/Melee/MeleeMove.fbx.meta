@@ -1,11 +1,23 @@
 fileFormatVersion: 2
-guid: 4fd280e5117346b4bb694a104bef7196
+guid: bd2c4108c1dc01147ab5b01ed3025666
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable:
   - first:
-      74: 2399300532808103
-    second: Idle
+      74: 4723146814002874508
+    second: Armature|Attack
+  - first:
+      74: 5702659241440815421
+    second: Armature|Attack.002
+  - first:
+      74: -4245129998077138617
+    second: Armature|Attack.004
+  - first:
+      74: -5913978943142729594
+    second: MeleeMove
+  - first:
+      74: -4926629957759332671
+    second: Armature|Move.002
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,11 +48,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
-      takeName: Body|BodyAction.001
+      name: MeleeMove
+      takeName: Armature|Move
       internalID: 0
       firstFrame: 0
-      lastFrame: 10
+      lastFrame: 99
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -121,7 +133,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.003
+    globalScale: 0.3
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
