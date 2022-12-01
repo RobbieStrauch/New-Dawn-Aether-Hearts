@@ -19,7 +19,7 @@ All written parts such as the Written Component, Slide, Appendix, and Project Ma
 
 To play the demo go to the release titled "GDW Course Project" and download the zip 
 
-Within the zip file called "Builds" you should be able to access the .exe which is under the name "New Dawn Aether Hearts.exe"
+Within the zip file called "GDW.for.Game.Engine.Design" you should be able to access the .exe which is under the name "New Dawn Aether Hearts.exe"
 
 To move the camera tap space and then touch the edges of the screen with your mouse
 
