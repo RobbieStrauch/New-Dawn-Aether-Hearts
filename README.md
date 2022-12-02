@@ -26,3 +26,7 @@ To move the camera tap space and then touch the edges of the screen with your mo
 Once you spawn in a unit use right click to select it and left click where you want it to go
 
 (The enemies will be to the player's right)
+
+------------------------------------------------------------------------------------
+
+Release for GDW is under Fall Expo Build - Temporary Studio
