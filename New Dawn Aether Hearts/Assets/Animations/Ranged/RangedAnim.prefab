@@ -3195,7 +3195,7 @@ MonoBehaviour:
   projectilePosition: {fileID: 6788773688092881928}
   forward: 78
   upward: 1
-  right: -15
+  right: -5
   isSelected: 0
 --- !u!114 &-5821021985716655607
 MonoBehaviour:
