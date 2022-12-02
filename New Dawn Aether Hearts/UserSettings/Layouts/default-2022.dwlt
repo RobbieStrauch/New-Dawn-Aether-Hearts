@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -457,37 +457,37 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Images
+    - Assets/Materials/Textures/Rocky Texture v
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Images
+  - Assets/Materials/Textures/Rocky Texture v
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Joshua\Documents\GitHub\New-Dawn-Aether-Hearts\New
     Dawn Aether Hearts
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 6e310100
-    m_LastClickedID: 78190
-    m_ExpandedIDs: 00000000e6760000e8760000ea7600006a3101006c31010000ca9a3b
+    scrollPos: {x: 0, y: 125}
+    m_SelectedIDs: 68960000
+    m_LastClickedID: 38504
+    m_ExpandedIDs: 00000000c46b0000c66b0000c86b0000ca6b0000d86b0000e66b00005496000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scout
-      m_OriginalName: Scout
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 78286
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -501,7 +501,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e6760000e8760000ea760000
+    m_ExpandedIDs: 00000000c46b0000c66b0000c86b0000ca6b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -532,18 +532,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c62300000000000074a4000030720000088d02000c8d0200068d02000a8d0200
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scout
-      m_OriginalName: Scout
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 29238
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
@@ -553,7 +553,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 24}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -629,9 +629,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a4690000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: eef7feff14f8feff3a02ffffa290ffffa4abffff36f1ffffb0680000306b00004a6b00005a6b0000e46e000098700000
+      m_ExpandedIDs: 2cfbffff9c5c0000d05c00003c5d0000f25d0000785e00004a5f00005a5f0000ca5f000072600000b46000005e610000ae610000fa6100004c63000058630000bc63000014650000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -913,9 +913,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -206.351, y: -379.30862, z: -333.37875}
+    m_Target: {x: -262.4373, y: -314.23285, z: 77.95203}
     speed: 2
-    m_Value: {x: -206.351, y: -379.30862, z: -333.37875}
+    m_Value: {x: -262.4373, y: -314.23285, z: 77.95203}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -961,13 +961,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.40579757, y: 0.53235877, z: -0.3225615, w: 0.66958684}
+    m_Target: {x: 0.3554029, y: 0.016574569, z: -0.006194395, w: 0.9347989}
     speed: 2
-    m_Value: {x: 0.40570223, y: 0.5322337, z: -0.32248574, w: 0.66942954}
+    m_Value: {x: 0.3553188, y: 0.016570648, z: -0.0061929296, w: 0.93457776}
   m_Size:
-    m_Target: 253.39197
+    m_Target: 446.2127
     speed: 2
-    m_Value: 253.39197
+    m_Value: 446.2127
   m_Ortho:
     m_Target: 0
     speed: 2

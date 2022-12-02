@@ -684,6 +684,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals
@@ -1440,6 +1444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (6)
@@ -2800,6 +2808,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (3)
@@ -7084,6 +7096,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (2)
@@ -9494,6 +9510,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (6)
@@ -9665,6 +9685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (2)
@@ -11273,6 +11297,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 4ad8212e8210a2847a4f35746f619e00, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 4ad8212e8210a2847a4f35746f619e00, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -3033667219593020291, guid: 4ad8212e8210a2847a4f35746f619e00, type: 3}
     - target: {fileID: 919132149155446097, guid: 4ad8212e8210a2847a4f35746f619e00, type: 3}
       propertyPath: m_Name
       value: HighRise (1)
@@ -13545,6 +13577,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (5)
@@ -14413,6 +14449,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (5)
@@ -16608,6 +16648,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (1)
@@ -18586,6 +18630,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (4)
@@ -20367,7 +20415,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75556fb65fcec8b4a8e6bc9937fb775d, type: 2}
+  - {fileID: 2100000, guid: fd7f669a502b94e4c91b67d36d5d61fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22601,6 +22649,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals
@@ -22772,6 +22824,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (1)
@@ -23945,6 +24001,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (4)
@@ -28185,6 +28245,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 802af81873123bb48b7ce817f8336851, type: 2}
     - target: {fileID: 919132149155446097, guid: 7aa24a24e281c27459047658986a71a7, type: 3}
       propertyPath: m_Name
       value: AetherCrystals (3)
