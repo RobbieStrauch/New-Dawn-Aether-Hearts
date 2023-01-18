@@ -11,6 +11,8 @@ public class MoveState : IState
     ClickPath clickPath;
     Subject subject;
 
+    Vector3 newTargetPosition = Vector3.zero;
+
     public MoveState(StateCycle stateCycle, Subject subject, ClickPath clickPath, NavMeshAgent agent)
     {
         this.stateCycle = stateCycle;
@@ -54,18 +56,42 @@ public class MoveState : IState
             }
         }
 
-        if (Vector3.Distance(stateCycle.gameObject.transform.position, stateCycle.targetPosition) <= 2)
+        if (Vector3.Distance(stateCycle.gameObject.transform.position, stateCycle.targetPosition) <= stateCycle.radius)
         {
             stateCycle.ChangeState(stateCycle.startState);
         }
         else
         {
-            agent.SetDestination(stateCycle.targetPosition);
+            if (UnitSelection.instance.unitSelectedList.Count > 1)
+            {
+                newTargetPosition = GetNewPosition(stateCycle.targetPosition, stateCycle.radius, UnitSelection.instance.unitSelectedList.Count);
+                agent.SetDestination(newTargetPosition);
+            }
+            if (UnitSelection.instance.unitSelectedList.Count == 1)
+            {
+                agent.SetDestination(stateCycle.targetPosition);
+            }
         }
     }
 
     public void Exit()
     {
 
+    }
+
+    // Reference: https://www.youtube.com/watch?v=mCIkCXz9mxI&t=883s
+    private Vector3 GetNewPosition(Vector3 startPosition, float distance, int unitCount)
+    {
+        float angle = stateCycle.priority * (360.0f / unitCount);
+        Vector3 direction = ApplyRotationToVector(new Vector3(1.0f, 0.0f), angle);
+        Vector3 position = startPosition + direction * distance;
+
+        return position;
+    }
+
+    // Reference: https://www.youtube.com/watch?v=mCIkCXz9mxI&t=883s
+    private Vector3 ApplyRotationToVector(Vector3 vector, float angle)
+    {
+        return Quaternion.Euler(0.0f, angle, 0.0f) * vector;
     }
 }
