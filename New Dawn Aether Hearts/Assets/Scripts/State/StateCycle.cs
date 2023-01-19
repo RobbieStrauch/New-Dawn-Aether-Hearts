@@ -27,6 +27,8 @@ public class StateCycle : StateMachine
     public float forward = 32f;
     public float upward = 1f;
     public float right = 1f;
+    public int priority = 0;
+    public float radius = 5.0f;
 
     public bool isSelected = false;
 

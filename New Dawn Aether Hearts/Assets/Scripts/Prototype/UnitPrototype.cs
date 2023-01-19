@@ -9,6 +9,11 @@ public class UnitPrototype : MonoBehaviour
     public List<UnitData> allData;
     public List<GameObject> unitPanels;
 
+    public int scoutCount = 0;
+    public int rangedCount = 0;
+    public int meleeCount = 0;
+    public int tankCount = 0;
+
     Scout scout;
     Ranged ranged;
     Melee melee;
@@ -28,25 +33,27 @@ public class UnitPrototype : MonoBehaviour
         var b = button.GetComponentInChildren<TextMeshProUGUI>();
         ResourceManager resource = ResourceManager.instance;
 
-        if (button.gameObject.transform.parent.name == "ScoutPanel" && resource.Agold >= scout.Cost())
+        CheckUnitCount();
+
+        if (button.gameObject.transform.parent.name == "ScoutPanel" && resource.Agold >= scout.Cost() && scoutCount < 10)
         {
             resource.Agold -= scout.Cost();
             EditorManager.instance.item = scout.Clone().Spawn();
             EditorManager.instance.instantiated = true;
         }
-        if (button.gameObject.transform.parent.name == "RangedPanel" && resource.Agold >= ranged.Cost())
+        if (button.gameObject.transform.parent.name == "RangedPanel" && resource.Agold >= ranged.Cost() && rangedCount < 6)
         {
             resource.Agold -= ranged.Cost();
             EditorManager.instance.item = ranged.Clone().Spawn();
             EditorManager.instance.instantiated = true;
         }
-        if (button.gameObject.transform.parent.name == "MeleePanel" && resource.Agold >= melee.Cost())
+        if (button.gameObject.transform.parent.name == "MeleePanel" && resource.Agold >= melee.Cost() && meleeCount < 4)
         {
             resource.Agold -= melee.Cost();
             EditorManager.instance.item = melee.Clone().Spawn();
             EditorManager.instance.instantiated = true;
         }
-        if (button.gameObject.transform.parent.name == "TankPanel" && resource.Agold >= tank.Cost())
+        if (button.gameObject.transform.parent.name == "TankPanel" && resource.Agold >= tank.Cost() && tankCount < 2)
         {
             resource.Agold -= tank.Cost();
             EditorManager.instance.item = tank.Clone().Spawn();
@@ -86,6 +93,36 @@ public class UnitPrototype : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    void CheckUnitCount()
+    {
+        scoutCount = 0;
+        rangedCount = 0;
+        meleeCount = 0;
+        tankCount = 0;
+
+        UnitSelection unitSelection = UnitSelection.instance;
+
+        foreach (var item in unitSelection.unitList)
+        {
+            if (item.name.Contains("Scout"))
+            {
+                scoutCount++;
+            }
+            if (item.name.Contains("Ranged"))
+            {
+                rangedCount++;
+            }
+            if (item.name.Contains("Melee"))
+            {
+                meleeCount++;
+            }
+            if (item.name.Contains("Tank"))
+            {
+                tankCount++;
+            }
         }
     }
 }

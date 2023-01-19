@@ -29,6 +29,11 @@ public class UnitSelection : MonoBehaviour
         addUnit.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         //addUnit.GetComponent<Renderer>().material = selectedMaterial;
         addUnit.transform.GetComponent<StateCycle>().isSelected = true;
+
+        for (int i = 0; i < unitSelectedList.Count; i++)
+        {
+            unitSelectedList[i].GetComponent<StateCycle>().priority = i;
+        }
     }
 
     public void ContinueClickSelect(GameObject addUnit)
@@ -47,6 +52,11 @@ public class UnitSelection : MonoBehaviour
             //addUnit.GetComponent<Renderer>().material = unselectedMaterial;
             unitSelectedList.Remove(addUnit);
         }
+
+        for (int i = 0; i < unitSelectedList.Count; i++)
+        {
+            unitSelectedList[i].GetComponent<StateCycle>().priority = i;
+        }
     }
 
     public void DragSelect(GameObject addUnit)
@@ -57,6 +67,11 @@ public class UnitSelection : MonoBehaviour
             addUnit.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             //addUnit.GetComponent<Renderer>().material = selectedMaterial;
             addUnit.transform.GetComponent<StateCycle>().isSelected = true;
+        }
+
+        for (int i = 0; i < unitSelectedList.Count; i++)
+        {
+            unitSelectedList[i].GetComponent<StateCycle>().priority = i;
         }
     }
 
