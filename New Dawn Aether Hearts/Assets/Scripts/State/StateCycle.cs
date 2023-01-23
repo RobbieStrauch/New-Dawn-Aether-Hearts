@@ -13,6 +13,7 @@ public class StateCycle : StateMachine
 
     UnitClick unitClick;
     NavMeshAgent agent;
+    LineRenderer lineRenderer;
 
     public Vector3 targetPosition { get; set; }
 
@@ -39,9 +40,10 @@ public class StateCycle : StateMachine
     {
         unitClick = GameObject.Find("Game Manager").GetComponent<UnitClick>();
         agent = GetComponent<NavMeshAgent>();
+        lineRenderer = GetComponent<LineRenderer>();
 
         startState = new StartState(this, subject, clickPath, unitClick);
-        moveState = new MoveState(this, subject, clickPath, agent);
+        moveState = new MoveState(this, subject, clickPath, agent, lineRenderer);
         attackState = new AttackState(this, subject, clickPath, agent);
     }
 

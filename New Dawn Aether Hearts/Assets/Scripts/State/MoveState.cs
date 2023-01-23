@@ -7,22 +7,28 @@ public class MoveState : IState
 {
     StateCycle stateCycle;
     NavMeshAgent agent;
+    LineRenderer lineRenderer;
 
     ClickPath clickPath;
     Subject subject;
 
     Vector3 newTargetPosition = Vector3.zero;
 
-    public MoveState(StateCycle stateCycle, Subject subject, ClickPath clickPath, NavMeshAgent agent)
+    public MoveState(StateCycle stateCycle, Subject subject, ClickPath clickPath, NavMeshAgent agent, LineRenderer lineRenderer)
     {
         this.stateCycle = stateCycle;
         this.subject = subject;
         this.clickPath = clickPath;
         this.agent = agent;
+        this.lineRenderer = lineRenderer;
     }
 
     public void Enter()
     {
+        lineRenderer.enabled = true;
+        lineRenderer.startWidth = 0.5f;
+        lineRenderer.endWidth = 0.5f;
+
         if (stateCycle.GetComponent<Animator>())
         {
             stateCycle.GetComponent<Animator>().SetBool("isStart", false);
@@ -56,7 +62,8 @@ public class MoveState : IState
             }
         }
 
-        if (Vector3.Distance(stateCycle.gameObject.transform.position, stateCycle.targetPosition) <= stateCycle.radius)
+        //if (Vector3.Distance(stateCycle.gameObject.transform.position, stateCycle.targetPosition) <= stateCycle.radius)
+        if (agent.isStopped)
         {
             stateCycle.ChangeState(stateCycle.startState);
         }
@@ -76,7 +83,7 @@ public class MoveState : IState
 
     public void Exit()
     {
-
+        lineRenderer.enabled = false;
     }
 
     // Reference: https://www.youtube.com/watch?v=mCIkCXz9mxI&t=883s

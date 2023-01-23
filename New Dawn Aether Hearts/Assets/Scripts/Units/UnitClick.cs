@@ -61,6 +61,7 @@ public class UnitClick : MonoBehaviour
                     target.transform.position = hit.point;
                     target.SetActive(true);
                     NewTargetAcquired.Invoke(hit.point);
+                    Fade.instance.StartFading();
                 }
             }
         }

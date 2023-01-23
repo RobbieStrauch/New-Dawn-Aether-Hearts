@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 59938149}
   - component: {fileID: 59938148}
   m_Layer: 5
-  m_Name: DescriptionCost
+  m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1210,7 +1210,7 @@ MonoBehaviour:
 
 
     Cost:
-    $25'
+    $25 | Health: 100 | Damage: 35 | Firerate: 1.25 | Range: 2'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9309,7 +9309,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &650576417
 PrefabInstance:
@@ -14331,7 +14331,7 @@ GameObject:
   - component: {fileID: 983714142}
   - component: {fileID: 983714141}
   m_Layer: 5
-  m_Name: DescriptionCost
+  m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14381,7 +14381,7 @@ MonoBehaviour:
 
 
     Cost:
-    $10'
+    $10 | Health: 100 | Damage: 5 | Firerate: 0.5 | Range: 10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18757,7 +18757,7 @@ GameObject:
   - component: {fileID: 1248415624}
   - component: {fileID: 1248415623}
   m_Layer: 5
-  m_Name: DescriptionCost
+  m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18806,7 +18806,8 @@ MonoBehaviour:
   m_text: 'Fortify the front we will hold the line!
 
 
-    Cost: $40'
+    Cost: $40 | Health: 400
+    | Damage: 5 | Firerate: 0.15 | Range: 5'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -20007,7 +20008,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321878533}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1321878535
 Camera:
   m_ObjectHideFlags: 0
@@ -20064,7 +20065,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
 --- !u!4 &1325141919 stripped
 Transform:
@@ -22076,7 +22077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1382097251607727358, guid: 7be88cfa1f98c2648afd1dfee71eae45, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1382097251607727359, guid: 7be88cfa1f98c2648afd1dfee71eae45, type: 3}
       propertyPath: m_RootOrder
@@ -22125,6 +22126,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be88cfa1f98c2648afd1dfee71eae45, type: 3}
+--- !u!1 &1476463419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1382097251315446485, guid: 7be88cfa1f98c2648afd1dfee71eae45, type: 3}
+  m_PrefabInstance: {fileID: 1476463418}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1478962476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24619,7 +24625,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1640187167
 PrefabInstance:
@@ -30620,7 +30626,7 @@ GameObject:
   - component: {fileID: 2064729490}
   - component: {fileID: 2064729489}
   m_Layer: 5
-  m_Name: DescriptionCost
+  m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30667,7 +30673,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Need to hit something from long range? \nCall us in and we'll handle the
-    job!\n\nCost: $20"
+    job!\n\nCost: $20 | Health: 100 | Damage: 25 | Firerate: 2 | Range: 25"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -31473,6 +31479,7 @@ GameObject:
   - component: {fileID: 2131272765}
   - component: {fileID: 2131272768}
   - component: {fileID: 2131272771}
+  - component: {fileID: 2131272773}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -31715,6 +31722,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   options: {fileID: 2131272771}
+--- !u!114 &2131272773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131272754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c0e195d464d834586c245503482521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quad: {fileID: 1476463419}
 --- !u!1001 &2135571274
 PrefabInstance:
   m_ObjectHideFlags: 0
