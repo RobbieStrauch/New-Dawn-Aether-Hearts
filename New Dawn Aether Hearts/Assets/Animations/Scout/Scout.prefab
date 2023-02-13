@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ab915f683d04ab64e84653848cbea3ac, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -53,7 +53,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 59.178223
+  MaxDistance: 36.90779
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 5539780300003115776}
   - component: {fileID: 5539780300003115777}
   - component: {fileID: 5539780300003115778}
+  - component: {fileID: 1424825118351252881}
   m_Layer: 6
   m_Name: UnitVision
   m_TagString: Untagged
@@ -155,8 +156,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5539780300003115780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -43.5, z: 0}
-  m_LocalScale: {x: 6.802942, y: 1, z: -8.606216}
+  m_LocalPosition: {x: 3.0797, y: -25, z: 3.9963}
+  m_LocalScale: {x: 5.027615, y: 1, z: 3.0009265}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7963394675242957997}
@@ -226,6 +227,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1818360609 &1424825118351252881
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5539780300003115780}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_Active: 1
+  m_IsLocked: 1
+  m_Sources: []
 --- !u!1 &6056001283119818107
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6056001283119818107}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -363, y: 43.5, z: -288}
+  m_LocalPosition: {x: -896.34863, y: 0, z: -379.7974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -269,7 +288,7 @@ Transform:
   - {fileID: 5539780300003115779}
   - {fileID: 4920817996676799794}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7312050457836941199
 MeshFilter:
