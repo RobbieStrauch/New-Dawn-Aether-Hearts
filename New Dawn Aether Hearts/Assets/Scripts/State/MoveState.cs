@@ -62,12 +62,7 @@ public class MoveState : IState
             }
         }
 
-        //if (Vector3.Distance(stateCycle.gameObject.transform.position, stateCycle.targetPosition) <= stateCycle.radius)
-        if (agent.isStopped)
-        {
-            stateCycle.ChangeState(stateCycle.startState);
-        }
-        else
+        if (stateCycle.isSelected)
         {
             if (UnitSelection.instance.unitSelectedList.Count > 1)
             {
@@ -77,6 +72,10 @@ public class MoveState : IState
             if (UnitSelection.instance.unitSelectedList.Count == 1)
             {
                 agent.SetDestination(stateCycle.targetPosition);
+            }
+            if (Vector3.Distance(stateCycle.gameObject.transform.position, agent.destination) <= (stateCycle.radius / 2f))
+            {
+                stateCycle.ChangeState(stateCycle.startState);
             }
         }
     }
