@@ -62,18 +62,21 @@ public class MoveState : IState
             }
         }
 
-        if (UnitSelection.instance.unitSelectedList.Count > 1)
+        if (stateCycle.isSelected)
         {
-            newTargetPosition = GetNewPosition(stateCycle.targetPosition, stateCycle.radius, UnitSelection.instance.unitSelectedList.Count);
-            agent.SetDestination(newTargetPosition);
-        }
-        if (UnitSelection.instance.unitSelectedList.Count == 1)
-        {
-            agent.SetDestination(stateCycle.targetPosition);
-        }
-        if (Vector3.Distance(stateCycle.gameObject.transform.position, agent.destination) <= stateCycle.radius)
-        {
-            stateCycle.ChangeState(stateCycle.startState);
+            if (UnitSelection.instance.unitSelectedList.Count > 1)
+            {
+                newTargetPosition = GetNewPosition(stateCycle.targetPosition, stateCycle.radius, UnitSelection.instance.unitSelectedList.Count);
+                agent.SetDestination(newTargetPosition);
+            }
+            if (UnitSelection.instance.unitSelectedList.Count == 1)
+            {
+                agent.SetDestination(stateCycle.targetPosition);
+            }
+            if (Vector3.Distance(stateCycle.gameObject.transform.position, agent.destination) <= stateCycle.radius)
+            {
+                stateCycle.ChangeState(stateCycle.startState);
+            }
         }
     }
 
