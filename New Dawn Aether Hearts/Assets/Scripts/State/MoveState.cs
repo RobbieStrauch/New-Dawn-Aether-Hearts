@@ -73,7 +73,7 @@ public class MoveState : IState
             {
                 agent.SetDestination(stateCycle.targetPosition);
             }
-            if (Vector3.Distance(stateCycle.gameObject.transform.position, agent.destination) <= stateCycle.radius)
+            if (Vector3.Distance(stateCycle.gameObject.transform.position, agent.destination) <= (stateCycle.radius / 2f))
             {
                 stateCycle.ChangeState(stateCycle.startState);
             }

@@ -461,7 +461,7 @@ MonoBehaviour:
   upward: 1
   right: 1
   priority: 0
-  radius: 2
+  radius: 5
   isSelected: 0
 --- !u!114 &7524940184652755133
 MonoBehaviour:
