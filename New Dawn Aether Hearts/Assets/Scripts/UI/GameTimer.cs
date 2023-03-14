@@ -30,7 +30,7 @@ public class GameTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().isLoaded && timer > 0.1f)
+        if (ClientManager.instance.startGame && timer > 0.1f)
         {
             timer -= Time.deltaTime;
             minutes = Mathf.Floor(timer / 60f);
@@ -38,7 +38,7 @@ public class GameTimer : MonoBehaviour
 
             text.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-            circle.fillAmount = timer / totalTime;
+            //circle.fillAmount = timer / totalTime;
         }
 
         if (timer <= 0.1f)
