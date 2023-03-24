@@ -13,6 +13,7 @@ public class MoveState : IState
     Subject subject;
 
     Vector3 newTargetPosition = Vector3.zero;
+    Vector3 currentTargetPosition = Vector3.zero;
 
     public MoveState(StateCycle stateCycle, Subject subject, ClickPath clickPath, NavMeshAgent agent, LineRenderer lineRenderer)
     {
@@ -21,6 +22,8 @@ public class MoveState : IState
         this.clickPath = clickPath;
         this.agent = agent;
         this.lineRenderer = lineRenderer;
+
+        currentTargetPosition = stateCycle.gameObject.transform.position;
     }
 
     public void Enter()
@@ -28,6 +31,8 @@ public class MoveState : IState
         lineRenderer.enabled = true;
         lineRenderer.startWidth = 0.5f;
         lineRenderer.endWidth = 0.5f;
+
+        agent.SetDestination(currentTargetPosition);
 
         GameObject walkNoise = stateCycle.transform.Find("Walk Noise").gameObject;
         walkNoise.GetComponent<AudioSource>().Play();
@@ -71,14 +76,16 @@ public class MoveState : IState
             {
                 newTargetPosition = GetNewPosition(stateCycle.targetPosition, stateCycle.radius, UnitSelection.instance.unitSelectedList.Count);
                 agent.SetDestination(newTargetPosition);
+                currentTargetPosition = newTargetPosition;
             }
             if (UnitSelection.instance.unitSelectedList.Count == 1)
             {
                 agent.SetDestination(stateCycle.targetPosition);
+                currentTargetPosition = stateCycle.targetPosition;
             }
         }
 
-        if (Vector3.Distance(stateCycle.gameObject.transform.position, agent.destination) <= (stateCycle.radius / 2f))
+        if (Vector3.Distance(stateCycle.gameObject.transform.position, currentTargetPosition) <= (stateCycle.radius / 2f))
         {
             stateCycle.ChangeState(stateCycle.startState);
         }

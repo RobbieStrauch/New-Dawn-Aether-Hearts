@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6013931076968673217}
   - component: {fileID: 5514501705785594769}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7875685414172913597}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3210685313229396043}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger4b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 7903406140360801589}
   - component: {fileID: 3537835176374328420}
   - component: {fileID: 8181591540541966916}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2547091533534129600}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger3a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 311737543172884990}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3140387975052074001}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: LeftBicep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 141990177218946522}
   - component: {fileID: 1464376136076138831}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Circle.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2930803470123864236}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: RightGun_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4555763034533858960}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: RightGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 410316614718982844}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger1b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1423341412289661873}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: RightBicep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6760070006642948846}
   - component: {fileID: 935345717320226388}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 7857169207349516654}
   - component: {fileID: 621446740441506039}
   - component: {fileID: 7744189353391637890}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2235437750504988528}
   - component: {fileID: 3084514157754547156}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 407297175139486694}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger4a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3342828352183868611}
   - component: {fileID: 2251227441605431829}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,7 +1043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3296694371407318469}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger1b_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3828979209034102689}
   - component: {fileID: 790784253829601388}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2759475454709711659}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ProjectilePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1373,7 +1373,7 @@ MonoBehaviour:
   projectile: {fileID: 5488129717929618976, guid: fc8596ca924206c48920b3899e5793f1, type: 3}
   projectilePosition: {fileID: 2759475454709711656}
   forward: 78
-  upward: 1
+  upward: -2
   right: -5
   attackRange: 25
   attackDamage: 25
@@ -1399,7 +1399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2315073349799855028}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: LeftFoot_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1430,7 +1430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7735508117989476108}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger3b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,7 +1463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1562959769918621367}
   - component: {fileID: 5952590757332631463}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1570,7 +1570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3329602550720350726}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1602,7 +1602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6782169461095045602}
   - component: {fileID: 71886838487950812}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1709,7 +1709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2278407512030326787}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1743,7 +1743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6612850983885397075}
   - component: {fileID: 6201843373233431683}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1870,7 +1870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2158457927572164479}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger2a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1903,7 +1903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7415072674334177849}
   - component: {fileID: 6896343362612921527}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Walk Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2031,7 +2031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2457323000718313761}
   - component: {fileID: 5402955633571972243}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2139,7 +2139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7336238482657266646}
   - component: {fileID: 5947365080731323728}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2246,7 +2246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8281946715964382734}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: RightConnecter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2279,7 +2279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5249104848206889433}
   - component: {fileID: 2776235182037761505}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2387,7 +2387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1041047267837482488}
   - component: {fileID: 8633364281539380169}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2497,7 +2497,7 @@ GameObject:
   - component: {fileID: 3356914049432696291}
   - component: {fileID: 3029679048728365604}
   - component: {fileID: 2550339870118739838}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: HealthUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2597,7 +2597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7150699625316126951}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger2b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2630,7 +2630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1952927887953964921}
   - component: {fileID: 1852854568619889618}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2738,7 +2738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7838413272170209330}
   - component: {fileID: 8981929883718816142}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2846,7 +2846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3807727843915558234}
   - component: {fileID: 8926413629573736848}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2953,7 +2953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6095712065043403921}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: RightShin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2987,7 +2987,7 @@ GameObject:
   - component: {fileID: 8619030067065767017}
   - component: {fileID: 2468444130776579688}
   - component: {fileID: 2088755995806080189}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3062,7 +3062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6608267495659838982}
   - component: {fileID: 1693518079832103132}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Circle.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3170,7 +3170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2130173360946550600}
   - component: {fileID: 7198731948454467633}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3278,7 +3278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8919494761708382440}
   - component: {fileID: 6299975312364439875}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3385,7 +3385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1112005239006684787}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger2b_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3417,7 +3417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7538711885942864384}
   - component: {fileID: 5750450173743514717}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3524,7 +3524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5794169892082126349}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3560,7 +3560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3904979717189975161}
   - component: {fileID: 6808402929247363041}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3667,7 +3667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6991693044302646542}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: LeftForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3700,7 +3700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4439159979729693236}
   - component: {fileID: 5832456474120656768}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Circle.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3807,7 +3807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 352290342343452689}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: LeftThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3840,7 +3840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5933689209501621762}
   - component: {fileID: 4785034824207514840}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3948,7 +3948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2224816592525583252}
   - component: {fileID: 5513674755062209762}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4056,7 +4056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7559637952631583229}
   - component: {fileID: 8271837408927652096}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4163,7 +4163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8248965479172344452}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: LeftShin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4195,7 +4195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2827460082510242911}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger3b_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4227,7 +4227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 610973018429560432}
   - component: {fileID: 7728038761909505771}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Circle.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4335,7 +4335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8960181699874689047}
   - component: {fileID: 5388573774837379947}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4443,7 +4443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4599832533496822552}
   - component: {fileID: 6337059643039737772}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4551,7 +4551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5058000326717467848}
   - component: {fileID: 5209092586748773219}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4658,7 +4658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3855867111239801226}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger4b_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4689,7 +4689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5123572630725797595}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: LegHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4723,7 +4723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3534612438198844612}
   - component: {fileID: 4933982399397738577}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Circle.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4830,7 +4830,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3530266235870967112}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: RightThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4863,7 +4863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2231059317858211573}
   - component: {fileID: 2701821256691248378}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4970,7 +4970,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 541054323447956001}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Finger1a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5002,7 +5002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8677594299103562220}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5034,7 +5034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2174985307211385103}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5066,7 +5066,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3261414604400179353}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: RightFoot_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5098,7 +5098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9214885227506342034}
   - component: {fileID: 5146976413587133035}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}

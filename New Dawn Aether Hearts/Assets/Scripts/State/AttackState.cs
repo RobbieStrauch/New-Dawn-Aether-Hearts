@@ -65,8 +65,6 @@ public class AttackState : IState
             {
                 saveObject = hit.collider.gameObject;
 
-                Debug.Log(saveObject.name);
-
                 Debug.DrawRay(stateCycle.transform.position, desiredDirection * stateCycle.attackRange, Color.red);
                 agent.SetDestination(stateCycle.transform.position);
                 stateCycle.transform.LookAt(hit.point);
@@ -75,7 +73,6 @@ public class AttackState : IState
 
             if (saveObject == null)
             {
-                //Debug.Log("Done Shooting");
                 stateCycle.ChangeState(stateCycle.moveState);
             }
         }

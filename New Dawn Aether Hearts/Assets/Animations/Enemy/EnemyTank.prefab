@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5215675718025511158}
   - component: {fileID: 7101396546088425209}
   - component: {fileID: 3221746171488765013}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: HealthUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 1448704608273433671}
   - component: {fileID: 4508735903551394227}
   - component: {fileID: 9185704807652191577}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1517667380832458193}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Projectile Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4056531825559232586}
   - component: {fileID: 1331080275312183526}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 6026794993537373698}
   - component: {fileID: 8979642721982549105}
   - component: {fileID: 3835658584893044573}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 2947863115361800665}
   - component: {fileID: 7201712225431875916}
   - component: {fileID: 8362112864957523982}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 3525812443024433180}
   - component: {fileID: 129348324225221768}
   - component: {fileID: 3654261131233873576}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -753,7 +753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 938978782659510324}
   - component: {fileID: 7941865131728017417}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Walk Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}

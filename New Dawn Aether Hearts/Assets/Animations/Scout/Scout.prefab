@@ -644,10 +644,10 @@ GameObject:
   - component: {fileID: -8766752951523353143}
   - component: {fileID: -3028475215981638977}
   - component: {fileID: -4750289759895548692}
-  - component: {fileID: 7818253968640713977}
   - component: {fileID: 3168836396295650581}
   - component: {fileID: 338501557226622423}
   - component: {fileID: 6170127512550932555}
+  - component: {fileID: 888425689775399136}
   m_Layer: 10
   m_Name: Scout
   m_TagString: ATeam
@@ -818,20 +818,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
---- !u!64 &7818253968640713977
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6056001283119818107}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: 1e59431503423364191aa4cad3ea251b, type: 3}
 --- !u!120 &3168836396295650581
 LineRenderer:
   serializedVersion: 2
@@ -960,6 +946,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthImage: {fileID: 9033786316397931927}
+--- !u!65 &888425689775399136
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056001283119818107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.75708, y: 2.8423753, z: 0.98535585}
+  m_Center: {x: 0.04272461, y: 0.20426369, z: 0.054013968}
 --- !u!1 &6359834481217282936
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +968,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1739128854729957654}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Projectile Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1002,7 @@ GameObject:
   - component: {fileID: 8653002037710235350}
   - component: {fileID: 2148679534118519826}
   - component: {fileID: 4221557102301360067}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}

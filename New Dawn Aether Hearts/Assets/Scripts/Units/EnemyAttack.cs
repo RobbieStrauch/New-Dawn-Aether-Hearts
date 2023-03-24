@@ -12,7 +12,6 @@ public class EnemyAttack : MonoBehaviour
     bool alreadyAttacked;
     public GameObject projectile;
     public GameObject projectilePosition;
-    GameObject saveObject;
 
     public float forward = 32f;
     public float upward = 12f;
@@ -45,13 +44,16 @@ public class EnemyAttack : MonoBehaviour
                     gameObject.GetComponent<Animator>().SetBool("isAttack", true);
                 }
 
-                saveObject = hit.collider.gameObject;
-
                 Debug.DrawRay(transform.position, desiredDirection * attackRange, Color.red);
-                transform.LookAt(hit.point);
+                Vector3 temp = hit.collider.gameObject.transform.GetChild(1).gameObject.transform.position;
+                var lookPosition = temp - transform.position;
+                lookPosition.y = 0;
+                var rotate = Quaternion.LookRotation(lookPosition);
+                transform.rotation = rotate;
+
                 AttackUnit();
             }
-            if (saveObject == null)
+            else
             {
                 if (gameObject.GetComponent<Animator>())
                 {
@@ -77,6 +79,7 @@ public class EnemyAttack : MonoBehaviour
                     gameObject.transform.GetComponentInChildren<Animation>().Play();
                 }
                 alreadyAttacked = true;
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
         }
         else
@@ -102,7 +105,13 @@ public class EnemyAttack : MonoBehaviour
                 }
 
                 alreadyAttacked = true;
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
         }
+    }
+
+    private void ResetAttack()
+    {
+        alreadyAttacked = false;
     }
 }

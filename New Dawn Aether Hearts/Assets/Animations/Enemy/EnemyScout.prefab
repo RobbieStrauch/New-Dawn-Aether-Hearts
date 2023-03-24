@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5524397401273471157}
   - component: {fileID: 8013676442309475774}
   - component: {fileID: 4607901842876721728}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4067710354419023708}
   - component: {fileID: 792638358745076329}
   - component: {fileID: 6635395607956206619}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7523822501091167343}
   - component: {fileID: 4695957403124857783}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Walk Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 6439723524267933530}
   - component: {fileID: 4366936147667787166}
   - component: {fileID: 2008084530383517263}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 5323478115883437835}
   - component: {fileID: 1101502387251654404}
   - component: {fileID: 4558739237534687270}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: HealthUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7278270037851456702}
   - component: {fileID: 4365302694841356387}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +621,6 @@ GameObject:
   - component: {fileID: 6155253502152095407}
   - component: {fileID: 3302476987259413977}
   - component: {fileID: 2258635809404245344}
-  - component: {fileID: 5605813181044391285}
   - component: {fileID: 8424950281543014855}
   - component: {fileID: 2399255235974683016}
   - component: {fileID: 2399255235974683023}
@@ -651,7 +650,7 @@ Transform:
   - {fileID: 8745833828716397174}
   - {fileID: 7523822501091167343}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &4914063580491298307
 MeshFilter:
@@ -732,20 +731,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
---- !u!64 &5605813181044391285
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8449000258153676023}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: 1e59431503423364191aa4cad3ea251b, type: 3}
 --- !u!114 &8424950281543014855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,8 +791,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1665955, y: 2.344902, z: 1.392653}
-  m_Center: {x: -0.002029419, y: -0.044472933, z: 0.25766253}
+  m_Size: {x: 2.75708, y: 2.344902, z: 1.5778852}
+  m_Center: {x: 0.04272461, y: -0.044472933, z: 0.35027862}
 --- !u!1 &8721632098336176884
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4136975817073490074}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Projectile Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
