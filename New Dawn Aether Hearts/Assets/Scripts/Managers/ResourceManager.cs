@@ -76,19 +76,30 @@ public class ResourceManager : MonoBehaviour
 
         zones(A1, A2, A3, A4, Ap2, N, B1, B2, B3, B4, Bp2);
 
-        if (ClientManager.instance.startGame)
+        //if (ClientManager.instance.startGame)
+        //{
+        //    Timer += Time.deltaTime;
+
+        //    if (Timer >= DelayAmount)
+        //    {
+        //        Timer = 0f;
+        //        Agold++;
+        //        Bgold++;
+
+        //        GoldA();
+        //        GoldB();
+        //    }
+        //}
+        Timer += Time.deltaTime;
+
+        if (Timer >= DelayAmount)
         {
-            Timer += Time.deltaTime;
+            Timer = 0f;
+            Agold++;
+            Bgold++;
 
-            if (Timer >= DelayAmount)
-            {
-                Timer = 0f;
-                Agold++;
-                Bgold++;
-
-                GoldA();
-                GoldB();
-            }
+            GoldA();
+            GoldB();
         }
         string score = "$" + Agold;
         Scoretxt.text = score;

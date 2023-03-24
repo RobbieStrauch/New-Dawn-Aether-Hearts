@@ -30,7 +30,8 @@ public class GameTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ClientManager.instance.startGame && timer > 0.1f)
+        //if (ClientManager.instance.startGame && timer > 0.1f)
+        if (SceneManager.GetActiveScene().isLoaded && timer > 0.1f)
         {
             timer -= Time.deltaTime;
             minutes = Mathf.Floor(timer / 60f);

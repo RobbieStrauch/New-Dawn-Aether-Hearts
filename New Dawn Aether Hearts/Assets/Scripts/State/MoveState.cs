@@ -29,6 +29,9 @@ public class MoveState : IState
         lineRenderer.startWidth = 0.5f;
         lineRenderer.endWidth = 0.5f;
 
+        GameObject walkNoise = stateCycle.transform.Find("Walk Noise").gameObject;
+        walkNoise.GetComponent<AudioSource>().Play();
+
         if (stateCycle.GetComponent<Animator>())
         {
             stateCycle.GetComponent<Animator>().SetBool("isStart", false);
@@ -73,16 +76,20 @@ public class MoveState : IState
             {
                 agent.SetDestination(stateCycle.targetPosition);
             }
-            if (Vector3.Distance(stateCycle.gameObject.transform.position, agent.destination) <= (stateCycle.radius / 2f))
-            {
-                stateCycle.ChangeState(stateCycle.startState);
-            }
+        }
+
+        if (Vector3.Distance(stateCycle.gameObject.transform.position, agent.destination) <= (stateCycle.radius / 2f))
+        {
+            stateCycle.ChangeState(stateCycle.startState);
         }
     }
 
     public void Exit()
     {
         lineRenderer.enabled = false;
+
+        GameObject walkNoise = stateCycle.transform.Find("Walk Noise").gameObject;
+        walkNoise.GetComponent<AudioSource>().Stop();
     }
 
     // Reference: https://www.youtube.com/watch?v=mCIkCXz9mxI&t=883s

@@ -1336,6 +1336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be4210110310140b6736782ec13d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordType: 0
 --- !u!1 &3534375391018453881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +1439,7 @@ Transform:
   - {fileID: 5949212953262960958}
   - {fileID: 6120117655370321898}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7998496091454065494
 Animator:
@@ -2941,6 +2942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be4210110310140b6736782ec13d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordType: 0
 --- !u!1 &6878132843163636246
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,7 +4021,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f79280854eb8fd34c83c1374c878adf0, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
