@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 4078341048625001932}
   m_Layer: 6
   m_Name: UnitVision
-  m_TagString: Untagged
+  m_TagString: ATeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
