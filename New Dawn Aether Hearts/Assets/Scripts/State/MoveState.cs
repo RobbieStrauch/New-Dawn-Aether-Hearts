@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.GraphicsBuffer;
 
 public class MoveState : IState
 {
@@ -28,6 +30,8 @@ public class MoveState : IState
 
     public void Enter()
     {
+        //Debug.Log("Move");
+
         lineRenderer.enabled = true;
         lineRenderer.startWidth = 0.5f;
         lineRenderer.endWidth = 0.5f;
@@ -85,10 +89,42 @@ public class MoveState : IState
             }
         }
 
-        if (Vector3.Distance(stateCycle.gameObject.transform.position, currentTargetPosition) <= (stateCycle.radius / 2f))
+        try
         {
+            float x = stateCycle.transform.position.x;
+            float y = stateCycle.transform.position.y;
+            float z = stateCycle.transform.position.z;
+
+            float rx = stateCycle.transform.eulerAngles.x;
+            float ry = stateCycle.transform.eulerAngles.y;
+            float rz = stateCycle.transform.eulerAngles.z;
+
+            //Debug.Log(stateCycle.transform.localRotation.y + " or " + stateCycle.transform.rotation.y + " or " + stateCycle.transform.eulerAngles.y);
+
+            byte[] buffer = Encoding.ASCII.GetBytes(UnitClient.instance.GetClient().Client.LocalEndPoint + "|" + stateCycle.name + "|" + x.ToString() + "|" + y.ToString() + "|" + z.ToString() + "|" + rx.ToString() + "|" + ry.ToString() + "|" + rz.ToString());
+            UnitClient.instance.GetClient().Send(buffer, buffer.Length);
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log(e.ToString());
+        }
+
+        //Debug.Log(Vector3.Distance(stateCycle.transform.position, currentTargetPosition) + "<" + agent.stoppingDistance);
+
+        if (Vector3.Distance(stateCycle.transform.position, currentTargetPosition) < agent.stoppingDistance)
+        {
+            agent.SetDestination(stateCycle.transform.position);
             stateCycle.ChangeState(stateCycle.startState);
         }
+        //else
+        //{
+        //    agent.SetDestination(currentTargetPosition);
+        //}
+
+        //if (Vector3.Distance(stateCycle.gameObject.transform.position, currentTargetPosition) <= (stateCycle.radius / 2f))
+        //{
+        //    stateCycle.ChangeState(stateCycle.startState);
+        //}
     }
 
     public void Exit()

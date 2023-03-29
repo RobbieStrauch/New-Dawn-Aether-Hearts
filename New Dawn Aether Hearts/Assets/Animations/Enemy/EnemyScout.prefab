@@ -366,9 +366,9 @@ GameObject:
   - component: {fileID: 3302476987259413977}
   - component: {fileID: 2258635809404245344}
   - component: {fileID: 8424950281543014855}
-  - component: {fileID: 2399255235974683016}
   - component: {fileID: 2399255235974683023}
   - component: {fileID: 5964385951226470456}
+  - component: {fileID: -8360292390632481331}
   m_Layer: 11
   m_Name: EnemyScout
   m_TagString: BTeam
@@ -486,29 +486,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthImage: {fileID: 6635395607956206619}
---- !u!114 &2399255235974683016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8449000258153676023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964a5f04e2480d845b59608c412dd3d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player2:
-    serializedVersion: 2
-    m_Bits: 1024
-  timeBetweenAttacks: 0.5
-  projectile: {fileID: 5488129717929618976, guid: fc8596ca924206c48920b3899e5793f1, type: 3}
-  projectilePosition: {fileID: 8721632098336176884}
-  forward: 32
-  upward: 1
-  right: 1
-  attackRange: 10
-  attackDamage: 5
 --- !u!114 &2399255235974683023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,6 +512,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.75708, y: 2.344902, z: 1.5778852}
   m_Center: {x: 0.04272461, y: -0.044472933, z: 0.35027862}
+--- !u!114 &-8360292390632481331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449000258153676023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a831850ab8883fc40817838752f97e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player2:
+    serializedVersion: 2
+    m_Bits: 1024
+  attackDamage: 5
+  bulletAttackTime: 0.5
+  swordAttackTime: 0
+  attackRange: 8
+  alreadyAttacked: 0
+  projectile: {fileID: 5488129717929618976, guid: fc8596ca924206c48920b3899e5793f1, type: 3}
+  projectilePosition: {fileID: 8721632098336176884}
+  forward: 32
+  upward: 1
+  right: 1
 --- !u!1 &8721632098336176884
 GameObject:
   m_ObjectHideFlags: 0

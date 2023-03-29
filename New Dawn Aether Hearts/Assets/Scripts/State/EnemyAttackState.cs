@@ -4,31 +4,22 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AttackState : IState
+public class EnemyAttackState : IState
 {
-    StateCycle stateCycle;
-    NavMeshAgent agent;
-
-    ClickPath clickPath;
-    Subject subject;
+    EnemyStateCycle stateCycle;
 
     float elapsedTime = 0f;
     bool timerActive = false;
 
     GameObject saveObject;
 
-    public AttackState(StateCycle stateCycle, Subject subject, ClickPath clickPath, NavMeshAgent agent)
+    public EnemyAttackState(EnemyStateCycle stateCycle)
     {
         this.stateCycle = stateCycle;
-        this.subject = subject;
-        this.clickPath = clickPath;
-        this.agent = agent;
     }
 
     public void Enter()
     {
-        //Debug.Log("Attack");
-
         if (stateCycle.GetComponent<Animator>())
         {
             stateCycle.GetComponent<Animator>().SetBool("isAttack", true);
@@ -43,13 +34,13 @@ public class AttackState : IState
             elapsedTime += Time.deltaTime;
         }
 
-        if (elapsedTime > stateCycle.bulletAttackTime && stateCycle.gameObject.GetComponent<Unit>().unitType != Unit.UnitType.Melee)
+        if (elapsedTime > stateCycle.bulletAttackTime && stateCycle.gameObject.GetComponent<EnemyUnit>().enemyUnitType != EnemyUnit.EnemyUnitType.Melee)
         {
             ResetBulletAttack();
             elapsedTime = 0f;
         }
 
-        if (elapsedTime > stateCycle.swordAttackTime && stateCycle.gameObject.GetComponent<Unit>().unitType == Unit.UnitType.Melee)
+        if (elapsedTime > stateCycle.swordAttackTime && stateCycle.gameObject.GetComponent<EnemyUnit>().enemyUnitType == EnemyUnit.EnemyUnitType.Melee)
         {
             ResetSwordAttack();
             elapsedTime = 0f;
@@ -69,7 +60,8 @@ public class AttackState : IState
                 saveObject = hit.collider.gameObject;
 
                 Debug.DrawRay(stateCycle.transform.position, desiredDirection * stateCycle.attackRange, Color.red);
-                agent.SetDestination(stateCycle.transform.position);
+                //agent.SetDestination(stateCycle.transform.position);
+                stateCycle.transform.position = stateCycle.transform.position;
                 stateCycle.transform.LookAt(hit.point);
                 AttackUnit();
             }
@@ -78,7 +70,7 @@ public class AttackState : IState
             {
                 if (!saveObject.activeSelf)
                 {
-                    stateCycle.ChangeState(stateCycle.moveState);
+                    stateCycle.ChangeState(stateCycle.startState);
                 }
             }
         }
@@ -96,7 +88,7 @@ public class AttackState : IState
 
     private void AttackUnit()
     {
-        if (stateCycle.gameObject.GetComponent<Unit>().unitType == Unit.UnitType.Melee)
+        if (stateCycle.gameObject.GetComponent<EnemyUnit>().enemyUnitType == EnemyUnit.EnemyUnitType.Melee)
         {
             if (!stateCycle.alreadyAttacked)
             {

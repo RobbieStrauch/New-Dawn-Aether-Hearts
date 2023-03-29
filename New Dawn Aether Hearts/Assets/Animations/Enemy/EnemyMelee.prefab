@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 591083997990470582}
   - component: {fileID: 7528704218098856011}
   - component: {fileID: 7386000583988250046}
-  - component: {fileID: 2275010011448756845}
   - component: {fileID: 8328331101655718393}
+  - component: {fileID: 9112947503818314178}
   m_Layer: 11
   m_Name: EnemyMelee
   m_TagString: BTeam
@@ -141,29 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthImage: {fileID: 6287285529995298076}
---- !u!114 &2275010011448756845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43110149230509734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964a5f04e2480d845b59608c412dd3d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player2:
-    serializedVersion: 2
-    m_Bits: 1024
-  timeBetweenAttacks: 1.25
-  projectile: {fileID: 5488129717929618976, guid: fc8596ca924206c48920b3899e5793f1, type: 3}
-  projectilePosition: {fileID: 0}
-  forward: 32
-  upward: 1
-  right: 1
-  attackRange: 2
-  attackDamage: 35
 --- !u!114 &8328331101655718393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +154,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyUnitType: 2
+--- !u!114 &9112947503818314178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43110149230509734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a831850ab8883fc40817838752f97e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player2:
+    serializedVersion: 2
+    m_Bits: 1024
+  attackDamage: 35
+  bulletAttackTime: 0
+  swordAttackTime: 1.25
+  attackRange: 2
+  alreadyAttacked: 0
+  projectile: {fileID: 5488129717929618976, guid: fc8596ca924206c48920b3899e5793f1, type: 3}
+  projectilePosition: {fileID: 0}
+  forward: 32
+  upward: 1
+  right: 1
 --- !u!1 &233648883180600905
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
+using System.Text;
 
 public class EditorManager : MonoBehaviour
 {
@@ -42,6 +43,29 @@ public class EditorManager : MonoBehaviour
         if (instantiated && Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
         {
             //item.GetComponent<Renderer>().material = normalMaterial;
+            try
+            {
+                float x = item.transform.position.x;
+                float y = item.transform.position.y;
+                float z = item.transform.position.z;
+
+                float rx = item.transform.eulerAngles.x;
+                float ry = item.transform.eulerAngles.y;
+                float rz = item.transform.eulerAngles.z;
+
+                //Debug.Log(stateCycle.transform.localRotation.y + " or " + stateCycle.transform.rotation.y + " or " + stateCycle.transform.eulerAngles.y);
+
+                byte[] buffer = Encoding.ASCII.GetBytes(UnitClient.instance.GetClient().Client.LocalEndPoint + "|" + item.name + "|Activate" + "|" + x.ToString() + "|" + y.ToString() + "|" + z.ToString() + "|" + rx.ToString() + "|" + ry.ToString() + "|" + rz.ToString());
+                UnitClient.instance.GetClient().Send(buffer, buffer.Length);
+
+                //byte[] buffer = Encoding.ASCII.GetBytes(UnitClient.instance.GetClient().Client.LocalEndPoint + "|" + item.name + "|Activate");
+                //UnitClient.instance.GetClient().Send(buffer, buffer.Length);
+            }
+            catch (System.Exception e)
+            {
+                Debug.Log(e.ToString());
+            }
+
             item.GetComponent<Collider>().enabled = true;
             item.GetComponent<NavMeshAgent>().enabled = true;
             instantiated = false;

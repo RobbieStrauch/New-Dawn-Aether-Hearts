@@ -6,8 +6,6 @@ public class ObjectPooler : MonoBehaviour
 {
     public static ObjectPooler instance;
 
-    public GameObject poolParent;
-
     public List<Pool> pools;
     Queue<GameObject> objectPools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
@@ -31,7 +29,7 @@ public class ObjectPooler : MonoBehaviour
             for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab);
-                obj.transform.SetParent(poolParent.transform);
+                obj.transform.SetParent(pool.poolParent.transform);
                 obj.SetActive(false);
                 objectPools.Enqueue(obj);
             }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class StartState : IState
@@ -20,6 +21,8 @@ public class StartState : IState
 
     public void Enter()
     {
+        //Debug.Log("Start");
+
         if (stateCycle.GetComponent<Animator>())
         {
             stateCycle.GetComponent<Animator>().SetBool("isStart", true);

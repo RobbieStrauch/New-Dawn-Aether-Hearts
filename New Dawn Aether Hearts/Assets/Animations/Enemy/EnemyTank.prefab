@@ -223,8 +223,8 @@ GameObject:
   - component: {fileID: 7894502624950259313}
   - component: {fileID: 5902025173751907915}
   - component: {fileID: 8311113790761808047}
-  - component: {fileID: 424215181888241352}
   - component: {fileID: 424215181888241359}
+  - component: {fileID: 1916103615522125424}
   m_Layer: 11
   m_Name: EnemyTank
   m_TagString: BTeam
@@ -306,29 +306,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthImage: {fileID: 3835658584893044573}
---- !u!114 &424215181888241352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946391213120746164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964a5f04e2480d845b59608c412dd3d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player2:
-    serializedVersion: 2
-    m_Bits: 1024
-  timeBetweenAttacks: 0.15
-  projectile: {fileID: 5488129717929618976, guid: fc8596ca924206c48920b3899e5793f1, type: 3}
-  projectilePosition: {fileID: 599559278624029884}
-  forward: 32
-  upward: 1
-  right: 1
-  attackRange: 5
-  attackDamage: 5
 --- !u!114 &424215181888241359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +319,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyUnitType: 3
+--- !u!114 &1916103615522125424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946391213120746164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a831850ab8883fc40817838752f97e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player2:
+    serializedVersion: 2
+    m_Bits: 1024
+  attackDamage: 5
+  bulletAttackTime: 0.15
+  swordAttackTime: 0
+  attackRange: 5
+  alreadyAttacked: 0
+  projectile: {fileID: 5488129717929618976, guid: fc8596ca924206c48920b3899e5793f1, type: 3}
+  projectilePosition: {fileID: 599559278624029884}
+  forward: 32
+  upward: 1
+  right: 1
 --- !u!1 &2937181261911392766
 GameObject:
   m_ObjectHideFlags: 0
