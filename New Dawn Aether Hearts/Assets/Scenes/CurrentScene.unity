@@ -25747,7 +25747,7 @@ MonoBehaviour:
   movespeed: 10
   thickness: 15
   cam: {fileID: 1414814426}
-  freeze: 0
+  freeze: 1
 --- !u!65 &1414814431
 BoxCollider:
   m_ObjectHideFlags: 0

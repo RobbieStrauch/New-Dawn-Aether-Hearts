@@ -111,7 +111,7 @@ public class MoveState : IState
 
         //Debug.Log(Vector3.Distance(stateCycle.transform.position, currentTargetPosition) + "<" + agent.stoppingDistance);
 
-        if (Vector3.Distance(stateCycle.transform.position, currentTargetPosition) < agent.stoppingDistance)
+        if (Vector3.Distance(stateCycle.transform.position, currentTargetPosition) < agent.stoppingDistance + 1)
         {
             agent.SetDestination(stateCycle.transform.position);
             stateCycle.ChangeState(stateCycle.startState);
