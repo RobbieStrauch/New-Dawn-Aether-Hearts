@@ -9,4 +9,9 @@ public class StartGame : MonoBehaviour
     {
         SceneManager.LoadScene("CurrentScene");
     }
+
+    public void tutorial()
+    {
+        SceneManager.LoadScene("TutorialScene");
+    }
 }

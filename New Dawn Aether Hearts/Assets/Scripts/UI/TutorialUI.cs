@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialUI : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class TutorialUI : MonoBehaviour
     public AudioSource audioSource;
     public GameObject button;
     public GameObject del_button;
+    public Text txtbox;
     string msg;
     int temp = 0;
 
@@ -21,6 +23,7 @@ public class TutorialUI : MonoBehaviour
                     msg = "Greetings commander, welcome to the tutorial.";
                     text.text = msg;
                     temp++;
+                    txtbox.text = "Next";
                     break;
             }
 
@@ -85,6 +88,7 @@ public class TutorialUI : MonoBehaviour
                     msg = "The way to win is to either achieve total dominance and capture all the resource points on the map or to have more points controlled by the end of the timer.";
                     text.text = msg;
                     temp++;
+                    txtbox.text = "End";
                     break;
             }
 
@@ -103,6 +107,11 @@ public class TutorialUI : MonoBehaviour
         Destroy(button);
         Destroy(text);
         Destroy(del_button);
+    }
+
+    public void goback()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
     
 }
