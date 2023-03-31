@@ -36880,6 +36880,7 @@ MonoBehaviour:
   isTCPConnected: 0
   isConnecting: 0
   startGame: 0
+  gameOver: 0
   mainCamera: {fileID: 2115971030}
   vision: {fileID: 70758429}
   blueCameraPosition: {fileID: 1339333052}
@@ -37030,6 +37031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd0b7dc432fede14dbb00b7fff7db821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 2115971035}
   ground:
     serializedVersion: 2
     m_Bits: 8192
@@ -37072,14 +37074,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081257423}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca50a3f748d164c4188ce959f6d3756f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolParent: {fileID: 992693937}
   pools:
-  - tag: Flash
+  - poolParent: {fileID: 0}
+    tag: Flash
     prefab: {fileID: 988566486173805015, guid: fdc9d3cd476115b40971cd59321bfc37, type: 3}
     size: 10
 --- !u!114 &2081257435
@@ -37089,7 +37091,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081257423}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc9aab4134cb0f5439cb54a50cbd235a, type: 3}
   m_Name: 
@@ -37101,7 +37103,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081257423}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad1c50f812c1e9f41ab667505478cdef, type: 3}
   m_Name: 
