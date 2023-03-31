@@ -26,6 +26,7 @@ public class ClientManager : MonoBehaviour
     public bool isTCPConnected;
     public bool isConnecting;
     public bool startGame;
+    public bool gameOver;
 
     public GameObject mainCamera;
     public GameObject vision;
@@ -71,6 +72,7 @@ public class ClientManager : MonoBehaviour
         isTCPConnected = false;
         isConnecting = false;
         startGame = false;
+        gameOver = false;
         editorCanvas.enabled = false;
         gameplayCanvas.enabled = false;
         multiplayerCanvas.enabled = true;
@@ -173,7 +175,7 @@ public class ClientManager : MonoBehaviour
                 Array.Copy(buffer, data, receivedCopy);
                 string message = Encoding.ASCII.GetString(data);
 
-                Debug.Log(message);
+                //Debug.Log(message);
 
                 if (client.Connected)
                 {
@@ -183,6 +185,10 @@ public class ClientManager : MonoBehaviour
                         editorCanvas.enabled = true;
                         gameplayCanvas.enabled = true;
                         multiplayerCanvas.enabled = false;
+                    }
+                    if (message.Contains("$<PLAYER1>$DEFEAT") || message.Contains("$<PLAYER2>$DEFEAT"))
+                    {
+                        gameOver = true;
                     }
                     if (message[0] == '[')
                     {

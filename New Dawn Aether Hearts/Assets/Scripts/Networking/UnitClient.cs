@@ -11,20 +11,12 @@ public class UnitClient : MonoBehaviour
 {
     public static UnitClient instance;
 
-    //public GameObject myCube;
-    //public GameObject otherCube;
-
-    //private bool foundCube = false;
-
     public static byte[] buffer = new byte[512];
     public static UdpClient client = new UdpClient();
 
     private static bool receivedData = false;
     private static byte[] bytes = new byte[512];
-
     private static bool UDPConnected = false;
-
-    //private Vector3 lastPosition;
 
     void Awake()
     {
@@ -37,19 +29,17 @@ public class UnitClient : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //foundCube = false;
         buffer = new byte[512];
         client = new UdpClient();
         receivedData = false;
         bytes = new byte[512];
         UDPConnected = false;
-        //lastPosition = new Vector3();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!ClientManager.instance.startGame)
+        if (!UDPConnected)
         {
             try
             {
@@ -59,50 +49,14 @@ public class UnitClient : MonoBehaviour
                 byte[] data = Encoding.ASCII.GetBytes("UDP Client Connected");
                 client.Send(data, data.Length);
                 client.BeginReceive(new AsyncCallback(ReceiveCallback), null);
-                //ClientManager.instance.startGame = true;
             }
             catch (Exception e)
             {
                 Debug.Log(e.ToString());
-                //ClientManager.instance.ipInput = false;
-                //ClientManager.instance.error_Text.enabled = true;
-                //ClientManager.instance.ip = string.Empty;
             }
         }
-        //if (GameObject.Find("Cube1").GetComponent<Cube>() && !foundCube)
-        //{
-        //    myCube = GameObject.Find("Cube1");
-        //    otherCube = GameObject.Find("Cube2");
-        //    lastPosition = myCube.transform.position;
-        //    foundCube = true;
-        //}
-        //if (GameObject.Find("Cube2").GetComponent<Cube>() && !foundCube)
-        //{
-        //    myCube = GameObject.Find("Cube2");
-        //    otherCube = GameObject.Find("Cube1");
-        //    lastPosition = myCube.transform.position;
-        //    foundCube = true;
-        //}
         if (UDPConnected)
         {
-            //float x = myCube.transform.position.x;
-            //float y = myCube.transform.position.y;
-            //float z = myCube.transform.position.z;
-            //buffer = Encoding.ASCII.GetBytes(myCube.name + " " + x.ToString() + " " + y.ToString() + " " + z.ToString());
-
-            //if (myCube.transform.position != lastPosition)
-            //{
-            //    try
-            //    {
-            //        client.Send(buffer, buffer.Length);
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        Debug.Log(e.ToString());
-            //    }
-            //}
-            //lastPosition = myCube.transform.position;
-
             if (receivedData)
             {
                 string receivedString = Encoding.ASCII.GetString(bytes);
@@ -131,11 +85,6 @@ public class UnitClient : MonoBehaviour
                         unit.transform.eulerAngles = new Vector3(float.Parse(data[5]), float.Parse(data[6]), float.Parse(data[7]));
                     }
                 }
-
-                //if (data[0] == otherCube.name)
-                //{
-                //    otherCube.transform.position = new Vector3(float.Parse(data[1]), float.Parse(data[2]), float.Parse(data[3]));
-                //}
 
                 receivedData = false;
             }
