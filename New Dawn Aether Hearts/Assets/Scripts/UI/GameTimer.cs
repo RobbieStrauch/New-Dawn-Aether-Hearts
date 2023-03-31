@@ -91,6 +91,10 @@ public class GameTimer : MonoBehaviour
                 winnerText.text = ClientManager.instance.player2 + " Is Victorious!";
                 ClientManager.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER2$>VICTORY"));
             }
+
+            ClientManager.instance.client.Shutdown(SocketShutdown.Both);
+            ClientManager.instance.client.Close();
+            ClientManager.instance.thread.Abort();
         }
     }
 }

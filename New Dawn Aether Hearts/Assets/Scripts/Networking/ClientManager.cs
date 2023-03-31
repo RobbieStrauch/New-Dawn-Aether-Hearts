@@ -190,9 +190,12 @@ public class ClientManager : MonoBehaviour
                     {
                         gameOver = true;
                     }
-                    if (message[0] == '[')
+                    if (message.Length > 1)
                     {
-                        ChatManager.instance.SendChatMessage(message, Message.MessageType.OtherMessage);
+                        if (message[0] == '[')
+                        {
+                            ChatManager.instance.SendChatMessage(message, Message.MessageType.OtherMessage);
+                        }
                     }
                 }
 

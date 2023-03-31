@@ -96,15 +96,17 @@ public class MainServerProgram
 
                 string data = Encoding.ASCII.GetString(bytes);
 
-                if (receive == 0 || data.Contains("$<PLAYER1$>VICTORY") || data.Contains("$<PLAYER2$>VICTORY"))
+                if (receive == 0 || data.Contains("$<PLAYER1$>VICTORY") || data.Contains("$<PLAYER2$>VICTORY") || data.Contains("$<PLAYER1$>DEFEAT") || data.Contains("$<PLAYER2$>DEFEAT"))
                 {
-                    if (client1.Contains("$<PLAYER1$>"))
+                    if (client1.Contains(socket.RemoteEndPoint.ToString()))
                     {
                         client1 = "";
+                        Console.WriteLine("Removed Client1: " + socket.RemoteEndPoint.ToString() + " | " + data);
                     }
-                    if (client2.Contains("$<PLAYER2$>"))
+                    if (client2.Contains(socket.RemoteEndPoint.ToString()))
                     {
                         client2 = "";
+                        Console.WriteLine("Removed Client2: " + socket.RemoteEndPoint.ToString() + " | " + data);
                     }
                     startGame = false;
                     TCPclients.Remove(socket);
@@ -123,7 +125,7 @@ public class MainServerProgram
                         client2 = socket.RemoteEndPoint.ToString();
                         data += "Approved";
                     }
-                    if ((client1 != string.Empty || client2 != string.Empty) && !startGame)
+                    if ((client1 != string.Empty && client2 != string.Empty) && !startGame)
                     {
                         data += "$<STARTGAME>$";
                         startGame = true;
