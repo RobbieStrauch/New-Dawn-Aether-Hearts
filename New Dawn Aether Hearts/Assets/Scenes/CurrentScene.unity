@@ -37289,7 +37289,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131272754}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc9aab4134cb0f5439cb54a50cbd235a, type: 3}
   m_Name: 
@@ -37364,7 +37364,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131272754}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad1c50f812c1e9f41ab667505478cdef, type: 3}
   m_Name: 
@@ -37381,6 +37381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd0b7dc432fede14dbb00b7fff7db821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1414814428}
   ground:
     serializedVersion: 2
     m_Bits: 8192

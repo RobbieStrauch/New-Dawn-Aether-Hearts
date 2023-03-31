@@ -19,7 +19,6 @@ public class InputController : MonoBehaviour
         InputAction.Disable();
     }
 
-    // Start is called before the first frame update
     void Awake()
     {
         if (controller == null)
@@ -27,9 +26,14 @@ public class InputController : MonoBehaviour
             controller = this;
         }
 
-        InputAction = new PlayerActions();
+        //InputAction = new PlayerActions();
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        InputAction = new PlayerActions();
+    }
 
     // Update is called once per frame
     void Update()

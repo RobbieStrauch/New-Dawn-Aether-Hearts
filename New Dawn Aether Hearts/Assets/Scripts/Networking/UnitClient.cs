@@ -59,7 +59,7 @@ public class UnitClient : MonoBehaviour
                 byte[] data = Encoding.ASCII.GetBytes("UDP Client Connected");
                 client.Send(data, data.Length);
                 client.BeginReceive(new AsyncCallback(ReceiveCallback), null);
-                ClientManager.instance.startGame = true;
+                //ClientManager.instance.startGame = true;
             }
             catch (Exception e)
             {

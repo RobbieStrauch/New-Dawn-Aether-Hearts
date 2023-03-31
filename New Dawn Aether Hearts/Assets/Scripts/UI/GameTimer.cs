@@ -15,7 +15,7 @@ public class GameTimer : MonoBehaviour
     public TMP_Text winnerText;
     public GameObject gameOverPanel;
 
-    private float totalTime = 30f;
+    private float totalTime = 300f;
     private float timer = 0f;
     private float seconds = 0f;
     private float minutes = 0f;
