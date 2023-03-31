@@ -175,10 +175,10 @@ public class ClientManager : MonoBehaviour
                 Array.Copy(buffer, data, receivedCopy);
                 string message = Encoding.ASCII.GetString(data);
 
-                //Debug.Log(message);
-
                 if (client.Connected)
                 {
+                    Debug.Log(message);
+
                     if (message.Contains("$<STARTGAME>$"))
                     {
                         startGame = true;
@@ -186,7 +186,7 @@ public class ClientManager : MonoBehaviour
                         gameplayCanvas.enabled = true;
                         multiplayerCanvas.enabled = false;
                     }
-                    if (message.Contains("$<PLAYER1>$DEFEAT") || message.Contains("$<PLAYER2>$DEFEAT"))
+                    if (message.Contains("$<PLAYER1$>DEFEAT") || message.Contains("$<PLAYER2$>DEFEAT"))
                     {
                         gameOver = true;
                     }

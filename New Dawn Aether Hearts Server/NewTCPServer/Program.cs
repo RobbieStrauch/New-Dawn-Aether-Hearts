@@ -98,20 +98,44 @@ public class MainServerProgram
 
                 if (receive == 0 || data.Contains("$<PLAYER1$>VICTORY") || data.Contains("$<PLAYER2$>VICTORY") || data.Contains("$<PLAYER1$>DEFEAT") || data.Contains("$<PLAYER2$>DEFEAT"))
                 {
-                    if (client1.Contains(socket.RemoteEndPoint.ToString()))
+                    if (data.Contains("$<PLAYER1$>DEFEAT") || data.Contains("$<PLAYER2$>DEFEAT"))
                     {
-                        client1 = "";
-                        Console.WriteLine("Removed Client1: " + socket.RemoteEndPoint.ToString() + " | " + data);
+                        if (client1.Contains(socket.RemoteEndPoint.ToString()))
+                        {
+                            client1 = "";
+                            Console.WriteLine("Removed Client1: " + socket.RemoteEndPoint.ToString() + " | " + data);
+                        }
+                        if (client2.Contains(socket.RemoteEndPoint.ToString()))
+                        {
+                            client2 = "";
+                            Console.WriteLine("Removed Client2: " + socket.RemoteEndPoint.ToString() + " | " + data);
+                        }
+
+                        startGame = false;
+                        TCPclients.Remove(socket);
+                        socket.Shutdown(SocketShutdown.Both);
+                        socket.Close();
+
+                        TCPSendAllData(data);
                     }
-                    if (client2.Contains(socket.RemoteEndPoint.ToString()))
+                    if (data.Contains("$<PLAYER1$>VICTORY") || data.Contains("$<PLAYER2$>VICTORY"))
                     {
-                        client2 = "";
-                        Console.WriteLine("Removed Client2: " + socket.RemoteEndPoint.ToString() + " | " + data);
+                        if (client1.Contains(socket.RemoteEndPoint.ToString()))
+                        {
+                            client1 = "";
+                            Console.WriteLine("Removed Client1: " + socket.RemoteEndPoint.ToString() + " | " + data);
+                        }
+                        if (client2.Contains(socket.RemoteEndPoint.ToString()))
+                        {
+                            client2 = "";
+                            Console.WriteLine("Removed Client2: " + socket.RemoteEndPoint.ToString() + " | " + data);
+                        }
+
+                        startGame = false;
+                        TCPclients.Remove(socket);
+                        socket.Shutdown(SocketShutdown.Both);
+                        socket.Close();
                     }
-                    startGame = false;
-                    TCPclients.Remove(socket);
-                    socket.Shutdown(SocketShutdown.Both);
-                    socket.Close();
                 }
                 else
                 {

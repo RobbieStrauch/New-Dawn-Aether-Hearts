@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -374,7 +374,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2cfbffff
+      m_ExpandedIDs: 2cfbffffaa630000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -508,22 +508,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Networking
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Networking
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Robbie Strauch\Documents\GDW Game\New-Dawn-Aether-Hearts\New
     Dawn Aether Hearts
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 120}
-    m_SelectedIDs: b8720000
-    m_LastClickedID: 29368
+    scrollPos: {x: 0, y: 180}
+    m_SelectedIDs: c0720000
+    m_LastClickedID: 29376
     m_ExpandedIDs: 00000000667200006872000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 12700000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -866,9 +866,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -151.7314, y: -385.43408, z: 539.54944}
+    m_Target: {x: -348.0729, y: -347.66638, z: 553.4532}
     speed: 2
-    m_Value: {x: -151.7314, y: -385.43408, z: 539.54944}
+    m_Value: {x: -348.0729, y: -347.66638, z: 553.4532}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -918,9 +918,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.2640775, y: 0.02081759, z: -0.0057268254, w: -0.9642598}
   m_Size:
-    m_Target: 842.68097
+    m_Target: 835.87585
     speed: 2
-    m_Value: 842.68097
+    m_Value: 835.87585
   m_Ortho:
     m_Target: 0
     speed: 2

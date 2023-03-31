@@ -81,20 +81,22 @@ public class GameTimer : MonoBehaviour
 
         if (ClientManager.instance.gameOver)
         {
+            gameOverPanel.SetActive(true);
+
             if (ClientManager.instance.player1 != "" && ClientManager.instance.client.Connected)
             {
-                winnerText.text = ClientManager.instance.player1 + " Is Victorious!";
+                winnerText.text = "Other Player Has Disconnected\n" + ClientManager.instance.player1 + " Is Victorious!";
                 ClientManager.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER1$>VICTORY"));
             }
             if (ClientManager.instance.player2 != "" && ClientManager.instance.client.Connected)
             {
-                winnerText.text = ClientManager.instance.player2 + " Is Victorious!";
+                winnerText.text = "Other Player Has Disconnected\n" + ClientManager.instance.player2 + " Is Victorious!";
                 ClientManager.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER2$>VICTORY"));
             }
 
-            ClientManager.instance.client.Shutdown(SocketShutdown.Both);
-            ClientManager.instance.client.Close();
-            ClientManager.instance.thread.Abort();
+            //ClientManager.instance.client.Shutdown(SocketShutdown.Both);
+            //ClientManager.instance.client.Close();
+            //ClientManager.instance.thread.Abort();
         }
     }
 }
