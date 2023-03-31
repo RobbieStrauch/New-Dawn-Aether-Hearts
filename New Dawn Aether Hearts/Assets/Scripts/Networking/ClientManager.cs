@@ -45,8 +45,8 @@ public class ClientManager : MonoBehaviour
     public TMP_Text blueTeamText;
     public TMP_Text redTeamText;
 
-    Socket client;
-    Thread thread;
+    public Socket client;
+    public Thread thread;
 
     static byte[] buffer = new byte[512];
     static bool receivedData = false;
@@ -173,6 +173,8 @@ public class ClientManager : MonoBehaviour
                 Array.Copy(buffer, data, receivedCopy);
                 string message = Encoding.ASCII.GetString(data);
 
+                Debug.Log(message);
+
                 if (client.Connected)
                 {
                     if (message.Contains("$<STARTGAME>$"))
@@ -221,6 +223,9 @@ public class ClientManager : MonoBehaviour
 
     public static void ReceiveData(Socket socket)
     {
-        socket.BeginReceive(buffer, 0, buffer.Length, 0, new AsyncCallback(ReceiveCallback), socket);
+        if (socket.Connected)
+        {
+            socket.BeginReceive(buffer, 0, buffer.Length, 0, new AsyncCallback(ReceiveCallback), socket);
+        }
     }
 }

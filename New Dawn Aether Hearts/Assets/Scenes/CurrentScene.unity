@@ -16484,8 +16484,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1822940619}
   circle: {fileID: 367909536}
-  winnerText: {fileID: 0}
-  gameOverPanel: {fileID: 0}
+  winnerText: {fileID: 62772214}
+  gameOverPanel: {fileID: 1834640667}
 --- !u!114 &929448630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32113,7 +32113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1831090760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37537,7 +37537,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131272754}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 113c33e5f4a7f084fb8c01c6ec78485e, type: 3}
   m_Name: 
@@ -37561,7 +37561,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131272754}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ad78e0cc3f7c5c4da4c150f1ca475b3, type: 3}
   m_Name: 

@@ -61,8 +61,9 @@ public class UnitClient : MonoBehaviour
                 client.BeginReceive(new AsyncCallback(ReceiveCallback), null);
                 ClientManager.instance.startGame = true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Debug.Log(e.ToString());
                 //ClientManager.instance.ipInput = false;
                 //ClientManager.instance.error_Text.enabled = true;
                 //ClientManager.instance.ip = string.Empty;
