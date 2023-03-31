@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialUI : MonoBehaviour
 {
@@ -103,6 +104,11 @@ public class TutorialUI : MonoBehaviour
         Destroy(button);
         Destroy(text);
         Destroy(del_button);
+    }
+
+    public void goback()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
     
 }
