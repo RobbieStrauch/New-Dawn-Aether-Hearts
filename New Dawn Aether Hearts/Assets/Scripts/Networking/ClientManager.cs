@@ -177,7 +177,7 @@ public class ClientManager : MonoBehaviour
 
                 if (client.Connected)
                 {
-                    Debug.Log(message);
+                    //Debug.Log(message);
 
                     if (message.Contains("$<STARTGAME>$"))
                     {

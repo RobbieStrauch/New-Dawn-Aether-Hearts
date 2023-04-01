@@ -149,7 +149,7 @@ public class MainServerProgram
                         client2 = socket.RemoteEndPoint.ToString();
                         data += "Approved";
                     }
-                    if ((client1 != string.Empty && client2 != string.Empty) && !startGame)
+                    if ((client1 != string.Empty || client2 != string.Empty) && !startGame)
                     {
                         data += "$<STARTGAME>$";
                         startGame = true;
