@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +8,41 @@ using System.Threading;
 using System.Net.Sockets;
 using System.Net;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+
+public class Highscore
+{
+    public string name;
+    public int score;
+}
 
 public class MainServerProgram
 {
+    // DLL Imports
+    [DllImport("HighscorePlugin")]
+    public static extern void SetHighscore(string name, int score);
+
+    [DllImport("HighscorePlugin")]
+    public static extern Highscore GetHighscore();
+
+    [DllImport("HighscorePlugin")]
+    public static extern void SaveToFile(string name, int score);
+
+    [DllImport("HighscorePlugin")]
+    public static extern void StartWriting(string fileName);
+
+    [DllImport("HighscorePlugin")]
+    public static extern void EndWriting();
+
+    // DLL Stuff
+    public static List<Highscore> highscores = new List<Highscore>();
+    public static List<string> readLines = new List<string>();
+    private static byte[] DLLbuffer = new byte[512];
+    private static Socket DLLserver = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+    private static List<Socket> DLLclients = new List<Socket>();
+
     // TCP Stuff
-    private static byte[] buffer = new byte[512];
+    private static byte[] TCPbuffer = new byte[512];
     private static Socket TCPserver = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
     private static List<Socket> TCPclients = new List<Socket>();
     private static bool startGame = false;
@@ -19,12 +50,40 @@ public class MainServerProgram
     static string client2 = "";
 
     // UDP Stuff
-    private static byte[] receiveBuffer = new byte[512];
+    private static byte[] UDPbuffer = new byte[512];
     static List<EndPoint> UDPclients = new List<EndPoint>();
     static Socket UDPserver = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 
     public static void Main(string[] args)
     {
+        string path = Path.GetFullPath(Path.GetFileName("ClientHighscores.txt"));
+        Read(path);
+
+        highscores.Capacity = readLines.Count;
+        for (int i = 0; i < readLines.Count; i++)
+        {
+            string[] temp_string = readLines[i].Split('|');
+            Highscore temp_highscore = new Highscore();
+            temp_highscore.name = temp_string[0];
+            temp_highscore.score = int.Parse(temp_string[1]);
+            highscores.Add(temp_highscore);
+        }
+
+        try
+        {
+            // DLL Stuff
+            DLLserver.Bind(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8887));
+            DLLserver.Listen(10);
+            Console.WriteLine("Starting Highscore Server...");
+            Thread highscoreThread = new Thread(new ThreadStart(DLLAcceptClient));
+            highscoreThread.Name = "Highscore Thread";
+            highscoreThread.Start();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.ToString());
+        }
+
         IPHostEntry hostInfo = Dns.GetHostEntry(Dns.GetHostName());
         IPAddress ip = hostInfo.AddressList[hostInfo.AddressList.Length - 1];
         IPEndPoint localEP = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8889);
@@ -34,16 +93,16 @@ public class MainServerProgram
             // TCP Stuff
             TCPserver.Bind(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8888));
             TCPserver.Listen(2);
-            Console.WriteLine("Starting Server...");
+            Console.WriteLine("Starting Chat Server...");
             Thread sendThread = new Thread(new ThreadStart(TCPAcceptClient));
             sendThread.Name = "Send Thread";
             sendThread.Start();
 
-
+            // UDP Stuff
             UDPserver.Bind(localEP);
             Console.WriteLine("Waiting For Data...");
             EndPoint remoteEP = new IPEndPoint(IPAddress.Any, 0);
-            UDPserver.BeginReceiveFrom(receiveBuffer, 0, receiveBuffer.Length, 0, ref remoteEP, new AsyncCallback(UDPReceiveCallback), remoteEP);
+            UDPserver.BeginReceiveFrom(UDPbuffer, 0, UDPbuffer.Length, 0, ref remoteEP, new AsyncCallback(UDPReceiveCallback), remoteEP);
         }
         catch (Exception e)
         {
@@ -51,6 +110,105 @@ public class MainServerProgram
         }
 
         Console.ReadKey();
+    }
+
+    private static void DLLAcceptClient()
+    {
+        try
+        {
+            DLLserver.BeginAccept(new AsyncCallback(DLLAcceptCallback), null);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Exception: " + e.ToString());
+        }
+    }
+
+    private static void DLLAcceptCallback(IAsyncResult result)
+    {
+        try
+        {
+            Socket socket = DLLserver.EndAccept(result);
+            Console.WriteLine("Highscore Client Connected...");
+            DLLclients.Add(socket);
+
+            socket.BeginReceive(DLLbuffer, 0, DLLbuffer.Length, 0, new AsyncCallback(DLLReceiveCallback), socket);
+
+            DLLserver.BeginAccept(new AsyncCallback(DLLAcceptCallback), null);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Exception: " + e.ToString());
+        }
+    }
+
+    private static void DLLReceiveCallback(IAsyncResult result)
+    {
+        if (DLLclients.Count > 0)
+        {
+            try
+            {
+                Socket socket = (Socket)result.AsyncState;
+                int receive = socket.EndReceive(result);
+                byte[] bytes = new byte[receive];
+                Array.Copy(DLLbuffer, bytes, receive);
+
+                string data = Encoding.ASCII.GetString(bytes);
+
+                if (receive == 0)
+                {
+                    DLLclients.Remove(socket);
+                    socket.Shutdown(SocketShutdown.Both);
+                    socket.Close();
+                }
+                else
+                {
+                    DLLSendAllData(data);
+                    Console.WriteLine(socket.RemoteEndPoint.ToString() + ": " + data);
+
+                    socket.BeginReceive(DLLbuffer, 0, DLLbuffer.Length, 0, new AsyncCallback(DLLReceiveCallback), socket);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.ToString());
+            }
+        }
+    }
+
+    private static void DLLSendCallback(IAsyncResult result)
+    {
+        Socket socket = (Socket)result.AsyncState;
+        socket.EndSend(result);
+    }
+
+    public static void DLLSendData(Socket socket, string data)
+    {
+        try
+        {
+            byte[] buffer = Encoding.ASCII.GetBytes(data);
+            socket.BeginSend(buffer, 0, buffer.Length, 0, new AsyncCallback(DLLSendCallback), socket);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("EXCEPTION: " + e.ToString());
+        }
+    }
+
+    public static void DLLSendAllData(string data)
+    {
+        try
+        {
+            byte[] buffer = Encoding.ASCII.GetBytes(data);
+            foreach (Socket client in DLLclients)
+            {
+                client.BeginSend(buffer, 0, buffer.Length, 0, new AsyncCallback(DLLSendCallback), client);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("EXCEPTION: " + e.ToString());
+        }
     }
 
     private static void TCPAcceptClient()
@@ -70,10 +228,10 @@ public class MainServerProgram
         try
         {
             Socket socket = TCPserver.EndAccept(result);
-            Console.WriteLine("Client Connected...");
+            Console.WriteLine("Chat Client Connected...");
             TCPclients.Add(socket);
 
-            socket.BeginReceive(buffer, 0, buffer.Length, 0, new AsyncCallback(TCPReceiveCallback), socket);
+            socket.BeginReceive(TCPbuffer, 0, TCPbuffer.Length, 0, new AsyncCallback(TCPReceiveCallback), socket);
 
             TCPserver.BeginAccept(new AsyncCallback(TCPAcceptCallback), null);
         }
@@ -92,7 +250,7 @@ public class MainServerProgram
                 Socket socket = (Socket)result.AsyncState;
                 int receive = socket.EndReceive(result);
                 byte[] bytes = new byte[receive];
-                Array.Copy(buffer, bytes, receive);
+                Array.Copy(TCPbuffer, bytes, receive);
 
                 string data = Encoding.ASCII.GetString(bytes);
 
@@ -158,7 +316,7 @@ public class MainServerProgram
                     TCPSendAllData(data);
                     Console.WriteLine(socket.RemoteEndPoint.ToString() + ": " + data);
 
-                    socket.BeginReceive(buffer, 0, buffer.Length, 0, new AsyncCallback(TCPReceiveCallback), socket);
+                    socket.BeginReceive(TCPbuffer, 0, TCPbuffer.Length, 0, new AsyncCallback(TCPReceiveCallback), socket);
                 }
             }
             catch (Exception e)
@@ -211,7 +369,7 @@ public class MainServerProgram
         {
             int receive = UDPserver.EndReceiveFrom(result, ref remoteEP);
             byte[] data = new byte[receive];
-            Array.Copy(receiveBuffer, data, receive);
+            Array.Copy(UDPbuffer, data, receive);
             string message = Encoding.ASCII.GetString(data);
 
             if (!UDPclients.Contains(remoteEP))
@@ -226,7 +384,7 @@ public class MainServerProgram
 
             EndPoint newClientEP = new IPEndPoint(IPAddress.Any, 0);
 
-            UDPserver.BeginReceiveFrom(receiveBuffer, 0, receiveBuffer.Length, 0, ref newClientEP, new AsyncCallback(UDPReceiveCallback), newClientEP);
+            UDPserver.BeginReceiveFrom(UDPbuffer, 0, UDPbuffer.Length, 0, ref newClientEP, new AsyncCallback(UDPReceiveCallback), newClientEP);
         }
         catch (Exception e)
         {
@@ -260,5 +418,18 @@ public class MainServerProgram
         {
             UDPSendTo(buffer, client);
         }
+    }
+
+    public static void Read(string path)
+    {
+        StreamReader streamReader = new StreamReader(path);
+
+        while (!streamReader.EndOfStream)
+        {
+            string line = streamReader.ReadLine();
+            readLines.Add(line);
+        }
+
+        streamReader.Close();
     }
 }
