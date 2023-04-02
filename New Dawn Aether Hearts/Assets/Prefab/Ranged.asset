@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Ranged
   _cost: 20
-  _prefab: {fileID: 5978520132402425928, guid: c3d1c2fb52da67942aaa15f085434390, type: 3}
+  _prefab: {fileID: 3376928344371864893, guid: e596a918f9b1b284aa49901f10fba50c, type: 3}
