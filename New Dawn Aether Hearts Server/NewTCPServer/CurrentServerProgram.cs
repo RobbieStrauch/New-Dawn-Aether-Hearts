@@ -9,6 +9,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Xml.Linq;
 
 public class Highscore
 {
@@ -18,28 +19,13 @@ public class Highscore
 
 public class MainServerProgram
 {
-    // DLL Imports
-    [DllImport("HighscorePlugin")]
-    public static extern void SetHighscore(string name, int score);
-
-    [DllImport("HighscorePlugin")]
-    public static extern Highscore GetHighscore();
-
-    [DllImport("HighscorePlugin")]
-    public static extern void SaveToFile(string name, int score);
-
-    [DllImport("HighscorePlugin")]
-    public static extern void StartWriting(string fileName);
-
-    [DllImport("HighscorePlugin")]
-    public static extern void EndWriting();
-
     // DLL Stuff
     public static List<Highscore> highscores = new List<Highscore>();
     public static List<string> readLines = new List<string>();
     private static byte[] DLLbuffer = new byte[512];
     private static Socket DLLserver = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
     private static List<Socket> DLLclients = new List<Socket>();
+    static string path = Path.GetFullPath(Path.GetFileName("ClientHighscores.txt"));
 
     // TCP Stuff
     private static byte[] TCPbuffer = new byte[512];
@@ -56,10 +42,9 @@ public class MainServerProgram
 
     public static void Main(string[] args)
     {
-        string path = Path.GetFullPath(Path.GetFileName("ClientHighscores.txt"));
+        //Write(path, "Temporary", 77);
         Read(path);
 
-        highscores.Capacity = readLines.Count;
         for (int i = 0; i < readLines.Count; i++)
         {
             string[] temp_string = readLines[i].Split('|');
@@ -157,13 +142,53 @@ public class MainServerProgram
 
                 if (receive == 0)
                 {
+                    Console.WriteLine("Disconnect");
+                    string temp = "";
+                    for (int i = 0; i < highscores.Count; i++)
+                    {
+                        temp += highscores[i].name + "|" + highscores[i].score + "\n";
+                    }
+
+                    Write(path, temp);
+
                     DLLclients.Remove(socket);
                     socket.Shutdown(SocketShutdown.Both);
                     socket.Close();
                 }
                 else
                 {
-                    DLLSendAllData(data);
+                    if (data.Contains("{<HIGHSCORE>}"))
+                    {
+                        bool check = false;
+                        string[] temp_string = data.Split('|');
+                        Highscore temp_highscore = new Highscore();
+                        temp_highscore.name = temp_string[1];
+                        temp_highscore.score = int.Parse(temp_string[2]);
+
+                        foreach (var item in highscores)
+                        {
+                            if (item.name == temp_highscore.name)
+                            {
+                                item.score = temp_highscore.score;
+                                check = true;
+                                break;
+                            }
+                            //Console.WriteLine(item.name + ": " + item.score);
+                        }
+                        if (!check)
+                        {
+                            highscores.Add(temp_highscore);
+                        }
+                    }
+
+                    string temp = "";
+                    foreach (var item in highscores)
+                    {
+                        temp += "|" + item.name + "|" + item.score;
+                        //Console.WriteLine(item.name + ": " + item.score);
+                    }
+
+                    DLLSendAllData("{<NEWHIGHSCORE>}|" + highscores.Count + temp);
                     Console.WriteLine(socket.RemoteEndPoint.ToString() + ": " + data);
 
                     socket.BeginReceive(DLLbuffer, 0, DLLbuffer.Length, 0, new AsyncCallback(DLLReceiveCallback), socket);
@@ -427,9 +452,19 @@ public class MainServerProgram
         while (!streamReader.EndOfStream)
         {
             string line = streamReader.ReadLine();
-            readLines.Add(line);
+            if (line.Length > 1)
+            {
+                readLines.Add(line);
+            }
         }
 
         streamReader.Close();
+    }
+
+    public static void Write(string path, string data) 
+    {
+        StreamWriter streamWriter = new StreamWriter(path);
+        streamWriter.Write(data);
+        streamWriter.Close();
     }
 }

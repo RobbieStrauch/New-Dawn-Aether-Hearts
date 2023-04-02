@@ -6,6 +6,8 @@ using System;
 using UnityEngine;
 using System.Net;
 using System.Text;
+using System.IO;
+using UnityEngine.SceneManagement;
 
 public class HighscoreClient : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class HighscoreClient : MonoBehaviour
     public int port = 8887;
     public bool menuOpen = true;
     public bool connected = false;
+    public static List<string> readLines = new List<string>();
 
     public Socket client;
     public Thread thread;
@@ -21,6 +24,11 @@ public class HighscoreClient : MonoBehaviour
     static byte[] buffer = new byte[512];
     static bool receivedData = false;
     static int receivedCopy;
+
+    public static string currentLine;
+
+    static string path;
+    static string fn;
 
     void Awake()
     {
@@ -35,6 +43,16 @@ public class HighscoreClient : MonoBehaviour
     {
         menuOpen = true;
         connected = false;
+
+        path = Application.dataPath;
+        fn = path + "/PlayerHighscore.txt";
+
+        //for (int i = 0; i < readLines.Count; i++)
+        //{
+        //    string[] temp_string = readLines[i].Split('|');
+        //    Highscore temp_highscore = new Highscore(temp_string[0], int.Parse(temp_string[1]));
+        //    Leaderboard.instance.AddNewScore(temp_highscore.name, temp_highscore.score);
+        //}
     }
 
     // Update is called once per frame
@@ -62,7 +80,8 @@ public class HighscoreClient : MonoBehaviour
 
             if (menuOpen)
             {
-                byte[] sent = Encoding.ASCII.GetBytes("{<HIGHSCORE>}");
+                Read(fn);
+                byte[] sent = Encoding.ASCII.GetBytes("{<HIGHSCORE>}|" + currentLine);
                 client.Send(sent);
                 menuOpen = false;
             }
@@ -76,7 +95,16 @@ public class HighscoreClient : MonoBehaviour
 
             if (client.Connected)
             {
-
+                if (message.Contains("{<NEWHIGHSCORE>}"))
+                {
+                    string[] temp_string = message.Split('|');
+                    for (int i = 0; i < int.Parse(temp_string[1]); i++)
+                    {
+                        //Debug.Log(temp_string[2 + (i * 2)] + ": " + temp_string[3 + (i * 2)]);
+                        Highscore temp_highscore = new Highscore(temp_string[2 + (i * 2)], int.Parse(temp_string[3 + (i * 2)]));
+                        Leaderboard.instance.AddNewScore(temp_highscore.name, temp_highscore.score);
+                    }
+                }
             }
 
             receivedCopy = 0;
@@ -99,5 +127,20 @@ public class HighscoreClient : MonoBehaviour
         {
             socket.BeginReceive(buffer, 0, buffer.Length, 0, new AsyncCallback(ReceiveCallback), socket);
         }
+    }
+
+    public static void Read(string path)
+    {
+        StreamReader streamReader = new StreamReader(path);
+
+        while (!streamReader.EndOfStream)
+        {
+            string line = streamReader.ReadLine();
+            currentLine = line;
+            //Debug.Log(line);
+            //readLines.Add(line);
+        }
+
+        streamReader.Close();
     }
 }

@@ -5,22 +5,23 @@ using TMPro;
 
 public class Leaderboard : MonoBehaviour
 {
+    public static Leaderboard instance;
+
     public List<TMP_Text> leaderboard;
     List<Highscore> highscores = new List<Highscore>();
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        AddNewScore("John", 4500);
-        AddNewScore("Max", 5520);
-        AddNewScore("Dave", 380);
-        AddNewScore("Steve", 6654);
-        AddNewScore("Mike", 11021);
-        AddNewScore("Kaelum", 3535);
-        AddNewScore("William", 2222);
-        AddNewScore("Josh", 5624);
-        AddNewScore("Robbie", 50000);
-        AddNewScore("Evrett", 6969);
+
     }
 
     // Update is called once per frame
@@ -36,17 +37,17 @@ public class Leaderboard : MonoBehaviour
             }
             else
             {
-                leaderboard[i].text = "";
+                leaderboard[i].text = (i + 1).ToString() + ") ";
             }
         }
     }
 
-    void AddNewScore(string name, int score)
+    public void AddNewScore(string name, int score)
     {
         highscores.Add(new Highscore(name, score));
     }
 
-    int SortByScore(Highscore s1, Highscore s2)
+    public int SortByScore(Highscore s1, Highscore s2)
     {
         return s2.score.CompareTo(s1.score);
     }

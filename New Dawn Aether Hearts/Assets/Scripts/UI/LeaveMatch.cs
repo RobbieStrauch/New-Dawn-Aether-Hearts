@@ -9,6 +9,11 @@ public class LeaveMatch : MonoBehaviour
 {
     public void Press()
     {
+        if (!GameTimer.instance.victory)
+        {
+            GameTimer.instance.EndgameScore(-100);
+        }
+
         if (ClientManager.instance.client.Connected)
         {
             if (ClientManager.instance.player1 != "")
