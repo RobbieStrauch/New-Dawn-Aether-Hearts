@@ -1,29 +1,12 @@
 fileFormatVersion: 2
-guid: 58a2dda2dc964264e8140635caecb621
+guid: 184b9deca6d5181408b7c37a685bd65b
 ModelImporter:
   serializedVersion: 22103
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dark Metal
-    second: {fileID: 2100000, guid: 3489f3a7a35248948945a771461d25c9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dented Metal
-    second: {fileID: 2100000, guid: 06fe6b8bdd02c284787d4976626e35d1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: 16acc76750546a4478b9735778810801, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mech Wire
-    second: {fileID: 2100000, guid: cd484010dca933a4eaf017eb7d351f34, type: 2}
+      74: 7392723860079324640
+    second: Body|Body|Body|BodyAction.001
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -55,15 +38,15 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -109,7 +92,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.3
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
