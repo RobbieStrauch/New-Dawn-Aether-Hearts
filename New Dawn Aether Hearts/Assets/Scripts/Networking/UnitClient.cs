@@ -61,7 +61,7 @@ public class UnitClient : MonoBehaviour
             {
                 string receivedString = Encoding.ASCII.GetString(bytes);
 
-                //Debug.Log(receivedString);
+                Debug.Log(receivedString);
 
                 string[] data = receivedString.Split('|');
 

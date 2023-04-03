@@ -36,9 +36,7 @@ public class MainServerProgram
     static string client2 = "";
 
     // UDP Stuff
-    private static byte[] UDPbuffer = new byte[512];
-    static List<EndPoint> UDPclients = new List<EndPoint>();
-    static Socket UDPserver = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+    static List<IPEndPoint> UDPclients = new List<IPEndPoint>();
 
     public static void Main(string[] args)
     {
@@ -84,10 +82,8 @@ public class MainServerProgram
             sendThread.Start();
 
             // UDP Stuff
-            UDPserver.Bind(localEP);
-            Console.WriteLine("Waiting For Data...");
-            EndPoint remoteEP = new IPEndPoint(IPAddress.Any, 0);
-            UDPserver.BeginReceiveFrom(UDPbuffer, 0, UDPbuffer.Length, 0, ref remoteEP, new AsyncCallback(UDPReceiveCallback), remoteEP);
+            UdpClient udpSocket = new UdpClient(8889);
+            udpSocket.BeginReceive(new AsyncCallback(UDPReceiveCallback), udpSocket);
         }
         catch (Exception e)
         {
@@ -388,28 +384,24 @@ public class MainServerProgram
 
     public static void UDPReceiveCallback(IAsyncResult result)
     {
-        EndPoint remoteEP = new IPEndPoint(IPAddress.Any, 0);
-
         try
         {
-            int receive = UDPserver.EndReceiveFrom(result, ref remoteEP);
-            byte[] data = new byte[receive];
-            Array.Copy(UDPbuffer, data, receive);
+            UdpClient socket = result.AsyncState as UdpClient;
+            IPEndPoint source = new IPEndPoint(0, 0);
+            byte[] data = socket.EndReceive(result, ref source);
             string message = Encoding.ASCII.GetString(data);
 
-            if (!UDPclients.Contains(remoteEP))
+            if (!UDPclients.Contains(source))
             {
-                Console.WriteLine("Added Client: " + remoteEP.ToString());
-                UDPclients.Add(remoteEP);
+                Console.WriteLine("Added Client: " + source.ToString());
+                UDPclients.Add(source);
             }
 
-            Console.WriteLine("Receive From: " + remoteEP.ToString() + " | Data: " + message);
+            Console.WriteLine("Receive From: " + source.ToString() + " | Data: " + message);
 
-            UDPSendToAll(message);
+            UDPSendToAll(socket, message);
 
-            EndPoint newClientEP = new IPEndPoint(IPAddress.Any, 0);
-
-            UDPserver.BeginReceiveFrom(UDPbuffer, 0, UDPbuffer.Length, 0, ref newClientEP, new AsyncCallback(UDPReceiveCallback), newClientEP);
+            socket.BeginReceive(new AsyncCallback(UDPReceiveCallback), socket);
         }
         catch (Exception e)
         {
@@ -417,17 +409,11 @@ public class MainServerProgram
         }
     }
 
-    public static void UDPSendCallback(IAsyncResult result)
-    {
-        UDPserver.EndSendTo(result);
-    }
-
-    public static void UDPSendTo(byte[] data, EndPoint clientEP)
+    public static void UDPSendTo(UdpClient client, byte[] data, IPEndPoint clientEP)
     {
         try
         {
-            //server.SendTo(data, clientEP);
-            UDPserver.BeginSendTo(data, 0, data.Length, 0, clientEP, new AsyncCallback(UDPSendCallback), clientEP);
+            client.Send(data, data.Length, clientEP);
         }
         catch (Exception)
         {
@@ -435,13 +421,13 @@ public class MainServerProgram
         }
     }
 
-    public static void UDPSendToAll(string data)
+    public static void UDPSendToAll(UdpClient client, string data)
     {
         byte[] buffer = Encoding.ASCII.GetBytes(data);
 
-        foreach (var client in UDPclients)
+        foreach (var item in UDPclients)
         {
-            UDPSendTo(buffer, client);
+            UDPSendTo(client, buffer, item);
         }
     }
 
