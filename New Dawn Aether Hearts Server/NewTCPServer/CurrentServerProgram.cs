@@ -83,6 +83,10 @@ public class MainServerProgram
 
             // UDP Stuff
             UdpClient udpSocket = new UdpClient(8889);
+            const int SIO_UDP_CONNRESET = -1744830452;
+            //var client = new UdpClient(endpoint);
+            udpSocket.Client.IOControl((IOControlCode) SIO_UDP_CONNRESET, new byte[] { 0, 0, 0, 0 }, null);
+            //client.Client.IOControl((IOControlCode) SIO_UDP_CONNRESET, new byte[] { 0, 0, 0, 0 }, null);
             udpSocket.BeginReceive(new AsyncCallback(UDPReceiveCallback), udpSocket);
         }
         catch (Exception e)
