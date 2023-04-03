@@ -17481,6 +17481,7 @@ MonoBehaviour:
   circle: {fileID: 367909536}
   winnerText: {fileID: 62772214}
   gameOverPanel: {fileID: 1834640667}
+  victory: 0
 --- !u!114 &929448630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39689,7 +39690,7 @@ MonoBehaviour:
     size: 10
   - poolParent: {fileID: 453295053}
     tag: TeamA Tank Units
-    prefab: {fileID: 2225311527056329848, guid: 313b0712a45f5ef4a814b1357ba4881f, type: 3}
+    prefab: {fileID: 115266344384190122, guid: 45786a9ebbaff124ca5dc1f858c0812a, type: 3}
     size: 2
   - poolParent: {fileID: 963905560}
     tag: TeamB Melee Units

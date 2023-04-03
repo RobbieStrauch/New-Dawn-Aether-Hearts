@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Tank
   _cost: 40
-  _prefab: {fileID: 2225311527056329848, guid: 313b0712a45f5ef4a814b1357ba4881f, type: 3}
+  _prefab: {fileID: 115266344384190122, guid: 45786a9ebbaff124ca5dc1f858c0812a, type: 3}
