@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 112
+  controlID: 57
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -401,9 +401,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d2770000
+      m_SelectedIDs: fa780000
       m_LastClickedID: 0
-      m_ExpandedIDs: f6faffff
+      m_ExpandedIDs: 06fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -537,22 +537,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations/Tank/Textured Ver
+    - Assets/Animations/Ranged
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Animations/Tank/Textured Ver
+  - Assets/Animations/Ranged
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\NDAH Repo\New-Dawn-Aether-Hearts\New Dawn Aether Hearts
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 57.400024}
-    m_SelectedIDs: d2770000
-    m_LastClickedID: 30674
-    m_ExpandedIDs: 00000000087700000a7700000c7700000e770000107700001277000014770000747700007877000000ca9a3b
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 62770000
+    m_LastClickedID: 30562
+    m_ExpandedIDs: 00000000f6760000f8760000fa760000fc760000fe76000000770000027700006277000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -580,7 +580,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000087700000a7700000c7700000e770000107700001277000014770000
+    m_ExpandedIDs: 00000000f6760000f8760000fa760000fc760000fe7600000077000002770000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -611,18 +611,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 12700000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Textured Ver
-      m_OriginalName: Textured Ver
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 30674
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 6}
     m_CreateAssetUtility:
@@ -894,9 +894,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -398.36685, y: -24.944344, z: -393.98233}
+    m_Target: {x: -412.49356, y: 5.646141, z: -390.59457}
     speed: 2
-    m_Value: {x: -398.36685, y: -24.944344, z: -393.98233}
+    m_Value: {x: -412.49356, y: 5.646141, z: -390.59457}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -942,13 +942,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.70599496, y: 0.009564766, z: -0.009529333, w: 0.70811427}
+    m_Target: {x: 0.6777613, y: -0.015434973, z: 0.014235918, w: 0.73500913}
     speed: 2
-    m_Value: {x: -0.012914391, y: -0.0066144047, z: -0.000051702154, w: -0.99998254}
+    m_Value: {x: 0.67772573, y: -0.01653714, z: 0.015252241, w: 0.73497057}
   m_Size:
-    m_Target: 57.02596
+    m_Target: 42.10507
     speed: 2
-    m_Value: 54.570297
+    m_Value: 40.29193
   m_Ortho:
     m_Target: 0
     speed: 2
