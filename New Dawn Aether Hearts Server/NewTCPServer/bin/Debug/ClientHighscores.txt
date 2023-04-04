@@ -1,2 +1,3 @@
 Temporary|1000
-CHUBBERS|600
+CHUBBERS|800
+VoidAngel|400

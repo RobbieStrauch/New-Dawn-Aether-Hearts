@@ -61,7 +61,7 @@ public class UnitClient : MonoBehaviour
             {
                 string receivedString = Encoding.ASCII.GetString(bytes);
 
-                Debug.Log(receivedString);
+                //Debug.Log(receivedString);
 
                 string[] data = receivedString.Split('|');
 
@@ -95,14 +95,17 @@ public class UnitClient : MonoBehaviour
     {
         try
         {
-            IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
+            if (client.Client.Connected)
+            {
+                IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
 
-            byte[] receive = client.EndReceive(result, ref remoteEndPoint);
-            bytes = receive;
+                byte[] receive = client.EndReceive(result, ref remoteEndPoint);
+                bytes = receive;
 
-            receivedData = true;
+                receivedData = true;
 
-            client.BeginReceive(new AsyncCallback(ReceiveCallback), null);
+                client.BeginReceive(new AsyncCallback(ReceiveCallback), null);
+            }
         }
         catch (Exception e)
         {

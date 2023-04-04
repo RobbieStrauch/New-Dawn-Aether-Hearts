@@ -39313,6 +39313,7 @@ GameObject:
   - component: {fileID: 2131272776}
   - component: {fileID: 2131272775}
   - component: {fileID: 2131272774}
+  - component: {fileID: 2131272779}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -39709,6 +39710,18 @@ MonoBehaviour:
     prefab: {fileID: 1946391213120746164, guid: 13c7c8622140b564dafe5eebc195557f, type: 3}
     size: 2
   objectPools: []
+--- !u!114 &2131272779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131272754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeaac1eadd17e24fb0bc98dcb6882d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2133152105
 PrefabInstance:
   m_ObjectHideFlags: 0
