@@ -43,7 +43,7 @@ public class UnitClient : MonoBehaviour
         {
             try
             {
-                client.Connect(IPAddress.Parse("127.0.0.1"), 8889);
+                client.Connect(IPAddress.Parse("44.213.239.62"), 8889);
                 UDPConnected = true;
                 byte[] data = Encoding.ASCII.GetBytes("UDP Client Connected");
                 client.Send(data, data.Length);

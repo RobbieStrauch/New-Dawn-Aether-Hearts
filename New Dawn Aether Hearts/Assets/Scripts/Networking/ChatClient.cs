@@ -132,7 +132,7 @@ public class ChatClient : MonoBehaviour
         {
             try
             {
-                IPAddress ip = IPAddress.Parse("127.0.0.1");
+                IPAddress ip = IPAddress.Parse("44.213.239.62");
                 client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 client.Connect(ip, port);
                 isTCPConnected = true;
