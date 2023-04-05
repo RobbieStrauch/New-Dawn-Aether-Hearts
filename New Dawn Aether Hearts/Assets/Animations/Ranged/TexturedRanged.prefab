@@ -1651,9 +1651,9 @@ GameObject:
   - component: {fileID: -836621828674749885}
   - component: {fileID: -4451326118143005949}
   - component: {fileID: 3614656384491390446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TexturedRanged
-  m_TagString: Untagged
+  m_TagString: ATeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

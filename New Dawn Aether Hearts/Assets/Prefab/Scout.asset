@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Scout
   _cost: 10
-  _prefab: {fileID: 6056001283119818107, guid: 441d08b4d9bc01a48ab9b6298bffb984, type: 3}
+  _prefab: {fileID: 7996562819439810008, guid: bc4fea1aefb23f243b9d414883235b2c, type: 3}

@@ -39679,7 +39679,7 @@ MonoBehaviour:
   pools:
   - poolParent: {fileID: 28904726}
     tag: TeamA Melee Units
-    prefab: {fileID: 3651189670734580630, guid: 6e01d532c30825d4f857ed1ebfa49760, type: 3}
+    prefab: {fileID: 7921562870068425932, guid: 53acb2dceec572f41aacc266f5322848, type: 3}
     size: 4
   - poolParent: {fileID: 404026052}
     tag: TeamA Ranged Units
@@ -39687,7 +39687,7 @@ MonoBehaviour:
     size: 6
   - poolParent: {fileID: 158518352}
     tag: TeamA Scout Units
-    prefab: {fileID: 6056001283119818107, guid: 441d08b4d9bc01a48ab9b6298bffb984, type: 3}
+    prefab: {fileID: 7996562819439810008, guid: bc4fea1aefb23f243b9d414883235b2c, type: 3}
     size: 10
   - poolParent: {fileID: 453295053}
     tag: TeamA Tank Units

@@ -18,9 +18,9 @@ GameObject:
   - component: {fileID: -5361391617762564225}
   - component: {fileID: 8689335787598772382}
   - component: {fileID: 2695904266176769555}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TankTextured
-  m_TagString: Untagged
+  m_TagString: ATeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

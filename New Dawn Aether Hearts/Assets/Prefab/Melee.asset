@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Melee
   _cost: 25
-  _prefab: {fileID: 3651189670734580630, guid: 6e01d532c30825d4f857ed1ebfa49760, type: 3}
+  _prefab: {fileID: 7921562870068425932, guid: 53acb2dceec572f41aacc266f5322848, type: 3}
