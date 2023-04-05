@@ -19,6 +19,6 @@ public class StartGame : MonoBehaviour
         HighscoreClient.instance.client.Shutdown(SocketShutdown.Both);
         HighscoreClient.instance.client.Close();
         HighscoreClient.instance.thread.Abort();
-        SceneManager.LoadScene("TutorialScene");
+        SceneManager.LoadScene("Cinema Test");
     }
 }
