@@ -8,21 +8,14 @@ public class StartState : IState
     StateCycle stateCycle;
     UnitClick unitClick;
 
-    ClickPath clickPath;
-    Subject subject;
-
-    public StartState(StateCycle stateCycle, Subject subject, ClickPath clickPath, UnitClick unitClick)
+    public StartState(StateCycle stateCycle, UnitClick unitClick)
     {
         this.stateCycle = stateCycle;
-        this.subject = subject;
-        this.clickPath = clickPath;
         this.unitClick = unitClick;
     }
 
     public void Enter()
     {
-        //Debug.Log("Start");
-
         if (stateCycle.GetComponent<Animator>())
         {
             stateCycle.GetComponent<Animator>().SetBool("isStart", true);

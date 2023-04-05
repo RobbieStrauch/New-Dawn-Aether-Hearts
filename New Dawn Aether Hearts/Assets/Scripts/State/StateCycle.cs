@@ -33,18 +33,15 @@ public class StateCycle : StateMachine
 
     public bool isSelected = false;
 
-    ClickPath clickPath;
-    Subject subject = new Subject();
-
     private void Awake()
     {
         unitClick = GameObject.Find("Game Manager").GetComponent<UnitClick>();
         agent = GetComponent<NavMeshAgent>();
         lineRenderer = GetComponent<LineRenderer>();
 
-        startState = new StartState(this, subject, clickPath, unitClick);
-        moveState = new MoveState(this, subject, clickPath, agent, lineRenderer);
-        attackState = new AttackState(this, subject, clickPath, agent);
+        startState = new StartState(this, unitClick);
+        moveState = new MoveState(this, agent, lineRenderer);
+        attackState = new AttackState(this, agent);
     }
 
     private void OnEnable()

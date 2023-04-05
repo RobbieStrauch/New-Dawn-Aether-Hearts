@@ -28,7 +28,6 @@ public class Scout : UnitTypes
 
     public override UnitTypes Clone()
     {
-        //return new Scout(MonoBehaviour.Instantiate(clone), cost);
         return new Scout(UnitObjectPooler.instance.SpawnFromPool("TeamA Scout Units"), cost);
     }
 
@@ -56,7 +55,6 @@ public class Ranged : UnitTypes
 
     public override UnitTypes Clone()
     {
-        //return new Ranged(MonoBehaviour.Instantiate(clone), cost);
         return new Ranged(UnitObjectPooler.instance.SpawnFromPool("TeamA Ranged Units"), cost);
     }
 
@@ -84,7 +82,6 @@ public class Melee : UnitTypes
 
     public override UnitTypes Clone()
     {
-        //return new Melee(MonoBehaviour.Instantiate(clone), cost);
         return new Melee(UnitObjectPooler.instance.SpawnFromPool("TeamA Melee Units"), cost);
     }
 
@@ -112,7 +109,6 @@ public class Tank : UnitTypes
 
     public override UnitTypes Clone()
     {
-        //return new Tank(MonoBehaviour.Instantiate(clone), cost);
         return new Tank(UnitObjectPooler.instance.SpawnFromPool("TeamA Tank Units"), cost);
     }
 

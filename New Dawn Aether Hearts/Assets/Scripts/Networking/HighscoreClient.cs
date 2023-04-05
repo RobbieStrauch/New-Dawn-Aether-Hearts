@@ -46,13 +46,6 @@ public class HighscoreClient : MonoBehaviour
 
         path = Application.dataPath;
         fn = path + "/PlayerHighscore.txt";
-
-        //for (int i = 0; i < readLines.Count; i++)
-        //{
-        //    string[] temp_string = readLines[i].Split('|');
-        //    Highscore temp_highscore = new Highscore(temp_string[0], int.Parse(temp_string[1]));
-        //    Leaderboard.instance.AddNewScore(temp_highscore.name, temp_highscore.score);
-        //}
     }
 
     // Update is called once per frame
@@ -100,7 +93,6 @@ public class HighscoreClient : MonoBehaviour
                     string[] temp_string = message.Split('|');
                     for (int i = 0; i < int.Parse(temp_string[1]); i++)
                     {
-                        //Debug.Log(temp_string[2 + (i * 2)] + ": " + temp_string[3 + (i * 2)]);
                         Highscore temp_highscore = new Highscore(temp_string[2 + (i * 2)], int.Parse(temp_string[3 + (i * 2)]));
                         Leaderboard.instance.AddNewScore(temp_highscore.name, temp_highscore.score);
                     }
@@ -137,8 +129,6 @@ public class HighscoreClient : MonoBehaviour
         {
             string line = streamReader.ReadLine();
             currentLine = line;
-            //Debug.Log(line);
-            //readLines.Add(line);
         }
 
         streamReader.Close();

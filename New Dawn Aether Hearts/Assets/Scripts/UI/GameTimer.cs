@@ -59,16 +59,13 @@ public class GameTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((ClientManager.instance.startGame && timer > 0.1f) || ClientManager.instance.gameOver)
-        //if (SceneManager.GetActiveScene().isLoaded && timer > 0.1f)
+        if ((ChatClient.instance.startGame && timer > 0.1f) || ChatClient.instance.gameOver)
         {
             timer -= Time.deltaTime;
             minutes = Mathf.Floor(timer / 60f);
             seconds = Mathf.RoundToInt(timer % 60f);
 
             text.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-            //circle.fillAmount = timer / totalTime;
         }
 
         if (timer <= 0.1f)
@@ -91,16 +88,16 @@ public class GameTimer : MonoBehaviour
 
             if (aZoneCounter > bZoneCounter)
             {
-                if (ClientManager.instance.player1 != "" && ClientManager.instance.client.Connected)
+                if (ChatClient.instance.player1 != "" && ChatClient.instance.client.Connected)
                 {
-                    winnerText.text = ClientManager.instance.player1 + " Is Victorious!";
-                    ClientManager.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER1$>VICTORY"));
+                    winnerText.text = ChatClient.instance.player1 + " Is Victorious!";
+                    ChatClient.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER1$>VICTORY"));
                     EndgameScore(100);
                 }
-                if (ClientManager.instance.player2 != "" && ClientManager.instance.client.Connected)
+                if (ChatClient.instance.player2 != "" && ChatClient.instance.client.Connected)
                 {
-                    winnerText.text = ClientManager.instance.player2 + " Is Victorious!";
-                    ClientManager.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER2$>VICTORY"));
+                    winnerText.text = ChatClient.instance.player2 + " Is Victorious!";
+                    ChatClient.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER2$>VICTORY"));
                     EndgameScore(100);
                 }
             }
@@ -111,27 +108,23 @@ public class GameTimer : MonoBehaviour
             }
         }
 
-        if (ClientManager.instance.gameOver)
+        if (ChatClient.instance.gameOver)
         {
             gameOverPanel.SetActive(true);
             victory = true;
 
-            if (ClientManager.instance.player1 != "" && ClientManager.instance.client.Connected)
+            if (ChatClient.instance.player1 != "" && ChatClient.instance.client.Connected)
             {
-                winnerText.text = "Other Player Has Disconnected\n" + ClientManager.instance.player1 + " Is Victorious!";
-                ClientManager.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER1$>VICTORY"));
+                winnerText.text = "Other Player Has Disconnected\n" + ChatClient.instance.player1 + " Is Victorious!";
+                ChatClient.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER1$>VICTORY"));
                 EndgameScore(100);
             }
-            if (ClientManager.instance.player2 != "" && ClientManager.instance.client.Connected)
+            if (ChatClient.instance.player2 != "" && ChatClient.instance.client.Connected)
             {
-                winnerText.text = "Other Player Has Disconnected\n" + ClientManager.instance.player2 + " Is Victorious!";
-                ClientManager.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER2$>VICTORY"));
+                winnerText.text = "Other Player Has Disconnected\n" + ChatClient.instance.player2 + " Is Victorious!";
+                ChatClient.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER2$>VICTORY"));
                 EndgameScore(100);
             }
-
-            //ClientManager.instance.client.Shutdown(SocketShutdown.Both);
-            //ClientManager.instance.client.Close();
-            //ClientManager.instance.thread.Abort();
         }
     }
 
@@ -147,7 +140,6 @@ public class GameTimer : MonoBehaviour
                 if (line.Length > 1)
                 {
                     readLine = line;
-                    //readLines.Add(line);
                 }
             }
             streamReader.Close();

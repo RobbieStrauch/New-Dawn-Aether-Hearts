@@ -15,22 +15,22 @@ public class QuitCheck : MonoBehaviour
             GameTimer.instance.EndgameScore(-100);
         }
 
-        if(ClientManager.instance.client != null)
+        if(ChatClient.instance.client != null)
         {
-            if (ClientManager.instance.client.Connected)
+            if (ChatClient.instance.client.Connected)
             {
-                if (ClientManager.instance.player1 != "")
+                if (ChatClient.instance.player1 != "")
                 {
-                    ClientManager.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER1$>DEFEAT"));
+                    ChatClient.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER1$>DEFEAT"));
                 }
-                if (ClientManager.instance.player2 != "")
+                if (ChatClient.instance.player2 != "")
                 {
-                    ClientManager.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER2$>DEFEAT"));
+                    ChatClient.instance.client.Send(Encoding.ASCII.GetBytes("$<PLAYER2$>DEFEAT"));
                 }
 
-                ClientManager.instance.client.Shutdown(SocketShutdown.Both);
-                ClientManager.instance.client.Close();
-                ClientManager.instance.thread.Abort();
+                ChatClient.instance.client.Shutdown(SocketShutdown.Both);
+                ChatClient.instance.client.Close();
+                ChatClient.instance.thread.Abort();
             }
         }
 

@@ -20,7 +20,6 @@ public class UnitHealth : MonoBehaviour
     {
         if (GetHealth() <= 0f)
         {
-            //Destroy(gameObject);
             if (gameObject.GetComponent<Unit>())
             {
                 if (gameObject.GetComponent<Unit>().unitType == Unit.UnitType.Scout)

@@ -44,7 +44,6 @@ public class UnitClient : MonoBehaviour
             try
             {
                 client.Connect(IPAddress.Parse("127.0.0.1"), 8889);
-                //ClientManager.instance.isUDPConnected = true;
                 UDPConnected = true;
                 byte[] data = Encoding.ASCII.GetBytes("UDP Client Connected");
                 client.Send(data, data.Length);
@@ -60,8 +59,6 @@ public class UnitClient : MonoBehaviour
             if (receivedData)
             {
                 string receivedString = Encoding.ASCII.GetString(bytes);
-
-                //Debug.Log(receivedString);
 
                 string[] data = receivedString.Split('|');
 

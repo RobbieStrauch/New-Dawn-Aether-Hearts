@@ -24,10 +24,10 @@ public class ScaleSettingPlugin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InputAction = InputController.controller.InputAction;
+        //InputAction = InputController.controller.InputAction;
 
-        InputAction.Scale.Increase.performed += cntxt => ScaleUp();
-        InputAction.Scale.Decrease.performed += cntxt => ScaleDown();
+        //InputAction.Scale.Increase.performed += cntxt => ScaleUp();
+        //InputAction.Scale.Decrease.performed += cntxt => ScaleDown();
     }
 
     // Update is called once per frame

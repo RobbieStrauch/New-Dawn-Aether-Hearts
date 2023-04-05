@@ -27,7 +27,6 @@ public class EditorManager : MonoBehaviour
 
     private void Drop()
     {
-        //item.GetComponent<Renderer>().material = normalMaterial;
         try
         {
             float x = item.transform.position.x;
@@ -71,7 +70,6 @@ public class EditorManager : MonoBehaviour
     {
         if (instantiated)
         {
-            //item.GetComponent<Renderer>().material = transparentMaterial;
             groundObject.layer = 0;
 
             RaycastHit hit;

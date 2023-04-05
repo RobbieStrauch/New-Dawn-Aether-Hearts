@@ -45,16 +45,16 @@ public class ChatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ClientManager.instance.usernameInput)
+        if (ChatClient.instance.usernameInput)
         {
             if (username.Length > maxUsernameLength)
             {
                 username = string.Empty;
-                ClientManager.instance.usernameInput = false;
+                ChatClient.instance.usernameInput = false;
             }
             else
             {
-                username = ClientManager.instance.username;
+                username = ChatClient.instance.username;
                 usernameStructure = "[" + username + "]: ";
             }
         }

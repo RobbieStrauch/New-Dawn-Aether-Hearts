@@ -19,7 +19,6 @@ public class Fade : MonoBehaviour
             instance = this;
         }
 
-        //quad = GetComponentInChildren<GameObject>();
         mesh = quad.GetComponent<MeshRenderer>();
     }
 

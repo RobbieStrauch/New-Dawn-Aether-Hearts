@@ -28,23 +28,8 @@ public class EnemyStateCycle : StateMachine
         attackState = new EnemyAttackState(this);
     }
 
-    //private void OnEnable()
-    //{
-    //    unitClick.NewTargetAcquired += OnNewTargetAcquired;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    unitClick.NewTargetAcquired -= OnNewTargetAcquired;
-    //}
-
     private void Start()
     {
         ChangeState(startState);
     }
-
-    //public void OnNewTargetAcquired(Vector3 newTarget)
-    //{
-    //    targetPosition = newTarget;
-    //}
 }

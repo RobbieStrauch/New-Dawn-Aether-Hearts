@@ -31,7 +31,6 @@ public class UnitObjectPooler : MonoBehaviour
                 GameObject obj = Instantiate(pool.prefab);
                 obj.transform.SetParent(pool.poolParent.transform);
                 obj.name = pool.tag + i.ToString();
-                //Debug.Log(obj.name.Substring(6, obj.name.Length - 6));
                 obj.SetActive(false);
                 objectPools.Add(obj);
             }

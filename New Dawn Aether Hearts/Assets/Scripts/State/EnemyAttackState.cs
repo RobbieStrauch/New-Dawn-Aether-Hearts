@@ -60,7 +60,6 @@ public class EnemyAttackState : IState
                 saveObject = hit.collider.gameObject;
 
                 Debug.DrawRay(stateCycle.transform.position, desiredDirection * stateCycle.attackRange, Color.red);
-                //agent.SetDestination(stateCycle.transform.position);
                 stateCycle.transform.position = stateCycle.transform.position;
                 stateCycle.transform.LookAt(hit.point);
                 AttackUnit();

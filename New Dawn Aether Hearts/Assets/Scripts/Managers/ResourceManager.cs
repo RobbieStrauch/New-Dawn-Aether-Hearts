@@ -76,7 +76,7 @@ public class ResourceManager : MonoBehaviour
 
         zones(A1, A2, A3, A4, Ap2, N, B1, B2, B3, B4, Bp2);
 
-        if (ClientManager.instance.startGame)
+        if (ChatClient.instance.startGame)
         {
             Timer += Time.deltaTime;
 
@@ -90,17 +90,7 @@ public class ResourceManager : MonoBehaviour
                 GoldB();
             }
         }
-        //Timer += Time.deltaTime;
 
-        //if (Timer >= DelayAmount)
-        //{
-        //    Timer = 0f;
-        //    Agold++;
-        //    Bgold++;
-
-        //    GoldA();
-        //    GoldB();
-        //}
         string score = "$" + Agold;
         Scoretxt.text = score;
     }

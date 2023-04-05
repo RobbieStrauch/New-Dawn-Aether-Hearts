@@ -9,9 +9,9 @@ using System.Threading;
 using System.Net;
 using System.Text;
 
-public class ClientManager : MonoBehaviour
+public class ChatClient : MonoBehaviour
 {
-    public static ClientManager instance;
+    public static ChatClient instance;
 
     public string player1 = "";
     public string player2 = "";

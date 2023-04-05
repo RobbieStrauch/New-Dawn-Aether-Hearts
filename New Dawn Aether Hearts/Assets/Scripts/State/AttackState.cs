@@ -9,26 +9,19 @@ public class AttackState : IState
     StateCycle stateCycle;
     NavMeshAgent agent;
 
-    ClickPath clickPath;
-    Subject subject;
-
     float elapsedTime = 0f;
     bool timerActive = false;
 
     GameObject saveObject;
 
-    public AttackState(StateCycle stateCycle, Subject subject, ClickPath clickPath, NavMeshAgent agent)
+    public AttackState(StateCycle stateCycle, NavMeshAgent agent)
     {
         this.stateCycle = stateCycle;
-        this.subject = subject;
-        this.clickPath = clickPath;
         this.agent = agent;
     }
 
     public void Enter()
     {
-        //Debug.Log("Attack");
-
         if (stateCycle.GetComponent<Animator>())
         {
             stateCycle.GetComponent<Animator>().SetBool("isAttack", true);

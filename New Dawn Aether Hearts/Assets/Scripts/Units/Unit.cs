@@ -17,7 +17,7 @@ public class Unit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //UnitSelection.instance.unitList.Add(this.gameObject);
+
     }
 
     // Update is called once per frame
