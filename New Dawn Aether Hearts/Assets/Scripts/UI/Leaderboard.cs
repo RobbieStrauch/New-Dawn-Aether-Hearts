@@ -8,7 +8,7 @@ public class Leaderboard : MonoBehaviour
     public static Leaderboard instance;
 
     public List<TMP_Text> leaderboard;
-    List<Highscore> highscores = new List<Highscore>();
+    public List<Highscore> highscores = new List<Highscore>();
 
     void Awake()
     {

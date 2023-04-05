@@ -8,8 +8,6 @@ public class QuitCheck : MonoBehaviour
 {
     private void OnApplicationQuit()
     {
-        Debug.Log("Quit");
-
         if (!GameTimer.instance.victory)
         {
             GameTimer.instance.EndgameScore(-100);

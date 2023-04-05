@@ -40,7 +40,6 @@ public class MainServerProgram
 
     public static void Main(string[] args)
     {
-        //Write(path, "Temporary", 77);
         Read(path);
 
         for (int i = 0; i < readLines.Count; i++)
@@ -171,7 +170,6 @@ public class MainServerProgram
                                 check = true;
                                 break;
                             }
-                            //Console.WriteLine(item.name + ": " + item.score);
                         }
                         if (!check)
                         {
@@ -183,7 +181,6 @@ public class MainServerProgram
                     foreach (var item in highscores)
                     {
                         temp += "|" + item.name + "|" + item.score;
-                        //Console.WriteLine(item.name + ": " + item.score);
                     }
 
                     DLLSendAllData("{<NEWHIGHSCORE>}|" + highscores.Count + temp);

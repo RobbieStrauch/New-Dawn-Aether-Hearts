@@ -775,6 +775,7 @@ GameObject:
   - component: {fileID: -2946150141629042711}
   - component: {fileID: 2470692207374484638}
   - component: {fileID: -5244695609442202725}
+  - component: {fileID: -2805853665369790744}
   m_Layer: 10
   m_Name: TexturedScout
   m_TagString: ATeam
@@ -1076,3 +1077,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthImage: {fileID: 7077431372401386692}
+--- !u!65 &-2805853665369790744
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7996562819439810008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.75708, y: 2.8423753, z: 0.98535585}
+  m_Center: {x: 0.04272461, y: 0.20426369, z: 0.054013968}

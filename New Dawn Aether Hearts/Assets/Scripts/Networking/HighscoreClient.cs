@@ -94,7 +94,13 @@ public class HighscoreClient : MonoBehaviour
                     for (int i = 0; i < int.Parse(temp_string[1]); i++)
                     {
                         Highscore temp_highscore = new Highscore(temp_string[2 + (i * 2)], int.Parse(temp_string[3 + (i * 2)]));
-                        Leaderboard.instance.AddNewScore(temp_highscore.name, temp_highscore.score);
+                        foreach (var item in Leaderboard.instance.highscores)
+                        {
+                            if (item.name != temp_highscore.name || item.name != "Temporary")
+                            {
+                                Leaderboard.instance.AddNewScore(temp_highscore.name, temp_highscore.score);
+                            }
+                        }
                     }
                 }
             }

@@ -22,7 +22,7 @@ public class GameTimer : MonoBehaviour
 
     public bool victory = false;
 
-    private float totalTime = 30f;
+    private float totalTime = 600f;
     private float timer = 0f;
     private float seconds = 0f;
     private float minutes = 0f;
