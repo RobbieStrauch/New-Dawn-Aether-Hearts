@@ -27347,7 +27347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7d5d33c49d71942b9654f1c1ac0665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 10
+  movespeed: 30
   thickness: 15
   cam: {fileID: 1414814426}
   freeze: 0
