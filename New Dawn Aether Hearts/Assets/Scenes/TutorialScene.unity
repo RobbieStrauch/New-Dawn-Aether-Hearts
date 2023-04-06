@@ -20773,7 +20773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scoretxt: {fileID: 831179198}
-  Agold: 10
+  Agold: 2147483647
   Bgold: 10
   DelayAmount: 1
   A1_1: {fileID: 1686247894}
@@ -24642,7 +24642,7 @@ MonoBehaviour:
   movespeed: 10
   thickness: 15
   cam: {fileID: 1319227822}
-  freeze: 1
+  freeze: 0
 --- !u!81 &1319227828
 AudioListener:
   m_ObjectHideFlags: 0
@@ -35386,15 +35386,15 @@ MonoBehaviour:
   audioSource: {fileID: 1934952524}
   button: {fileID: 514872938}
   del_button: {fileID: 1239464806}
-  clip1: {fileID: 8300000, guid: 8cb91e5ac04c6f741be4bcbd39d61480, type: 3}
-  clip2: {fileID: 8300000, guid: d04c696a8b2b9564e95b300583ea112d, type: 3}
-  clip3: {fileID: 8300000, guid: 1ef4c168e4186074eb22b9092a916881, type: 3}
-  clip4: {fileID: 8300000, guid: e7980350dd6a7c14389cfb0899c75c75, type: 3}
-  clip5: {fileID: 8300000, guid: 513e07a709214c44bb9875647a606585, type: 3}
-  clip6: {fileID: 8300000, guid: 5e6b5031cd27931478bc75b90e00ba18, type: 3}
-  clip7: {fileID: 8300000, guid: 663686c4ce819af428a4a6644d0c95fd, type: 3}
-  clip8: {fileID: 8300000, guid: d7494127138996b4084dc6ac466962f9, type: 3}
-  clip9: {fileID: 8300000, guid: edba6674cc28f7342934bbac017f0807, type: 3}
+  clip1: {fileID: 8300000, guid: 51b6f7cae19d5484fbe13de673dbfe54, type: 3}
+  clip2: {fileID: 8300000, guid: 5f706d0b517bf904cb775d6ebe34149a, type: 3}
+  clip3: {fileID: 8300000, guid: ce6662335eaa2074c93eb3d9a3ea567d, type: 3}
+  clip4: {fileID: 8300000, guid: 7d46059efbc0fe94db101df1571d924c, type: 3}
+  clip5: {fileID: 8300000, guid: 73ea964ba6fd38b4981b6afbdbf7b761, type: 3}
+  clip6: {fileID: 8300000, guid: e9922036dea82654ba5fa5b0fa488e93, type: 3}
+  clip7: {fileID: 8300000, guid: dfaf12aedd3e53b468fb11c8d7c51ae3, type: 3}
+  clip8: {fileID: 8300000, guid: fcdba897cc0f59f498718dbb18479b4c, type: 3}
+  clip9: {fileID: 8300000, guid: eaec553ce9af1724ba20b14dfeb4a797, type: 3}
   Song: {fileID: 8300000, guid: 81eb59bf61b767d439b7882e0f289e61, type: 3}
   txtbox: {fileID: 1598326583}
 --- !u!114 &2063899030
