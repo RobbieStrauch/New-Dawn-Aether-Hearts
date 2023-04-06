@@ -35,6 +35,7 @@ public class TutorialUI : MonoBehaviour
                     temp++;
                     txtbox.text = "Next";
                     audioSource.clip = clip1;
+                    audioSource.loop = false;
                     audioSource.Play();
                     break;
             }
@@ -104,6 +105,8 @@ public class TutorialUI : MonoBehaviour
                     msg = "You can tell how many points a side controls by looking at the colour of the diamonds on the top of the screen.";
                     text.text = msg;
                     temp++;
+                    audioSource.clip = clip8;
+                    audioSource.Play();
                     break;
             }
 
@@ -113,6 +116,8 @@ public class TutorialUI : MonoBehaviour
                     text.text = msg;
                     temp++;
                     txtbox.text = "End";
+                    audioSource.clip = clip9;
+                    audioSource.Play();
                     break;
             }
 
@@ -121,6 +126,7 @@ public class TutorialUI : MonoBehaviour
                     Destroy(button);
                     Destroy(text);
                     Destroy(del_button);
+                    audioSource.loop = true;
                     audioSource.clip = Song;
                     audioSource.Play();
                     break;
@@ -133,6 +139,7 @@ public class TutorialUI : MonoBehaviour
         Destroy(button);
         Destroy(text);
         Destroy(del_button);
+        audioSource.loop = true;
         audioSource.clip = Song;
         audioSource.Play();
     }
